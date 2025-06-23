@@ -1,0 +1,8 @@
+\cleardoublepage 
+
+# (APPENDIX) 附录 {-}
+
+# R 量化投资系列书籍 {#quantbooks}
+
+* 《AI时代R语言与技术分析全景应用指南》
+* 《R与金融时间序列分析常见问题集》
