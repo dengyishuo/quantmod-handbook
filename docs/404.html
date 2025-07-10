@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Page not found | quantmod：从数据获取到策略实战全景指南</title>
+  <meta name="description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Page not found | quantmod：从数据获取到策略实战全景指南" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/images/cover.jpg" />
+  <meta property="og:description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
+  <meta name="github-repo" content="dengyihsuo/quantmod-handbook" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Page not found | quantmod：从数据获取到策略实战全景指南" />
+  
+  <meta name="twitter:description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
+  <meta name="twitter:image" content="/images/cover.jpg" />
+
+<meta name="author" content="邓一硕" />
+
+
+<meta name="date" content="2025-07-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">quantmod：从数据获取到策略实战全景指南</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%89%8D%E8%A8%80"><i class="fa fa-check"></i>前言</a></li>
+<li class="chapter" data-level="" data-path="author.html"><a href="author.html"><i class="fa fa-check"></i>作者简介</a></li>
+<li class="chapter" data-level="1" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>1</b> 数据获取指南</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#%E8%82%A1%E7%A5%A8%E6%97%A5%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E6%8C%87%E5%8D%97"><i class="fa fa-check"></i><b>1.1</b> 股票日交易数据获取指南</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path=""><a href="#%E4%B8%AD%E5%9B%BD%E5%B8%82%E5%9C%BA%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96"><i class="fa fa-check"></i><b>1.1.1</b> 中国市场数据获取</a></li>
+<li class="chapter" data-level="1.1.2" data-path=""><a href="#%E8%8E%B7%E5%8F%96%E7%BE%8E%E5%9B%BD%E5%B8%82%E5%9C%BA%E6%95%B0%E6%8D%AE"><i class="fa fa-check"></i><b>1.1.2</b> 获取美国市场数据</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE%E7%9A%84%E7%AE%A1%E7%90%86%E4%B8%8E%E9%87%8D%E5%91%BD%E5%90%8D"><i class="fa fa-check"></i><b>1.2</b> 交易数据的管理与重命名</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#%E8%82%A1%E6%81%AF%E4%B8%8E%E6%8B%86%E8%82%A1%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E6%8C%87%E5%8D%97"><i class="fa fa-check"></i><b>1.3</b> 股息与拆股数据获取指南</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#%E6%9C%9F%E6%9D%83%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E5%8F%96%E6%8C%87%E5%8D%97"><i class="fa fa-check"></i><b>1.4</b> 期权交易数据获取取指南</a></li>
+<li class="chapter" data-level="1.5" data-path=""><a href="#%E6%B1%87%E5%B8%82%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E6%8C%87%E5%8D%97"><i class="fa fa-check"></i><b>1.5</b> 汇市数据获取指南</a></li>
+<li class="chapter" data-level="1.6" data-path=""><a href="#%E8%B4%B5%E9%87%8D%E9%87%91%E5%B1%9E%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E6%8C%87%E5%8D%97"><i class="fa fa-check"></i><b>1.6</b> 贵重金属数据获取指南</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path=""><a href="#%E9%BB%84%E9%87%91%E4%BB%B7%E6%A0%BC%E8%8E%B7%E5%8F%96"><i class="fa fa-check"></i><b>1.6.1</b> 黄金价格获取</a></li>
+<li class="chapter" data-level="1.6.2" data-path=""><a href="#%E9%92%AF%E9%87%91%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96"><i class="fa fa-check"></i><b>1.6.2</b> 钯金数据获取</a></li>
+<li class="chapter" data-level="1.6.3" data-path=""><a href="#%E9%93%82%E9%87%91%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96"><i class="fa fa-check"></i><b>1.6.3</b> 铂金数据获取</a></li>
+<li class="chapter" data-level="1.6.4" data-path=""><a href="#%E6%89%B9%E9%87%8F%E8%8E%B7%E5%8F%96%E5%A4%9A%E7%A7%8D%E8%B4%B5%E9%87%91%E5%B1%9E%E6%95%B0%E6%8D%AE"><i class="fa fa-check"></i><b>1.6.4</b> 批量获取多种贵金属数据</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path=""><a href="#%E7%BE%8E%E8%81%94%E5%82%A8%E7%BB%8F%E6%B5%8E%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E6%8C%87%E5%8D%97"><i class="fa fa-check"></i><b>1.7</b> 美联储经济数据获取指南</a></li>
+<li class="chapter" data-level="1.8" data-path=""><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E6%8C%87%E5%8D%97"><i class="fa fa-check"></i><b>1.8</b> 数据库数据获取指南</a></li>
+<li class="chapter" data-level="1.9" data-path=""><a href="#%E6%9F%A5%E7%9C%8B%E5%92%8C%E7%A7%BB%E9%99%A4%E6%95%B0%E6%8D%AE"><i class="fa fa-check"></i><b>1.9</b> 查看和移除数据</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path=""><a href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE"><i class="fa fa-check"></i><b>1.9.1</b> 查看数据</a></li>
+<li class="chapter" data-level="1.9.2" data-path=""><a href="#%E7%A7%BB%E9%99%A4%E6%95%B0%E6%8D%AE"><i class="fa fa-check"></i><b>1.9.2</b> 移除数据</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="manipulation.html"><a href="manipulation.html"><i class="fa fa-check"></i><b>2</b> 基本数据操作</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path=""><a href="#%E9%AA%8C%E8%AF%81%E6%95%B0%E6%8D%AE%E7%9A%84%E5%87%BD%E6%95%B0"><i class="fa fa-check"></i><b>2.1</b> 验证数据的函数</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path=""><a href="#%E9%AA%8C%E8%AF%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><i class="fa fa-check"></i><b>2.1.1</b> 验证数据类型</a></li>
+<li class="chapter" data-level="2.1.2" data-path=""><a href="#%E9%AA%8C%E8%AF%81%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7"><i class="fa fa-check"></i><b>2.1.2</b> 验证数据完整性</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path=""><a href="#%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE"><i class="fa fa-check"></i><b>2.2</b> 提取数据</a></li>
+<li class="chapter" data-level="2.3" data-path=""><a href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97"><i class="fa fa-check"></i><b>2.3</b> 数据的简单计算</a></li>
+<li class="chapter" data-level="2.4" data-path=""><a href="#%E5%BA%8F%E5%88%97%E8%AE%A1%E7%AE%97%E5%87%BD%E6%95%B0"><i class="fa fa-check"></i><b>2.4</b> 序列计算函数</a></li>
+<li class="chapter" data-level="2.5" data-path=""><a href="#%E8%AE%A1%E7%AE%97%E6%94%B6%E7%9B%8A%E7%8E%87"><i class="fa fa-check"></i><b>2.5</b> 计算收益率</a></li>
+<li class="chapter" data-level="2.6" data-path=""><a href="#%E5%BA%8F%E5%88%97%E7%9A%84%E6%BB%9E%E5%90%8E%E5%89%8D%E7%A7%BB%E4%B8%8E%E9%80%89%E5%8F%96"><i class="fa fa-check"></i><b>2.6</b> 序列的滞后/前移与选取</a></li>
+<li class="chapter" data-level="2.7" data-path=""><a href="#%E8%AE%A1%E7%AE%97%E5%B3%B0%E5%80%BC%E5%B3%B0%E8%B0%B7"><i class="fa fa-check"></i><b>2.7</b> 计算峰值/峰谷</a></li>
+<li class="chapter" data-level="2.8" data-path=""><a href="#%E8%AE%A1%E7%AE%97%E6%9E%81%E5%80%BC"><i class="fa fa-check"></i><b>2.8</b> 计算极值</a></li>
+<li class="chapter" data-level="2.9" data-path=""><a href="#%E5%B7%AE%E5%88%86%E9%98%88%E5%80%BC%E5%87%BD%E6%95%B0"><i class="fa fa-check"></i><b>2.9</b> 差分/阈值函数</a></li>
+<li class="chapter" data-level="2.10" data-path=""><a href="#%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0"><i class="fa fa-check"></i><b>2.10</b> 日期转换函数</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path=""><a href="#%E6%97%A5%E5%91%A8%E8%BD%AC%E6%8D%A2%E5%8F%8A%E6%97%A5%E6%9C%88%E8%BD%AC%E6%8D%A2"><i class="fa fa-check"></i><b>2.10.1</b> 日/周转换及日/月转换</a></li>
+<li class="chapter" data-level="2.10.2" data-path=""><a href="#%E6%95%B0%E6%8D%AE%E5%91%A8%E6%9C%9F%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%86%E5%88%AB"><i class="fa fa-check"></i><b>2.10.2</b> 数据周期的智能识别</a></li>
+<li class="chapter" data-level="2.10.3" data-path=""><a href="#%E5%91%A8%E6%9C%9F%E7%89%B9%E5%BE%81%E8%AE%A1%E7%AE%97"><i class="fa fa-check"></i><b>2.10.3</b> 周期特征计算</a></li>
+<li class="chapter" data-level="2.10.4" data-path=""><a href="#%E8%AE%A1%E7%AE%97%E5%91%A8%E6%9C%9F%E6%9C%80%E5%A4%A7%E5%80%BC"><i class="fa fa-check"></i><b>2.10.4</b> 计算周期最大值</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="graphs.html"><a href="graphs.html"><i class="fa fa-check"></i><b>3</b> 图形分析</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path=""><a href="#%E5%9F%BA%E6%9C%AC%E7%BB%98%E5%9B%BE%E5%87%BD%E6%95%B0"><i class="fa fa-check"></i><b>3.1</b> 基本绘图函数</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path=""><a href="#%E5%85%A8%E8%83%BD%E7%BB%98%E5%9B%BE%E5%BC%95%E6%93%8E-chartseries"><i class="fa fa-check"></i><b>3.1.1</b> 全能绘图引擎 chartSeries</a></li>
+<li class="chapter" data-level="3.1.2" data-path=""><a href="#%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7-rechart"><i class="fa fa-check"></i><b>3.1.2</b> 动态更新的可视化效率工具 reChart</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path=""><a href="#%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2"><i class="fa fa-check"></i><b>3.2</b> 三种基本图形</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path=""><a href="#%E6%9D%A1%E5%BD%A2%E5%9B%BE"><i class="fa fa-check"></i><b>3.2.1</b> 条形图</a></li>
+<li class="chapter" data-level="3.2.2" data-path=""><a href="#%E8%9C%A1%E7%83%9B%E5%9B%BE"><i class="fa fa-check"></i><b>3.2.2</b> 蜡烛图</a></li>
+<li class="chapter" data-level="3.2.3" data-path=""><a href="#%E7%BA%BF%E5%9B%BE"><i class="fa fa-check"></i><b>3.2.3</b> 线图</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path=""><a href="#%E5%9B%BE%E5%BD%A2%E4%B8%BB%E9%A2%98%E5%AE%9A%E5%88%B6"><i class="fa fa-check"></i><b>3.3</b> 图形主题定制</a></li>
+<li class="chapter" data-level="3.4" data-path=""><a href="#%E5%9B%BE%E5%BD%A2%E7%BC%A9%E6%94%BE"><i class="fa fa-check"></i><b>3.4</b> 图形缩放</a></li>
+<li class="chapter" data-level="3.5" data-path=""><a href="#%E5%9B%BE%E5%BD%A2%E5%AD%98%E5%82%A8"><i class="fa fa-check"></i><b>3.5</b> 图形存储</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="TTR.html"><a href="TTR.html"><i class="fa fa-check"></i><b>4</b> 技术分析图</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path=""><a href="#%E8%B6%8B%E5%8A%BF%E7%B1%BB%E6%8C%87%E6%A0%87%E5%9B%BE"><i class="fa fa-check"></i><b>4.1</b> 趋势类指标图</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path=""><a href="#%E6%8A%9B%E7%89%A9%E7%BA%BF%E6%8C%87%E6%A0%87-sar%E8%B6%8B%E5%8A%BF%E8%B7%9F%E8%B8%AA%E4%B8%8E%E6%AD%A2%E6%8D%9F%E7%AD%96%E7%95%A5%E7%9A%84%E5%8A%A8%E6%80%81%E5%B9%B3%E8%A1%A1%E5%99%A8"><i class="fa fa-check"></i><b>4.1.1</b> 抛物线指标 SAR：趋势跟踪与止损策略的动态平衡器</a></li>
+<li class="chapter" data-level="4.1.2" data-path=""><a href="#%E5%B9%B3%E5%9D%87%E8%B6%8B%E5%90%91%E6%8C%87%E6%A0%87-adx%E8%B6%8B%E5%8A%BF%E5%BC%BA%E5%BA%A6%E7%9A%84%E7%B2%BE%E7%A1%AE%E5%BA%A6%E9%87%8F%E4%B8%8E%E4%BA%A4%E6%98%93%E6%97%B6%E6%9C%BA%E8%BF%87%E6%BB%A4%E5%99%A8"><i class="fa fa-check"></i><b>4.1.2</b> 平均趋向指标 ADX：趋势强度的精确度量与交易时机过滤器</a></li>
+<li class="chapter" data-level="4.1.3" data-path=""><a href="#%E7%AE%80%E5%8D%95%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87%E7%BA%BF-sma%E8%B6%8B%E5%8A%BF%E8%AF%86%E5%88%AB%E4%B8%8E%E5%8A%A8%E6%80%81%E6%94%AF%E6%92%91%E9%98%BB%E5%8A%9B%E7%9A%84%E5%9F%BA%E7%9F%B3"><i class="fa fa-check"></i><b>4.1.3</b> 简单移动平均线 SMA：趋势识别与动态支撑阻力的基石</a></li>
+<li class="chapter" data-level="4.1.4" data-path=""><a href="#%E6%8C%87%E6%95%B0%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87%E7%BA%BF-ema%E4%BB%B7%E6%A0%BC%E5%8A%A8%E9%87%8F%E7%9A%84%E7%81%B5%E6%95%8F%E6%8D%95%E6%8D%89%E5%99%A8%E4%B8%8E%E8%B6%8B%E5%8A%BF%E6%8B%90%E7%82%B9%E5%85%88%E8%A1%8C%E6%8C%87%E6%A0%87"><i class="fa fa-check"></i><b>4.1.4</b> 指数移动平均线 EMA：价格动量的灵敏捕捉器与趋势拐点先行指标</a></li>
+<li class="chapter" data-level="4.1.5" data-path=""><a href="#%E5%8F%8C%E6%8C%87%E6%95%B0%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87%E7%BA%BF-dema%E6%B6%88%E9%99%A4%E6%BB%9E%E5%90%8E%E7%9A%84%E8%B6%8B%E5%8A%BF%E5%8A%A0%E9%80%9F%E5%BC%95%E6%93%8E%E4%B8%8E%E6%8B%90%E7%82%B9%E7%A1%AE%E8%AE%A4%E5%88%A9%E5%99%A8"><i class="fa fa-check"></i><b>4.1.5</b> 双指数移动平均线 DEMA：消除滞后的趋势加速引擎与拐点确认利器</a></li>
+<li class="chapter" data-level="4.1.6" data-path=""><a href="#%E5%8A%A0%E6%9D%83%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87%E7%BA%BF-wma%E7%B2%BE%E7%BB%86%E4%BB%B7%E6%A0%BC%E6%9D%83%E9%87%8D%E5%88%86%E9%85%8D%E7%9A%84%E8%B6%8B%E5%8A%BF%E5%BA%A6%E9%87%8F%E8%A1%A1%E4%B8%8E%E7%9F%AD%E6%9C%9F%E6%B3%A2%E5%8A%A8%E8%BF%87%E6%BB%A4%E5%99%A8"><i class="fa fa-check"></i><b>4.1.6</b> 加权移动平均线 WMA：精细价格权重分配的趋势度量衡与短期波动过滤器</a></li>
+<li class="chapter" data-level="4.1.7" data-path=""><a href="#%E9%9B%B6%E6%BB%9E%E5%90%8E%E6%8C%87%E6%95%B0%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87%E7%BA%BF-zlema%E6%B6%88%E9%99%A4%E8%B6%8B%E5%8A%BF%E6%BB%9E%E5%90%8E%E7%9A%84%E7%9F%AD%E7%BA%BF%E4%BA%A4%E6%98%93%E5%88%A9%E5%99%A8"><i class="fa fa-check"></i><b>4.1.7</b> 零滞后指数移动平均线 ZLEMA：消除趋势滞后的短线交易利器</a></li>
+<li class="chapter" data-level="4.1.8" data-path=""><a href="#%E5%BC%B9%E6%80%A7%E6%88%90%E4%BA%A4%E9%87%8F%E5%8A%A0%E6%9D%83%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87%E7%BA%BF-evwma%E9%87%8F%E4%BB%B7%E7%BB%93%E5%90%88%E7%9A%84%E8%B6%8B%E5%8A%BF%E7%A1%AE%E8%AE%A4%E5%88%A9%E5%99%A8"><i class="fa fa-check"></i><b>4.1.8</b> 弹性成交量加权移动平均线 EVWMA：量价结合的趋势确认利器</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path=""><a href="#%E9%9C%87%E8%8D%A1%E7%B1%BB%E6%8C%87%E6%A0%87"><i class="fa fa-check"></i><b>4.2</b> 震荡类指标</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path=""><a href="#%E7%9B%B8%E5%AF%B9%E5%BC%BA%E5%BC%B1%E6%8C%87%E6%A0%87-rsi%E5%B8%82%E5%9C%BA%E5%8A%A8%E9%87%8F%E7%9A%84%E5%9D%87%E8%A1%A1%E5%A4%A9%E5%B9%B3"><i class="fa fa-check"></i><b>4.2.1</b> 相对强弱指标 RSI：市场动量的均衡天平</a></li>
+<li class="chapter" data-level="4.2.2" data-path=""><a href="#%E9%9A%8F%E6%9C%BA%E6%8C%87%E6%A0%87-kdj%E4%BB%B7%E6%A0%BC%E5%8A%A8%E9%87%8F%E7%9A%84%E7%B2%BE%E5%87%86%E5%BA%A6%E9%87%8F%E8%A1%A1"><i class="fa fa-check"></i><b>4.2.2</b> 随机指标 KDJ：价格动量的精准度量衡</a></li>
+<li class="chapter" data-level="4.2.3" data-path=""><a href="#%E5%A8%81%E5%BB%89%E6%8C%87%E6%A0%87-wpr%E5%8F%8D%E5%90%91%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E8%B6%85%E4%B9%B0%E8%B6%85%E5%8D%96%E6%8E%A2%E6%B5%8B%E5%99%A8"><i class="fa fa-check"></i><b>4.2.3</b> 威廉指标 WPR：反向视角下的超买超卖探测器</a></li>
+<li class="chapter" data-level="4.2.4" data-path=""><a href="#chande-%E5%8A%A8%E9%87%8F%E6%91%86%E5%8A%A8%E6%8C%87%E6%A0%87-cmo%E4%BB%B7%E6%A0%BC%E5%8A%A8%E8%83%BD%E7%9A%84%E7%B2%BE%E7%A1%AE%E6%B5%8B%E9%87%8F%E4%BB%AA"><i class="fa fa-check"></i><b>4.2.4</b> Chande 动量摆动指标 CMO：价格动能的精确测量仪</a></li>
+<li class="chapter" data-level="4.2.5" data-path=""><a href="#%E9%9A%8F%E6%9C%BA%E5%8A%A8%E9%87%8F%E6%8C%87%E6%A0%87-smi%E7%B2%BE%E5%87%86%E8%BF%87%E6%BB%A4%E5%99%AA%E9%9F%B3%E7%9A%84%E8%B6%8B%E5%8A%BF%E5%8F%8D%E8%BD%AC%E6%8E%A2%E6%B5%8B%E5%99%A8"><i class="fa fa-check"></i><b>4.2.5</b> 随机动量指标 SMI：精准过滤噪音的趋势反转探测器</a></li>
+<li class="chapter" data-level="4.2.6" data-path=""><a href="#%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E7%8E%87%E6%8C%87%E6%A0%87-roc%E5%B8%82%E5%9C%BA%E5%8A%A8%E8%83%BD%E7%9A%84%E6%B5%8B%E9%80%9F%E4%BB%AA"><i class="fa fa-check"></i><b>4.2.6</b> 价格变动率指标 ROC：市场动能的测速仪</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path=""><a href="#%E6%B3%A2%E5%8A%A8%E7%8E%87%E7%B1%BB%E6%8C%87%E6%A0%87"><i class="fa fa-check"></i><b>4.3</b> 波动率类指标</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path=""><a href="#%E5%B8%83%E6%9E%97%E5%B8%A6-bbands%E5%B8%82%E5%9C%BA%E6%B3%A2%E5%8A%A8%E7%9A%84%E5%8A%A8%E6%80%81%E6%A0%87%E5%B0%BA"><i class="fa fa-check"></i><b>4.3.1</b> 布林带 BBands：市场波动的动态标尺</a></li>
+<li class="chapter" data-level="4.3.2" data-path=""><a href="#%E5%8C%85%E7%BB%9C%E7%BA%BF-envelope%E4%BB%B7%E6%A0%BC%E6%B3%A2%E5%8A%A8%E7%9A%84%E5%9B%BA%E5%AE%9A%E5%8C%BA%E9%97%B4%E6%A0%87%E5%B0%BA"><i class="fa fa-check"></i><b>4.3.2</b> 包络线 Envelope：价格波动的固定区间标尺</a></li>
+<li class="chapter" data-level="4.3.3" data-path=""><a href="#%E5%B9%B3%E5%9D%87%E7%9C%9F%E5%AE%9E%E6%B3%A2%E5%B9%85-atr%E5%B8%82%E5%9C%BA%E6%B3%A2%E5%8A%A8%E6%80%A7%E7%9A%84%E7%B2%BE%E5%87%86%E5%BA%A6%E9%87%8F"><i class="fa fa-check"></i><b>4.3.3</b> 平均真实波幅 ATR：市场波动性的精准度量</a></li>
+<li class="chapter" data-level="4.3.4" data-path=""><a href="#%E5%8C%BA%E9%97%B4%E9%9C%87%E8%8D%A1%E7%BA%BF-dpo%E4%BB%B7%E6%A0%BC%E5%91%A8%E6%9C%9F%E4%B8%8E%E8%B6%85%E4%B9%B0%E8%B6%85%E5%8D%96%E7%9A%84%E7%B2%BE%E5%87%86%E5%BA%A6%E9%87%8F"><i class="fa fa-check"></i><b>4.3.4</b> 区间震荡线 DPO：价格周期与超买超卖的精准度量</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path=""><a href="#%E6%88%90%E4%BA%A4%E9%87%8F%E7%B1%BB%E6%8C%87%E6%A0%87"><i class="fa fa-check"></i><b>4.4</b> 成交量类指标</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path=""><a href="#%E6%88%90%E4%BA%A4%E9%87%8F%E6%8C%87%E6%A0%87-vo%E5%B8%82%E5%9C%BA%E5%8A%A8%E8%83%BD%E4%B8%8E%E8%B6%8B%E5%8A%BF%E7%A1%AE%E8%AE%A4%E7%9A%84%E6%A0%B8%E5%BF%83%E5%B7%A5%E5%85%B7"><i class="fa fa-check"></i><b>4.4.1</b> 成交量指标 Vo：市场动能与趋势确认的核心工具</a></li>
+<li class="chapter" data-level="4.4.2" data-path=""><a href="#chaikin-%E8%B5%84%E9%87%91%E6%B5%81%E9%87%8F-cmf%E9%87%8F%E4%BB%B7%E7%BB%93%E5%90%88%E7%9A%84%E8%B5%84%E9%87%91%E5%8A%A8%E8%83%BD%E6%8C%87%E6%A0%87"><i class="fa fa-check"></i><b>4.4.2</b> Chaikin 资金流量 CMF：量价结合的资金动能指标</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path=""><a href="#%E7%89%B9%E6%AE%8A%E6%8A%80%E6%9C%AF%E6%8C%87%E6%A0%87"><i class="fa fa-check"></i><b>4.5</b> 特殊技术指标</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path=""><a href="#%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87%E6%94%B6%E6%95%9B%E5%8F%91%E6%95%A3%E6%8C%87%E6%A0%87-macd%E8%B6%8B%E5%8A%BF%E4%B8%8E%E5%8A%A8%E9%87%8F%E7%9A%84%E5%8F%8C%E9%87%8D%E5%BA%A6%E9%87%8F"><i class="fa fa-check"></i><b>4.5.1</b> 移动平均收敛发散指标 MACD：趋势与动量的双重度量</a></li>
+<li class="chapter" data-level="4.5.2" data-path=""><a href="#%E5%8A%A8%E9%87%8F%E6%8C%87%E6%A0%87-momentum%E4%BB%B7%E6%A0%BC%E5%8F%98%E5%8A%A8%E9%80%9F%E5%BA%A6%E7%9A%84%E7%B2%BE%E5%87%86%E5%BA%A6%E9%87%8F"><i class="fa fa-check"></i><b>4.5.2</b> 动量指标 Momentum：价格变动速度的精准度量</a></li>
+<li class="chapter" data-level="4.5.3" data-path=""><a href="#%E9%A1%BA%E5%8A%BF%E6%8C%87%E6%A0%87-cci%E4%BB%B7%E6%A0%BC%E5%81%8F%E7%A6%BB%E5%BA%A6%E4%B8%8E%E8%B6%8B%E5%8A%BF%E5%8F%8D%E8%BD%AC%E7%9A%84%E5%8A%A8%E6%80%81%E7%9B%91%E6%B5%8B"><i class="fa fa-check"></i><b>4.5.3</b> 顺势指标 CCI：价格偏离度与趋势反转的动态监测</a></li>
+<li class="chapter" data-level="4.5.4" data-path=""><a href="#%E5%90%88%E7%BA%A6%E7%BB%88%E6%AD%A2%E7%BA%BF-expiry%E6%9C%9F%E8%B4%A7%E5%B8%82%E5%9C%BA%E6%97%B6%E9%97%B4%E7%BB%B4%E5%BA%A6%E7%9A%84%E9%A3%8E%E9%99%A9%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><i class="fa fa-check"></i><b>4.5.4</b> 合约终止线 Expiry：期货市场时间维度的风险管理工具</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path=""><a href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0quantmod-%E5%8C%85%E7%9A%84%E6%8C%87%E6%A0%87%E5%AE%9A%E5%88%B6%E4%B8%8E%E5%9B%BE%E8%A1%A8%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><i class="fa fa-check"></i><b>4.6</b> 辅助函数：quantmod 包的指标定制与图表管理工具</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path=""><a href="#%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%BB%98%E5%9B%BE%E6%8C%87%E6%A0%87"><i class="fa fa-check"></i><b>4.6.1</b> 设置默认绘图指标</a></li>
+<li class="chapter" data-level="4.6.2" data-path=""><a href="#%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E6%A0%87"><i class="fa fa-check"></i><b>4.6.2</b> 添加自定义指标</a></li>
+<li class="chapter" data-level="4.6.3" data-path=""><a href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E6%8C%87%E6%A0%87"><i class="fa fa-check"></i><b>4.6.3</b> 创建新指标</a></li>
+<li class="chapter" data-level="4.6.4" data-path=""><a href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%8C%87%E6%A0%87"><i class="fa fa-check"></i><b>4.6.4</b> 查看已添加的指标</a></li>
+<li class="chapter" data-level="4.6.5" data-path=""><a href="#%E6%9E%84%E5%BB%BA%E7%BB%BC%E5%90%88%E5%88%86%E6%9E%90%E5%9B%BE%E8%A1%A8"><i class="fa fa-check"></i><b>4.6.5</b> 构建综合分析图表</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i><b>5</b> 量化建模与回测：从模型设定到策略验证</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path=""><a href="#%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B"><i class="fa fa-check"></i><b>5.1</b> 模型构建流程</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path=""><a href="#%E8%AE%BE%E5%AE%9A%E6%A8%A1%E5%9E%8B%E5%BD%A2%E5%BC%8F"><i class="fa fa-check"></i><b>5.1.1</b> 设定模型形式</a></li>
+<li class="chapter" data-level="5.1.2" data-path=""><a href="#%E6%9F%A5%E7%9C%8B%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE"><i class="fa fa-check"></i><b>5.1.2</b> 查看模型数据</a></li>
+<li class="chapter" data-level="5.1.3" data-path=""><a href="#%E4%BC%B0%E8%AE%A1%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0"><i class="fa fa-check"></i><b>5.1.3</b> 估计模型参数</a></li>
+<li class="chapter" data-level="5.1.4" data-path=""><a href="#%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%9C%E6%8F%90%E5%8F%96"><i class="fa fa-check"></i><b>5.1.4</b> 模型结果提取</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path=""><a href="#%E7%AD%96%E7%95%A5%E5%9B%9E%E6%B5%8B%E4%B8%8E%E8%AF%84%E4%BC%B0"><i class="fa fa-check"></i><b>5.2</b> 策略回测与评估</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i>结语</a></li>
+<li class="appendix"><span><b>附录</b></span></li>
+<li class="chapter" data-level="A" data-path="quantbooks.html"><a href="quantbooks.html"><i class="fa fa-check"></i><b>A</b> R 量化投资系列书籍</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>参考文献</a></li>
+<li class="divider"></li>
+<li><a href="https://gewutang.org" target="blank">本书由邓一硕出品</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">quantmod：从数据获取到策略实战全景指南</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="page-not-found" class="section level1">
+<h1>Page not found</h1>
+<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
+<p>You may want to try searching to find the page's new location, or use
+the table of contents to find the page you are looking for.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": true,
+    "facebook": false,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/dengyishuo/quantmod-handbook/%s",
+    "text": "编辑"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["QuantmodHandbook.pdf", "QuantmodHandbook.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "none"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
