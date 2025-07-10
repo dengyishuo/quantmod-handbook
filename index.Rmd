@@ -12,8 +12,8 @@ lof: yes
 geometry: [b5paper, tmargin=2.5cm, bmargin=2.5cm, lmargin=3.5cm, rmargin=2.5cm]
 site: bookdown::bookdown_site
 description: "本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。"
-github-repo: dengyihsuo/quantmod
-#cover-image: images/cover.jpg
+github-repo: dengyihsuo/quantmod-handbook
+cover-image: images/cover.jpg
 ---
 
 ```{r setup, include=FALSE}
@@ -32,7 +32,8 @@ required_packages <- c("quantmod",
                        "tidyr",
                        "ggplot2", 
                        "PerformanceAnalytics", 
-                       "eTTR")
+                       "eTTR",
+                       "quantstrat")
 
 # 检查、安装并加载包
 lapply(required_packages, function(pkg) {
@@ -43,13 +44,13 @@ lapply(required_packages, function(pkg) {
   message(paste("加载包:", pkg))
   library(pkg, character.only = TRUE)
 })
-
-
 ```
 
 # 前言 {.unnumbered}
 
-在瞬息万变的金融市场中，数据驱动的量化分析已成为投资决策的关键。R 语言作为数据分析领域的佼佼者，以其强大的统计计算能力和丰富的扩展包生态，深受金融分析师与量化投资者的青睐。而 quantmod 包作为 R 语言在量化金融领域的 “瑞士军刀”，整合了数据获取、指标计算、图形可视化与量化投资建模等全流程功能，极大地简化了复杂金融分析任务。从便捷抓取全球金融市场数据，到快速计算技术指标、绘制专业图表，再到搭建多因子模型、回测投资策略，quantmod 包均能高效实现。本系列将深入探索 quantmod 包的核心功能，助你掌握量化金融分析的实战利器，解锁数据背后的投资密码。
+在瞬息万变的金融市场中，数据驱动的量化分析已成为投资决策的关键。R 语言作为数据分析领域的佼佼者，以其强大的统计计算能力和丰富的扩展包生态，深受金融分析师与量化投资者的青睐。而 quantmod 包作为 R 语言在量化金融领域的 “瑞士军刀”，整合了数据获取、指标计算、图形可视化与量化投资建模等全流程功能，极大地简化了复杂金融分析任务。
+
+从便捷抓取全球金融市场数据到快速计算技术指标、绘制专业图表，再到搭建多因子模型、回测投资策略，quantmod 包均能高效实现。本系列将深入探索 quantmod 包的核心功能，助你掌握量化金融分析的实战利器，解锁数据背后的投资密码。
 
 本书具体章节内容如下：
 

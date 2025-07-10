@@ -1,3 +1,4 @@
 # quantmod-handbook
-The manuscript of the quantmod handbook
+
+Handbook of Quantmod for Financial Analysis
 
