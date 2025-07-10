@@ -1,5 +1,5 @@
 ---
-title: "quantmod：从数据获取到策略实战全景指南"
+title: "quantmod：金融分析手册"
 author: "邓一硕"
 date: "`r Sys.Date()`"
 documentclass: ctexbook

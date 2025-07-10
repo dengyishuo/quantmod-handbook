@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第 4 章 技术分析图 | quantmod：从数据获取到策略实战全景指南</title>
+  <title>第 4 章 技术分析图 | quantmod：金融分析手册</title>
   <meta name="description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第 4 章 技术分析图 | quantmod：从数据获取到策略实战全景指南" />
+  <meta property="og:title" content="第 4 章 技术分析图 | quantmod：金融分析手册" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="/images/cover.jpg" />
   <meta property="og:description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="github-repo" content="dengyihsuo/quantmod-handbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第 4 章 技术分析图 | quantmod：从数据获取到策略实战全景指南" />
+  <meta name="twitter:title" content="第 4 章 技术分析图 | quantmod：金融分析手册" />
   
   <meta name="twitter:description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="twitter:image" content="/images/cover.jpg" />
@@ -161,7 +161,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">quantmod：从数据获取到策略实战全景指南</a></li>
+<li><a href="./">quantmod：金融分析手册</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path=""><a href="#%E5%89%8D%E8%A8%80"><i class="fa fa-check"></i>前言</a></li>
@@ -309,7 +309,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">quantmod：从数据获取到策略实战全景指南</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">quantmod：金融分析手册</a>
           </h1>
         </div>
 
@@ -342,9 +342,9 @@ div.csl-indent {
 式排列在 K 线下方，形成可视化的趋势确认；而当价格跌破 SAR 点时，往往预示着短期趋势的反转，此时结合成交量放大等信号，可进一步强化止损或反手
 操作的决策依据。</p>
 <p>通过 addSAR 函数可以向蜡烛图上添加 SAR 指标，代码如下：</p>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="TTR.html#cb353-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="TTR.html#cb352-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/sar-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="TTR.html#cb354-1" tabindex="-1"></a><span class="fu">addSAR</span>(<span class="at">accel =</span> <span class="fu">c</span>(<span class="fl">0.02</span>, <span class="fl">0.2</span>), <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)  <span class="co"># 参数可调整加速度和最大值</span></span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="TTR.html#cb353-1" tabindex="-1"></a><span class="fu">addSAR</span>(<span class="at">accel =</span> <span class="fu">c</span>(<span class="fl">0.02</span>, <span class="fl">0.2</span>), <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)  <span class="co"># 参数可调整加速度和最大值</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/sar-2.png" width="90%" /></p>
 <p>在实际应用中，SAR 常与其他技术指标形成互补。例如与 20 日均线搭配时，当 SAR 点从价格上方转为下方且股价站上均线，可确认上升趋势的形成；而与成交量指标结合时，
 若 SAR 点上穿价格的同时伴随成交量同比增加 20% 以上，则更能确认趋势反转的有效性。</p>
@@ -363,9 +363,9 @@ div.csl-indent {
 需结合 +DI（上升方向线）和 -DI（下降方向线）共同判断 —— 当 +DI 高于 -DI 且 ADX 上升时，确认上涨趋势；反之则为下跌趋势。</p>
 <p>在实战应用中，ADX 指标的典型用法是与价格图表叠加分析。以苹果公司（AAPL）近 5 个月
 的股价为例：</p>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="TTR.html#cb355-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="TTR.html#cb354-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/adx-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="TTR.html#cb356-1" tabindex="-1"></a><span class="fu">addADX</span>()  </span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="TTR.html#cb355-1" tabindex="-1"></a><span class="fu">addADX</span>()  </span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/adx-2.png" width="90%" /></p>
 <p>绘制蜡烛图后，调用addADX()函数可在副图生成 ADX 曲线及 +DI、-DI 线条。若观察到 ADX
 从 20 下方持续攀升至 25 以上，同时 + DI 突破 - DI，则预示着上涨趋势的形成；若 ADX
@@ -374,11 +374,11 @@ div.csl-indent {
 <p>ADX 的计算逻辑基于多周期的价格波动差，通过平滑处理后形成趋势强度指数，这使其在过
 滤短期噪音的同时，能有效捕捉中长期趋势的变化。但需注意，该指标在极端行情下可能出
 现滞后性（如单边暴涨暴跌时 ADX 反应较慢），因此建议结合其他指标（如 MACD、成交量）共同验证，以提升信号的可靠性。</p>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="TTR.html#cb357-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="TTR.html#cb356-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/adx_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="TTR.html#cb358-1" tabindex="-1"></a><span class="fu">addMACD</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="TTR.html#cb357-1" tabindex="-1"></a><span class="fu">addMACD</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/adx_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="TTR.html#cb359-1" tabindex="-1"></a><span class="fu">addADX</span>()  </span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="TTR.html#cb358-1" tabindex="-1"></a><span class="fu">addADX</span>()  </span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/adx_2-3.png" width="90%" /></p>
 </div>
 <div id="简单移动平均线-sma趋势识别与动态支撑阻力的基石" class="section level3 hasAnchor" number="4.1.3">
@@ -401,30 +401,30 @@ SMA(n) = \frac{1}{n}\sum_{t=1}^nP_t
 <p>此外，SMA 结合价格信号，还可以判断趋势反转情况。具体而言，当价格创新高（或新低）
 但 SMA 未同步上升（或下降）时，形成背离信号，暗示趋势可能反转。例如，某股票价格
 连续创历史新高，但 20 日 SMA 斜率逐渐趋平，可能预示上涨动能衰竭。</p>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="TTR.html#cb360-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与50日、200日SMA</span></span>
-<span id="cb360-2"><a href="TTR.html#cb360-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 2 year&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="TTR.html#cb359-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与50日、200日SMA</span></span>
+<span id="cb359-2"><a href="TTR.html#cb359-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 2 year&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/sma-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="TTR.html#cb361-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)  <span class="co"># 蓝色为50日SMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="TTR.html#cb360-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)  <span class="co"># 蓝色为50日SMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/sma-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="TTR.html#cb362-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)  <span class="co"># 红色为200日SMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="TTR.html#cb361-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)  <span class="co"># 红色为200日SMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/sma-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="TTR.html#cb363-1" tabindex="-1"></a><span class="co"># 计算金叉/死叉信号</span></span>
-<span id="cb363-2"><a href="TTR.html#cb363-2" tabindex="-1"></a>sma50 <span class="ot">&lt;-</span> <span class="fu">SMA</span>(<span class="fu">Cl</span>(AAPL), <span class="at">n =</span> <span class="dv">50</span>)</span>
-<span id="cb363-3"><a href="TTR.html#cb363-3" tabindex="-1"></a>sma200 <span class="ot">&lt;-</span> <span class="fu">SMA</span>(<span class="fu">Cl</span>(AAPL), <span class="at">n =</span> <span class="dv">200</span>)</span>
-<span id="cb363-4"><a href="TTR.html#cb363-4" tabindex="-1"></a>cross_signals <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">Cl</span>(AAPL), sma50, sma200)</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="TTR.html#cb362-1" tabindex="-1"></a><span class="co"># 计算金叉/死叉信号</span></span>
+<span id="cb362-2"><a href="TTR.html#cb362-2" tabindex="-1"></a>sma50 <span class="ot">&lt;-</span> <span class="fu">SMA</span>(<span class="fu">Cl</span>(AAPL), <span class="at">n =</span> <span class="dv">50</span>)</span>
+<span id="cb362-3"><a href="TTR.html#cb362-3" tabindex="-1"></a>sma200 <span class="ot">&lt;-</span> <span class="fu">SMA</span>(<span class="fu">Cl</span>(AAPL), <span class="at">n =</span> <span class="dv">200</span>)</span>
+<span id="cb362-4"><a href="TTR.html#cb362-4" tabindex="-1"></a>cross_signals <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">Cl</span>(AAPL), sma50, sma200)</span></code></pre></div>
 <p>投资实践中，短线交易常用 5-20 日 SMA（捕捉短期趋势），中线策略偏好 50 日 SMA（识别中期趋势），长线投资则关注 200 日 SMA（判断牛熊周期）。例如，加密货币市场波动剧烈，常选用 7 日和 21 日 SMA 组合；美股市场则更多使用 50 日和 200 日 SMA 作为牛熊分界线。</p>
 <p>在波动率高的市场（如原油），可适当延长 SMA 周期以减少假信号；在低波动市场（如国债），可缩短周期以提高灵敏度。也可结合 ADX 指标进行判断。当 <span class="math inline">\(ADX &gt; 25\)</span>（强趋势）时，使用较短期 SMA 捕捉趋势；当
 <span class="math inline">\(ADX&lt;20\)</span> （盘整）时，延长 SMA 周期或暂停使用交叉策略。</p>
 <p>SMA 的优势在于计算简单、易于理解，对中长期趋势判断有效性高，适合新手入门和机构投资者作为趋势基准。但其劣势也很明显，其滞后于价格变动，在盘整市场中易产生频繁交叉的假信号，无法捕捉价格突破的瞬时机会。</p>
 <p>因此，SMA 需与其他指标（如成交量、RSI）配合使用。当价格上穿 SMA 且成交量放大、RSI 突破 50 时，买入信号的可靠性显著提升。</p>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="TTR.html#cb364-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与50日、200日SMA</span></span>
-<span id="cb364-2"><a href="TTR.html#cb364-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 2 year&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="TTR.html#cb363-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与50日、200日SMA</span></span>
+<span id="cb363-2"><a href="TTR.html#cb363-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 2 year&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/sma_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="TTR.html#cb365-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)  <span class="co"># 蓝色为50日SMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="TTR.html#cb364-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)  <span class="co"># 蓝色为50日SMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/sma_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="TTR.html#cb366-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)  <span class="co"># 红色为200日SMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="TTR.html#cb365-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)  <span class="co"># 红色为200日SMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/sma_2-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="TTR.html#cb367-1" tabindex="-1"></a><span class="fu">addRSI</span>(<span class="at">n =</span> <span class="dv">14</span>, <span class="at">maType =</span> <span class="st">&quot;EMA&quot;</span>, <span class="at">wilder =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="TTR.html#cb366-1" tabindex="-1"></a><span class="fu">addRSI</span>(<span class="at">n =</span> <span class="dv">14</span>, <span class="at">maType =</span> <span class="st">&quot;EMA&quot;</span>, <span class="at">wilder =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/sma_2-4.png" width="90%" /></p>
 </div>
 <div id="指数移动平均线-ema价格动量的灵敏捕捉器与趋势拐点先行指标" class="section level3 hasAnchor" number="4.1.4">
@@ -438,33 +438,33 @@ EMA(n)_t = \alpha \times P_t + (1-\alpha) \times EMA(n)_{t-1}
 <p>以 12 日 EMA 为例，平滑系数 <span class="math inline">\(\alpha = 2/(12+1) \approx 0.1538\)</span> ，意味着当日价格的权重约为 15.4%，且随着时间推移，历史价格的权重呈指数衰减（如 20 日前价格的权重不足 1%）。这种加权方式使 EMA 曲线比 SMA 更贴近当前价格，尤其在趋势反转初期能更快改变斜率。</p>
 <p>在趋势确认场景中，价格从下方上穿 EMA 常被视为多头趋势启动，而从上方下穿则暗示空头趋势形成。由于 EMA 对近期价格更敏感，其发出的趋势信号比 SMA 提前约 5-8 个交易日。双 EMA 交叉策略（如 12 日 EMA 上穿 26 日 EMA）比双 SMA 交叉更及时，这一原理也构成了 MACD 指标的计算基础。此外，当价格创新高但 EMA 未能同步上升时，形成顶背离，预示上涨动能衰竭；反之，价格创新低但 EMA 未同步下降时，形成底背离，暗示下跌趋势可能结束，这种背离信号因 EMA 的动态加权特性而更具前瞻性。</p>
 <p>EMA 的周期选择需平衡灵敏度与稳定性：短线交易常用 8-20 日周期（如 12 日），中线策略偏好 50-60 日，长线投资则关注 100-200 日。例如比特币市场常以 20 日 EMA 作为短期趋势基准，而美股科技股更倾向用 50 日 EMA 识别中期方向。在高波动市场（如原油），可采用 “13 日 + 55 日” 的长短周期组合，既捕捉短期波动又过滤噪音；在低波动的消费股市场，缩小周期差（如 12 日 + 26 日）能提高信号灵敏度。</p>
-<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="TTR.html#cb368-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与12日EMA、50日SMA</span></span>
-<span id="cb368-2"><a href="TTR.html#cb368-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="TTR.html#cb367-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与12日EMA、50日SMA</span></span>
+<span id="cb367-2"><a href="TTR.html#cb367-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/ema-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="TTR.html#cb369-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">12</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)    <span class="co"># 蓝色为12日EMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="TTR.html#cb368-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">12</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)    <span class="co"># 蓝色为12日EMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/ema-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="TTR.html#cb370-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)     <span class="co"># 红色为50日SMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="TTR.html#cb369-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)     <span class="co"># 红色为50日SMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/ema-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="TTR.html#cb371-1" tabindex="-1"></a><span class="co"># 对比EMA与SMA的反应速度</span></span>
-<span id="cb371-2"><a href="TTR.html#cb371-2" tabindex="-1"></a>ema12 <span class="ot">&lt;-</span> <span class="fu">EMA</span>(<span class="fu">Cl</span>(AAPL), <span class="at">n =</span> <span class="dv">12</span>)</span>
-<span id="cb371-3"><a href="TTR.html#cb371-3" tabindex="-1"></a>sma50 <span class="ot">&lt;-</span> <span class="fu">SMA</span>(<span class="fu">Cl</span>(AAPL), <span class="at">n =</span> <span class="dv">50</span>)</span>
-<span id="cb371-4"><a href="TTR.html#cb371-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">Cl</span>(AAPL), <span class="at">main =</span> <span class="st">&quot;EMA vs SMA&quot;</span>, <span class="at">col =</span> <span class="st">&quot;gray&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="TTR.html#cb370-1" tabindex="-1"></a><span class="co"># 对比EMA与SMA的反应速度</span></span>
+<span id="cb370-2"><a href="TTR.html#cb370-2" tabindex="-1"></a>ema12 <span class="ot">&lt;-</span> <span class="fu">EMA</span>(<span class="fu">Cl</span>(AAPL), <span class="at">n =</span> <span class="dv">12</span>)</span>
+<span id="cb370-3"><a href="TTR.html#cb370-3" tabindex="-1"></a>sma50 <span class="ot">&lt;-</span> <span class="fu">SMA</span>(<span class="fu">Cl</span>(AAPL), <span class="at">n =</span> <span class="dv">50</span>)</span>
+<span id="cb370-4"><a href="TTR.html#cb370-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">Cl</span>(AAPL), <span class="at">main =</span> <span class="st">&quot;EMA vs SMA&quot;</span>, <span class="at">col =</span> <span class="st">&quot;gray&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/ema-4.png" width="90%" /></p>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="TTR.html#cb372-1" tabindex="-1"></a><span class="fu">lines</span>(ema12, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="TTR.html#cb371-1" tabindex="-1"></a><span class="fu">lines</span>(ema12, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/ema-5.png" width="90%" /></p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="TTR.html#cb373-1" tabindex="-1"></a><span class="fu">lines</span>(sma50, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="fl">1.5</span>)</span>
-<span id="cb373-2"><a href="TTR.html#cb373-2" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;Price&quot;</span>, <span class="st">&quot;12日EMA&quot;</span>, <span class="st">&quot;50日SMA&quot;</span>), </span>
-<span id="cb373-3"><a href="TTR.html#cb373-3" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;gray&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">1.5</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="TTR.html#cb372-1" tabindex="-1"></a><span class="fu">lines</span>(sma50, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb372-2"><a href="TTR.html#cb372-2" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;Price&quot;</span>, <span class="st">&quot;12日EMA&quot;</span>, <span class="st">&quot;50日SMA&quot;</span>), </span>
+<span id="cb372-3"><a href="TTR.html#cb372-3" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;gray&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">1.5</span>))</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/ema-6.png" width="90%" /></p>
 <p>从图表中可见，12 日 EMA 曲线比 50 日 SMA 更紧密跟随股价波动，在价格拐点处的反应更为迅速。实际应用中，EMA 常与 RSI、布林带等指标协同。当价格上穿 EMA 且 RSI 从超卖区回升、布林带中轨向上时，多重确认的买入信号可靠性显著提升；反之，价格下穿 EMA 且 RSI 跌破超买区、布林带开口收窄时，卖出信号更具参考价值。</p>
-<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="TTR.html#cb374-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与12日EMA、50日SMA</span></span>
-<span id="cb374-2"><a href="TTR.html#cb374-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="TTR.html#cb373-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与12日EMA、50日SMA</span></span>
+<span id="cb373-2"><a href="TTR.html#cb373-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/ema_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="TTR.html#cb375-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">12</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)    <span class="co"># 蓝色为12日EMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="TTR.html#cb374-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">12</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)    <span class="co"># 蓝色为12日EMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/ema_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="TTR.html#cb376-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)     <span class="co"># 红色为50日SMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="TTR.html#cb375-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)     <span class="co"># 红色为50日SMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/ema_2-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="TTR.html#cb377-1" tabindex="-1"></a><span class="fu">addRSI</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="TTR.html#cb376-1" tabindex="-1"></a><span class="fu">addRSI</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/ema_2-4.png" width="90%" /></p>
 <p>EMA 的优势在于对趋势反转的敏感性和较低的滞后性，尤其适合趋势明确的市场环境；尽管在盘整行情中仍可能产生假信号，但其动态加权逻辑已通过量化工具的优化弥补了计算复杂度问题。</p>
 <p>从本质来看，EMA 是 SMA 的进化版本，既保留了移动平均线平滑波动的核心功能，又通过加权机制提升了趋势跟踪的时效性，成为从简单趋势识别到复杂策略构建的关键工具。</p>
@@ -476,22 +476,22 @@ EMA(n)_t = \alpha \times P_t + (1-\alpha) \times EMA(n)_{t-1}
 <p>在趋势确认方面，当价格从下方上穿 DEMA 时，形成比 EMA 更可靠的买入信号，尤其在突破关键阻力位时，DEMA 的上穿往往伴随更强的动能确认；反之，价格从上方下穿 DEMA 时，卖出信号的有效性更高。在 AAPL 股价分析中，20 日 DEMA 的上穿 / 下穿信号比 20 日 EMA 提前约 3-5 个交易日，且假信号率降低约 25%。
 DEMA 也常用于构建多周期趋势系统：短期 DEMA（如 10 日）与长期 DEMA（如 50 日）的交叉可生成中线交易信号，这种组合在科技股波动周期中表现优异。例如，当 10 日 DEMA 上穿 50 日 DEMA 且成交量放大时，往往预示着持续性的上涨行情；而当两者形成死叉且价格跌破 DEMA 曲线时，可能触发大规模获利了结。</p>
 <p>DEMA 的周期选择需根据交易标的的波动性调整：在高波动市场（如原油期货），推荐使用 20-30 日周期以平衡灵敏度与稳定性；在低波动市场（如消费类 ETF），可缩短至 10-15 日以提高信号响应速度。此外，DEMA 与价格的乖离率（偏离程度）可作为超买超卖的辅助指标 —— 当价格偏离 20 日 DEMA 超过 4% 时，往往预示短期回调风险；而持续低于 DEMA 的价格可能暗示趋势反转。</p>
-<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="TTR.html#cb378-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日DEMA、20日EMA对比</span></span>
-<span id="cb378-2"><a href="TTR.html#cb378-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="TTR.html#cb377-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日DEMA、20日EMA对比</span></span>
+<span id="cb377-2"><a href="TTR.html#cb377-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/dema-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="TTR.html#cb379-1" tabindex="-1"></a><span class="fu">addDEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)    <span class="co"># 蓝色为20日DEMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="TTR.html#cb378-1" tabindex="-1"></a><span class="fu">addDEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)    <span class="co"># 蓝色为20日DEMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/dema-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="TTR.html#cb380-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="TTR.html#cb379-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/dema-3.png" width="90%" /></p>
 <p>通过图表对比可见，DEMA 曲线更贴近价格走势，尤其在股价快速变动时，DEMA 能更及时地反映趋势变化。实际应用中，DEMA 常与布林带结合使用：当价格上穿 DEMA 且触及布林带上轨时，可视为强势上涨信号；当价格下穿 DEMA 并跌破布林带下轨时，则可能是趋势转弱的早期预警。</p>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="TTR.html#cb381-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日DEMA、20日EMA对比</span></span>
-<span id="cb381-2"><a href="TTR.html#cb381-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="TTR.html#cb380-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日DEMA、20日EMA对比</span></span>
+<span id="cb380-2"><a href="TTR.html#cb380-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/dema_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="TTR.html#cb382-1" tabindex="-1"></a><span class="fu">addDEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)    <span class="co"># 蓝色为20日DEMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="TTR.html#cb381-1" tabindex="-1"></a><span class="fu">addDEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)    <span class="co"># 蓝色为20日DEMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/dema_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="TTR.html#cb383-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="TTR.html#cb382-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/dema_2-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="TTR.html#cb384-1" tabindex="-1"></a><span class="fu">addBBands</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="TTR.html#cb383-1" tabindex="-1"></a><span class="fu">addBBands</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/dema_2-4.png" width="90%" /></p>
 <p>DEMA 的优势在于其 “双重平滑” 机制，既保留了 EMA 对趋势反转的敏感性，又通过数学优化减少了滞后误差，使指标在趋势跟踪和转折点识别上更为精确。尽管计算复杂度高于 EMA，但其在量化策略中的应用已通过现代计算工具得到简化。在构建趋势跟踪系统时，DEMA 可作为核心决策指标，配合 RSI 或 MACD 等震荡指标过滤信号，形成从趋势确认到入场时机选择的完整分析链条，尤其适合中长线交易者寻找高胜率的交易机会。</p>
 </div>
@@ -506,14 +506,14 @@ WMA(n)_t = \frac{n \times P_t + (n-1) \times P_{t-1} + \dots + 1 \times P_{t-n+1
 <p>在趋势确认方面，当价格从下方上穿 WMA 时，形成比 SMA 更可靠的买入信号，因其对近期价格上涨的加权处理更突出；反之，价格从上方下穿 WMA 时，卖出信号的有效性更高。在 AAPL 股价分析中，10 日 WMA 的上穿 / 下穿信号比 10 日 SMA 提前约 2-3 个交易日，且假信号率降低约 20%。
 WMA 也常用于构建多周期趋势系统：短期 WMA（如 5 日）与长期 WMA（如 20 日）的交叉可生成中线交易信号。例如，当 5 日 WMA 上穿 20 日 WMA 且成交量放大时，往往预示着持续性的上涨行情；而当两者形成死叉且价格跌破 WMA 曲线时，可能触发趋势反转。这种策略在科技股波动周期中表现优异，既能捕捉趋势变化，又能减少盘整期的干扰信号。</p>
 <p>WMA 的周期选择需根据交易标的的特性调整：在高波动市场（如加密货币），推荐使用 15-20 日周期以平衡灵敏度与稳定性；在低波动市场（如国债 ETF），可缩短至 5-10 日以提高信号响应速度。此外，WMA 与价格的乖离率可作为超买超卖的辅助指标 —— 当价格偏离 10 日 WMA 超过 3% 时，往往预示短期回调风险；而持续低于 WMA 的价格可能暗示趋势转弱。</p>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="TTR.html#cb385-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与10日WMA、10日SMA、10日EMA对比</span></span>
-<span id="cb385-2"><a href="TTR.html#cb385-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="TTR.html#cb384-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与10日WMA、10日SMA、10日EMA对比</span></span>
+<span id="cb384-2"><a href="TTR.html#cb384-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wma-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="TTR.html#cb386-1" tabindex="-1"></a><span class="fu">addWMA</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)    <span class="co"># 蓝色为10日WMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="TTR.html#cb385-1" tabindex="-1"></a><span class="fu">addWMA</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)    <span class="co"># 蓝色为10日WMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wma-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="TTR.html#cb387-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)     <span class="co"># 红色为10日SMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="TTR.html#cb386-1" tabindex="-1"></a><span class="fu">addSMA</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)     <span class="co"># 红色为10日SMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wma-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="TTR.html#cb388-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)   <span class="co"># 绿色为10日EMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="TTR.html#cb387-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)   <span class="co"># 绿色为10日EMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wma-4.png" width="90%" /></p>
 <p>通过图表对比可见，WMA 曲线介于 SMA 和 EMA 之间，在股价快速变动时比 SMA 更灵敏，但
 比 EMA 更平缓。实际应用中，WMA 常与布林带结合使用：当价格上穿 WMA 且触及布林带上轨时，可视为强势上涨信号；当价格下穿 WMA 并跌破布林带下轨时，则可能
@@ -532,23 +532,23 @@ WMA 可作为核心决策指标，配合 RSI 或 MACD 等震荡指标过滤信�
 <p>在短线交易中，ZLEMA 的上穿 / 下穿信号比传统均线更具时效性：当价格从下方上穿 ZLEMA 时，形成强势买入信号，尤其在价格突破前期高点时，ZLEMA 的提前上移可确认突破动能；当价格从上方下穿 ZLEMA 时，卖出信号的有效性更高，配合成交量放大可进一步验证趋势反转。例如，在比特币 1 小时 K 线图中，10 日 ZLEMA 的交叉信号比 10 日 EMA 提前约 1-2 根 K 线，为短线交易者争取到更优的入场时机。
 ZLEMA 与其他指标的协同策略效果显著：结合布林带使用时，当价格上穿 ZLEMA 且触及布林带上轨，可视为强势上涨信号；当价格下穿 ZLEMA 并跌破布林带下轨，可能预示趋势转弱。在 MACD 指标中，若 ZLEMA 与价格形成背离（如价格创新高但 ZLEMA 未同步上升），则比 EMA 背离更可靠，暗示短期反转可能性更大。</p>
 <p>ZLEMA 的周期选择需根据交易频率调整：超短线交易（如 5 分钟 K 线）常用 5-10 日周期；日内交易推荐 10-20 日周期；波段交易可延长至 30-50 日。以以太坊期货为例，15 日 ZLEMA 在 4 小时 K 线图中既能过滤噪音，又能及时反映短期趋势变化。此外，补偿周期 k 的调整也会影响指标灵敏度 ——k 值越大，滞后补偿越强，但过度补偿可能导致 ZLEMA 过度拟合价格波动，增加假信号风险。</p>
-<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="TTR.html#cb389-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日ZLEMA、20日EMA对比</span></span>
-<span id="cb389-2"><a href="TTR.html#cb389-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="TTR.html#cb388-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日ZLEMA、20日EMA对比</span></span>
+<span id="cb388-2"><a href="TTR.html#cb388-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/zlema-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="TTR.html#cb390-1" tabindex="-1"></a><span class="fu">addZLEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)   <span class="co"># 蓝色为20日ZLEMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="TTR.html#cb389-1" tabindex="-1"></a><span class="fu">addZLEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)   <span class="co"># 蓝色为20日ZLEMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/zlema-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="TTR.html#cb391-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="TTR.html#cb390-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/zlema-3.png" width="90%" /></p>
 <p>通过图表对比可见，ZLEMA 曲线几乎与价格走势重合，在股价拐点处的反应速度明显快于 EMA。例如，当 AAPL 股价从高点回落时，ZLEMA 会先于 EMA 开始下拐，为短线交易者提供更早的止盈信号。</p>
 <p>ZLEMA 的优势在于彻底解决了传统均线的滞后痛点，使趋势跟踪效率大幅提升，尤其适合波动剧烈的市场环境。但其 “零滞后” 特性也存在潜在风险 —— 在盘整行情中，ZLEMA 可能因过度反应而产生频繁交叉的假信号，因此建议配合 ADX 指标使用：仅当 ADX&gt;25（强趋势）时，才采用 ZLEMA 的交叉信号，可将假信号率降低约 40%。从本质来看，ZLEMA 是短线交易中从趋势识别到时机把握的关键工具，通过数学优化将技术指标的滞后性误差降至最低，为高频交易策略提供了更精准的趋势判断依据。</p>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="TTR.html#cb392-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日ZLEMA、20日EMA对比</span></span>
-<span id="cb392-2"><a href="TTR.html#cb392-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="TTR.html#cb391-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日ZLEMA、20日EMA对比</span></span>
+<span id="cb391-2"><a href="TTR.html#cb391-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/zlema_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="TTR.html#cb393-1" tabindex="-1"></a><span class="fu">addZLEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)   <span class="co"># 蓝色为20日ZLEMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="TTR.html#cb392-1" tabindex="-1"></a><span class="fu">addZLEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)   <span class="co"># 蓝色为20日ZLEMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/zlema_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="TTR.html#cb394-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="TTR.html#cb393-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/zlema_2-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="TTR.html#cb395-1" tabindex="-1"></a><span class="fu">addADX</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="TTR.html#cb394-1" tabindex="-1"></a><span class="fu">addADX</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/zlema_2-4.png" width="90%" /></p>
 </div>
 <div id="弹性成交量加权移动平均线-evwma量价结合的趋势确认利器" class="section level3 hasAnchor" number="4.1.8">
@@ -564,24 +564,24 @@ EVWMA(n)_t = \frac{\sum_{i=0}^{n-1} P_{t-i} \times V_{t-i} \times e^{-\lambda \t
 <p>例如，在特斯拉股价的剧烈波动中，20 日 EVWMA 的上穿 / 下穿信号比 20 日 EMA 提前约 2-3 个交易日，且在假突破场景中表现更稳健（如 2023 年 4 月特斯拉财报后的虚假反弹，EVWMA 未被触发）。</p>
 <p>EVWMA 与价格的背离分析更具实战价值：当价格创新高但 EVWMA 未能同步上升时，形成顶背离，暗示上涨动能衰竭（如 2024 年 1 月苹果股价新高但 EVWMA 走平）；当价格创新低但 EVWMA 未同步下降时，形成底背离，预示下跌趋势可能结束。这种量价结合的背离信号比单纯价格指标更可靠，准确率提升约 30%。</p>
 <p>EVWMA 的周期选择需根据交易标的特性调整：在高波动市场（如加密货币），推荐使用 15-25 日周期以平衡灵敏度与稳定性；在低波动市场（如公用事业股），可缩短至 10-15 日以提高信号响应速度。此外，衰减因子 <span class="math inline">\(\lambda\)</span> 的调整会影响近期数据的权重。增大 <span class="math inline">\(\lambda\)</span> 可使 EVWMA 对最新成交量变化更敏感，但可能增加噪音；减小 <span class="math inline">\(\lambda\)</span> 则使指标更平滑，适合中长期趋势跟踪。</p>
-<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="TTR.html#cb396-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日EVWMA、20日EMA对比</span></span>
-<span id="cb396-2"><a href="TTR.html#cb396-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="TTR.html#cb395-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日EVWMA、20日EMA对比</span></span>
+<span id="cb395-2"><a href="TTR.html#cb395-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/evwma-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="TTR.html#cb397-1" tabindex="-1"></a><span class="fu">addEVWMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)   <span class="co"># 蓝色为20日EVWMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="TTR.html#cb396-1" tabindex="-1"></a><span class="fu">addEVWMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)   <span class="co"># 蓝色为20日EVWMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/evwma-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="TTR.html#cb398-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="TTR.html#cb397-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/evwma-3.png" width="90%" /></p>
 <p>通过图表对比可见，在成交量放大的交易日，EVWMA 会明显向价格方向偏移，而 EMA 保持原有轨迹。例如，在 AAPL 发布新产品后的放量上涨中，EVWMA 迅速上移，提前确认了趋势的有效性；而在缩量回调时，EVWMA 的下降幅度更小，提示可能为良性调整而非趋势反转。</p>
 <p>EVWMA 的优势在于解决了传统均线 “量价分离” 的痛点，通过成交量加权使指标更贴近市场真实供需力量。</p>
 <p>在构建交易策略时，可将 EVWMA 与布林带结合。当价格上穿 EVWMA 且触及布林带上轨，同时成交量高于 20 日均值时，视为强势买入信号；当价格下穿 EVWMA 并跌破布林带下轨，且成交量激增，可确认趋势转弱。这种量价双重确认机制，使 EVWMA 在趋势跟踪和转折点识别上的准确率比传统均线提升约 25%，尤其适合需要验证突破有效性的中短线策略。</p>
-<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="TTR.html#cb399-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日EVWMA、20日EMA对比</span></span>
-<span id="cb399-2"><a href="TTR.html#cb399-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="TTR.html#cb398-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与20日EVWMA、20日EMA对比</span></span>
+<span id="cb398-2"><a href="TTR.html#cb398-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/evwma_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="TTR.html#cb400-1" tabindex="-1"></a><span class="fu">addEVWMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)   <span class="co"># 蓝色为20日EVWMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="TTR.html#cb399-1" tabindex="-1"></a><span class="fu">addEVWMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)   <span class="co"># 蓝色为20日EVWMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/evwma_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="TTR.html#cb401-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="TTR.html#cb400-1" tabindex="-1"></a><span class="fu">addEMA</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)      <span class="co"># 红色为20日EMA</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/evwma_2-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="TTR.html#cb402-1" tabindex="-1"></a><span class="fu">addBBands</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="TTR.html#cb401-1" tabindex="-1"></a><span class="fu">addBBands</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/evwma_2-4.png" width="90%" /></p>
 </div>
 </div>
@@ -598,19 +598,19 @@ EVWMA(n)_t = \frac{\sum_{i=0}^{n-1} P_{t-i} \times V_{t-i} \times e^{-\lambda \t
 <p>传统超买超卖判断中，RSI&gt;70 被视为超买状态，价格可能回调；RSI&lt;30 被视为超卖状态，价格可能反弹。但在强趋势市场中，这一标准需动态调整：在牛市中，RSI 常在 70 以上持续运行，此时需等待 RSI 跌破 70 才确认回调；在熊市中，RSI 可能长期低于 30，需等待 RSI 突破 30 才确认反弹。例如，AAPL 在 2023 年 Q3 的上涨趋势中，RSI 多次触及 80 但未形成有效回调，直至 RSI 跌破 70 后才出现 10% 的调整。
 RSI 与价格的背离分析更具实战价值：当价格创新高但 RSI 未能同步上升时，形成顶背离，预示上涨动能衰竭；当价格创新低但 RSI 未同步下降时，形成底背离，暗示下跌趋势可能结束。在 2024 年 1 月特斯拉股价创新高时，RSI 却从 75 回落至 65，形成典型顶背离，随后股价下跌 15%。</p>
 <p>RSI 的周期选择需根据交易标的特性调整：短线交易常用 9-14 日周期，中线策略偏好 14-21 日周期。在高波动市场（如加密货币），可缩短周期以提高灵敏度；在低波动市场（如公用事业股），可延长周期以减少假信号。此外，结合趋势线分析可增强信号可靠性 —— 当 RSI 突破下降趋势线时，形成看涨信号；跌破上升趋势线时，形成看跌信号。</p>
-<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="TTR.html#cb403-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日RSI，标注超买超卖区域</span></span>
-<span id="cb403-2"><a href="TTR.html#cb403-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="TTR.html#cb402-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日RSI，标注超买超卖区域</span></span>
+<span id="cb402-2"><a href="TTR.html#cb402-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/rsi-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="TTR.html#cb404-1" tabindex="-1"></a><span class="fu">addRSI</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="TTR.html#cb403-1" tabindex="-1"></a><span class="fu">addRSI</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/rsi-2.png" width="90%" /></p>
 <p>通过图表可见，当 RSI 触及超买区域后，股价常伴随回调；触及超卖区域后，股价常出现反弹。但需注意，在强趋势市场中，超买超卖状态可能持续较长时间，此时需结合其他指标（如 MACD 柱状图）确认动量变化。</p>
 <p>RSI 的优势在于其 “提前预警” 能力，能在价格反转前发出信号，尤其适合捕捉短期交易机会。但其局限性在于对趋势市场的适应性较差。在单边上涨或下跌行情中，RSI 可能长时间处于超买或超卖区域，导致误判。因此，RSI 最有效的使用场景是震荡市场或趋势末期的反转确认，配合布林带或 ADX 指标可有效过滤趋势市场中的假信号。例如，当 ADX&gt;25（强趋势）时，应谨慎对待 RSI 的超买超卖信号；当 ADX&lt;20（震荡）时，RSI 信号的可靠性显著提升。</p>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="TTR.html#cb405-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日RSI，标注超买超卖区域</span></span>
-<span id="cb405-2"><a href="TTR.html#cb405-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="TTR.html#cb404-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日RSI，标注超买超卖区域</span></span>
+<span id="cb404-2"><a href="TTR.html#cb404-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/rsi_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="TTR.html#cb406-1" tabindex="-1"></a><span class="fu">addRSI</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="TTR.html#cb405-1" tabindex="-1"></a><span class="fu">addRSI</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/rsi_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="TTR.html#cb407-1" tabindex="-1"></a><span class="fu">addADX</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="TTR.html#cb406-1" tabindex="-1"></a><span class="fu">addADX</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/rsi_2-3.png" width="90%" /></p>
 </div>
 <div id="随机指标-kdj价格动量的精准度量衡" class="section level3 hasAnchor" number="4.2.2">
@@ -646,39 +646,39 @@ J 线作为 KD 的修正值，能提前反映 KD 的交叉信号，增强指标�
 <p>当 K 线从上方下穿 D 线，且 J 线同步向下突破 50，形成看跌死叉。2024 年 2 月宁德时代股价见顶前，KDJ 死叉准确预示了随后的回调。</p>
 <p>KDJ 与价格的背离分析更具前瞻性：当价格创新高但 KDJ 未能同步上升（尤其是 J 线无法突破 100），形成顶背离；当价格创新低但 KDJ 未同步下降（J 线未跌破 0），形成底背离。在 2023 年 Q4 腾讯股价下跌过程中，KDJ 底背离信号提前两周预警了反弹行情。</p>
 <p>KDJ 的周期参数（默认 9 日）需根据交易频率调整：超短线交易可缩短至 5 日，中长线策略可延长至 14 日。在高波动市场（如科创板股票），可适当增加平滑系数（如将 K 线计算改为 <span class="math inline">\(\frac{3}{4}K_{t-1} + \frac{1}{4}RSV_t\)</span>）以减少假信号。此外，结合布林带使用效果更佳：当 KDJ 金叉且价格位于布林带下轨附近，形成双重确认的买入信号。</p>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="TTR.html#cb408-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与KDJ指标，标注超买超卖区域</span></span>
-<span id="cb408-2"><a href="TTR.html#cb408-2" tabindex="-1"></a><span class="fu">colnames</span>(AAPL) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;open&quot;</span>, <span class="st">&quot;high&quot;</span>, <span class="st">&quot;low&quot;</span>, <span class="st">&quot;close&quot;</span>, <span class="st">&quot;volume&quot;</span>, <span class="st">&quot;adjusted&quot;</span>)</span>
-<span id="cb408-3"><a href="TTR.html#cb408-3" tabindex="-1"></a>kdj <span class="ot">&lt;-</span> eTTR<span class="sc">::</span><span class="fu">KDJ</span>(AAPL)</span>
-<span id="cb408-4"><a href="TTR.html#cb408-4" tabindex="-1"></a>K <span class="ot">&lt;-</span> kdj<span class="sc">$</span>K</span>
-<span id="cb408-5"><a href="TTR.html#cb408-5" tabindex="-1"></a>D <span class="ot">&lt;-</span> kdj<span class="sc">$</span>D</span>
-<span id="cb408-6"><a href="TTR.html#cb408-6" tabindex="-1"></a>J <span class="ot">&lt;-</span> kdj<span class="sc">$</span>J</span>
-<span id="cb408-7"><a href="TTR.html#cb408-7" tabindex="-1"></a></span>
-<span id="cb408-8"><a href="TTR.html#cb408-8" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="TTR.html#cb407-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与KDJ指标，标注超买超卖区域</span></span>
+<span id="cb407-2"><a href="TTR.html#cb407-2" tabindex="-1"></a><span class="fu">colnames</span>(AAPL) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;open&quot;</span>, <span class="st">&quot;high&quot;</span>, <span class="st">&quot;low&quot;</span>, <span class="st">&quot;close&quot;</span>, <span class="st">&quot;volume&quot;</span>, <span class="st">&quot;adjusted&quot;</span>)</span>
+<span id="cb407-3"><a href="TTR.html#cb407-3" tabindex="-1"></a>kdj <span class="ot">&lt;-</span> eTTR<span class="sc">::</span><span class="fu">KDJ</span>(AAPL)</span>
+<span id="cb407-4"><a href="TTR.html#cb407-4" tabindex="-1"></a>K <span class="ot">&lt;-</span> kdj<span class="sc">$</span>K</span>
+<span id="cb407-5"><a href="TTR.html#cb407-5" tabindex="-1"></a>D <span class="ot">&lt;-</span> kdj<span class="sc">$</span>D</span>
+<span id="cb407-6"><a href="TTR.html#cb407-6" tabindex="-1"></a>J <span class="ot">&lt;-</span> kdj<span class="sc">$</span>J</span>
+<span id="cb407-7"><a href="TTR.html#cb407-7" tabindex="-1"></a></span>
+<span id="cb407-8"><a href="TTR.html#cb407-8" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/kdj-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="TTR.html#cb409-1" tabindex="-1"></a><span class="fu">addTA</span>(K,<span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">legend =</span> <span class="cn">NA</span>)    <span class="co"># K线（红色）</span></span></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="TTR.html#cb408-1" tabindex="-1"></a><span class="fu">addTA</span>(K,<span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">legend =</span> <span class="cn">NA</span>)    <span class="co"># K线（红色）</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/kdj-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="TTR.html#cb410-1" tabindex="-1"></a><span class="fu">addTA</span>(D, <span class="at">on=</span><span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;K/D&quot;</span>)   <span class="co"># D线（蓝色）</span></span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="TTR.html#cb409-1" tabindex="-1"></a><span class="fu">addTA</span>(D, <span class="at">on=</span><span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;K/D&quot;</span>)   <span class="co"># D线（蓝色）</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/kdj-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="TTR.html#cb411-1" tabindex="-1"></a><span class="fu">addTA</span>(J, , <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;J&quot;</span>)  <span class="co"># J线（绿色）</span></span></code></pre></div>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="TTR.html#cb410-1" tabindex="-1"></a><span class="fu">addTA</span>(J, , <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;J&quot;</span>)  <span class="co"># J线（绿色）</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/kdj-4.png" width="90%" /></p>
 <p>通过图表可直观观察到：当 J 线快速触及 0 或 100 时，常伴随价格短期极值；而 KD 线的粘合与发散则反映市场多空力量的转换过程。</p>
 <p>KDJ 的优势在于其 “三维信号系统”——K 线捕捉短期波动，D 线过滤噪音，J 线提前预警，三者协同形成完整的动量分析框架。但其在单边趋势中可能产生频繁交叉的假信号，因此建议配合 ADX 指标使用：当 ADX&gt;25（强趋势）时，仅参考与趋势同向的 KDJ 信号；当 ADX&lt;20（震荡）时，充分利用 KDJ 的超买超卖和背离信号。这种组合策略在 A 股市场的准确率比单一 KDJ 指标提升约 35%，尤其适合捕捉科技股和新能源板块的短期爆发机会。</p>
-<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="TTR.html#cb412-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与KDJ指标，标注超买超卖区域</span></span>
-<span id="cb412-2"><a href="TTR.html#cb412-2" tabindex="-1"></a><span class="fu">colnames</span>(AAPL) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;open&quot;</span>, <span class="st">&quot;high&quot;</span>, <span class="st">&quot;low&quot;</span>, <span class="st">&quot;close&quot;</span>, <span class="st">&quot;volume&quot;</span>, <span class="st">&quot;adjusted&quot;</span>)</span>
-<span id="cb412-3"><a href="TTR.html#cb412-3" tabindex="-1"></a>kdj <span class="ot">&lt;-</span> eTTR<span class="sc">::</span><span class="fu">KDJ</span>(AAPL)</span>
-<span id="cb412-4"><a href="TTR.html#cb412-4" tabindex="-1"></a>K <span class="ot">&lt;-</span> kdj<span class="sc">$</span>K</span>
-<span id="cb412-5"><a href="TTR.html#cb412-5" tabindex="-1"></a>D <span class="ot">&lt;-</span> kdj<span class="sc">$</span>D</span>
-<span id="cb412-6"><a href="TTR.html#cb412-6" tabindex="-1"></a>J <span class="ot">&lt;-</span> kdj<span class="sc">$</span>J</span>
-<span id="cb412-7"><a href="TTR.html#cb412-7" tabindex="-1"></a></span>
-<span id="cb412-8"><a href="TTR.html#cb412-8" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="TTR.html#cb411-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与KDJ指标，标注超买超卖区域</span></span>
+<span id="cb411-2"><a href="TTR.html#cb411-2" tabindex="-1"></a><span class="fu">colnames</span>(AAPL) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;open&quot;</span>, <span class="st">&quot;high&quot;</span>, <span class="st">&quot;low&quot;</span>, <span class="st">&quot;close&quot;</span>, <span class="st">&quot;volume&quot;</span>, <span class="st">&quot;adjusted&quot;</span>)</span>
+<span id="cb411-3"><a href="TTR.html#cb411-3" tabindex="-1"></a>kdj <span class="ot">&lt;-</span> eTTR<span class="sc">::</span><span class="fu">KDJ</span>(AAPL)</span>
+<span id="cb411-4"><a href="TTR.html#cb411-4" tabindex="-1"></a>K <span class="ot">&lt;-</span> kdj<span class="sc">$</span>K</span>
+<span id="cb411-5"><a href="TTR.html#cb411-5" tabindex="-1"></a>D <span class="ot">&lt;-</span> kdj<span class="sc">$</span>D</span>
+<span id="cb411-6"><a href="TTR.html#cb411-6" tabindex="-1"></a>J <span class="ot">&lt;-</span> kdj<span class="sc">$</span>J</span>
+<span id="cb411-7"><a href="TTR.html#cb411-7" tabindex="-1"></a></span>
+<span id="cb411-8"><a href="TTR.html#cb411-8" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/kdj_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="TTR.html#cb413-1" tabindex="-1"></a><span class="fu">addTA</span>(K,<span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">legend =</span> <span class="cn">NA</span>)    <span class="co"># K线（红色）</span></span></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="TTR.html#cb412-1" tabindex="-1"></a><span class="fu">addTA</span>(K,<span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">legend =</span> <span class="cn">NA</span>)    <span class="co"># K线（红色）</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/kdj_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="TTR.html#cb414-1" tabindex="-1"></a><span class="fu">addTA</span>(D, <span class="at">on=</span><span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;K/D&quot;</span>)   <span class="co"># D线（蓝色）</span></span></code></pre></div>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="TTR.html#cb413-1" tabindex="-1"></a><span class="fu">addTA</span>(D, <span class="at">on=</span><span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;K/D&quot;</span>)   <span class="co"># D线（蓝色）</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/kdj_2-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="TTR.html#cb415-1" tabindex="-1"></a><span class="fu">addTA</span>(J, , <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;J&quot;</span>)  <span class="co"># J线（绿色）</span></span></code></pre></div>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="TTR.html#cb414-1" tabindex="-1"></a><span class="fu">addTA</span>(J, , <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;J&quot;</span>)  <span class="co"># J线（绿色）</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/kdj_2-4.png" width="90%" /></p>
-<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="TTR.html#cb416-1" tabindex="-1"></a><span class="fu">addADX</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="TTR.html#cb415-1" tabindex="-1"></a><span class="fu">addADX</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/kdj_2-5.png" width="90%" /></p>
 </div>
 <div id="威廉指标-wpr反向视角下的超买超卖探测器" class="section level3 hasAnchor" number="4.2.3">
@@ -690,25 +690,25 @@ J 线作为 KD 的修正值，能提前反映 KD 的交叉信号，增强指标�
 <p>传统交易策略中，WPR 的关键阈值为 - 20 和 - 80：当指标数值低于 - 80 时，市场处于超买状态，预示价格可能回调；当数值高于 - 20 时，市场进入超卖区域，暗示价格存在反弹潜力。这种反向判断逻辑与 RSI 形成互补 ——RSI 超买时 WPR 往往处于低位，两者结合可增强信号可靠性。
 在实际应用中，WPR 的背离信号更具实战价值。当价格创新高但 WPR 未能同步走低（即背离向上），形成顶背离，提示上涨动能衰竭；当价格创新低但 WPR 未同步下降（即背离向下），形成底背离，暗示下跌趋势可能反转。例如，在 AAPL 股价 2023 年 11 月的上涨行情中，价格创出阶段新高的同时，WPR 从 - 85 回升至 - 70，形成典型顶背离，随后股价出现 5% 的回调。</p>
 <p>WPR 的计算周期 n 可根据交易频率灵活调整：短线交易可缩短至 7 日，以捕捉更敏感的波动信号；中长线策略可延长至 21 日，过滤短期噪音。此外，配合移动平均线使用可提升信号质量 —— 当 WPR 在超卖区形成金叉（如 5 日 WPR 上穿 10 日 WPR），且价格同时站上短期均线时，买入信号的有效性显著增强。</p>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="TTR.html#cb417-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日WPR，标注关键阈值</span></span>
-<span id="cb417-2"><a href="TTR.html#cb417-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="TTR.html#cb416-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日WPR，标注关键阈值</span></span>
+<span id="cb416-2"><a href="TTR.html#cb416-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wpr-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="TTR.html#cb418-1" tabindex="-1"></a><span class="fu">addWPR</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="TTR.html#cb417-1" tabindex="-1"></a><span class="fu">addWPR</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wpr-2.png" width="90%" /></p>
 <p>通过图表可见，WPR 在超买超卖区间的震荡与价格波动形成对应关系。当指标触及 - 80 水平线时，常伴随价格短期高点；而在 - 20 附近反弹时，往往预示底部信号。但需注意，在趋势行情中，WPR 可能长时间处于极端区域，此时需结合 ADX 等趋势指标判断信号有效性。</p>
 <p>WPR 的优势在于其反向计算逻辑，能够在市场情绪过热或过冷时提供预警。但其在趋势强烈的单边市场中可能失效 —— 例如牛市中 WPR 持续处于超买区却不回调。因此，该指标更适合在震荡市或趋势末端使用，与 RSI、KDJ 等震荡指标配合构建多维度分析体系。在数字货币等波动剧烈的市场中，WPR 与布林带的组合策略表现优异：当 WPR 进入超卖区且价格触及布林带下轨时，可形成高概率的反弹买入信号。</p>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="TTR.html#cb419-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日WPR，标注关键阈值</span></span>
-<span id="cb419-2"><a href="TTR.html#cb419-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="TTR.html#cb418-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日WPR，标注关键阈值</span></span>
+<span id="cb418-2"><a href="TTR.html#cb418-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wpr_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="TTR.html#cb420-1" tabindex="-1"></a><span class="fu">addTA</span>(K,<span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">legend =</span> <span class="cn">NA</span>)    <span class="co"># K线（红色）</span></span></code></pre></div>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="TTR.html#cb419-1" tabindex="-1"></a><span class="fu">addTA</span>(K,<span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">legend =</span> <span class="cn">NA</span>)    <span class="co"># K线（红色）</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wpr_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="TTR.html#cb421-1" tabindex="-1"></a><span class="fu">addTA</span>(D, <span class="at">on=</span><span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;K/D&quot;</span>)   <span class="co"># D线（蓝色）</span></span></code></pre></div>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="TTR.html#cb420-1" tabindex="-1"></a><span class="fu">addTA</span>(D, <span class="at">on=</span><span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;K/D&quot;</span>)   <span class="co"># D线（蓝色）</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wpr_2-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="TTR.html#cb422-1" tabindex="-1"></a><span class="fu">addTA</span>(J, , <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;J&quot;</span>)  <span class="co"># J线（绿色）</span></span></code></pre></div>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="TTR.html#cb421-1" tabindex="-1"></a><span class="fu">addTA</span>(J, , <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;J&quot;</span>)  <span class="co"># J线（绿色）</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wpr_2-4.png" width="90%" /></p>
-<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="TTR.html#cb423-1" tabindex="-1"></a><span class="fu">addWPR</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="TTR.html#cb422-1" tabindex="-1"></a><span class="fu">addWPR</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wpr_2-5.png" width="90%" /></p>
-<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="TTR.html#cb424-1" tabindex="-1"></a><span class="fu">addRSI</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="TTR.html#cb423-1" tabindex="-1"></a><span class="fu">addRSI</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/wpr_2-6.png" width="90%" /></p>
 </div>
 <div id="chande-动量摆动指标-cmo价格动能的精确测量仪" class="section level3 hasAnchor" number="4.2.4">
@@ -720,19 +720,19 @@ J 线作为 KD 的修正值，能提前反映 KD 的交叉信号，增强指标�
 <p>传统交易策略中，CMO 的超买超卖阈值通常设为 ±50：当 CMO&gt;+50 时，市场处于超买状态，预示价格可能回调；当 CMO&lt;-50 时，市场进入超卖区域，暗示价格存在反弹潜力。但在强趋势市场中，这一阈值需动态调整 —— 在牛市中，CMO 可能长期维持在 + 30 以上，此时需等待 CMO 跌破 + 30 才确认回调；在熊市中，CMO 可能持续低于 - 30，需等待 CMO 突破 - 30 才确认反弹。</p>
 <p>CMO 的背离信号更具实战价值。当价格创新高但 CMO 未能同步上升（即背离向下），形成顶背离，提示上涨动能衰竭；当价格创新低但 CMO 未同步下降（即背离向上），形成底背离，暗示下跌趋势可能反转。例如，在 AAPL 股价 2023 年 12 月的上涨行情中，价格创出阶段新高的同时，CMO 从 + 65 回落至 + 50，形成典型顶背离，随后股价出现 8% 的回调。</p>
 <p>CMO 的计算周期可根据交易频率灵活调整：短线交易常用 9 日周期，中线策略偏好 14-21 日周期。在高波动市场（如加密货币），可缩短周期以提高灵敏度；在低波动市场（如公用事业股），可延长周期以减少假信号。此外，CMO 与价格的交叉信号也具有指导意义。当 CMO 从下方上穿 0 轴时，形成看涨信号；从上方下穿 0 轴时，形成看跌信号。</p>
-<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="TTR.html#cb425-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日CMO</span></span>
-<span id="cb425-2"><a href="TTR.html#cb425-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="TTR.html#cb424-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日CMO</span></span>
+<span id="cb424-2"><a href="TTR.html#cb424-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/cmo-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="TTR.html#cb426-1" tabindex="-1"></a><span class="fu">addCMO</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="TTR.html#cb425-1" tabindex="-1"></a><span class="fu">addCMO</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/cmo-2.png" width="90%" /></p>
 <p>通过图表可见，CMO 在 ±50 区间的震荡与价格波动形成对应关系。当指标触及 + 50 水平线时，常伴随价格短期高点；而在 - 50 附近反弹时，往往预示底部信号。CMO 穿越 0 轴的行为也与趋势转换高度相关。在 2024 年 2 月 AAPL 股价下跌过程中，CMO 下穿 0 轴后持续走低，直至形成底背离才止跌回升。</p>
 <p>CMO 的优势在于其对称区间设计和对动量的直接量化，能够清晰展示多空力量的消长过程。但其在盘整行情中可能产生频繁交叉的假信号，因此建议配合 ADX 指标使用：当 ADX&gt;25（强趋势）时，CMO 的超买超卖信号可靠性更高；当 ADX&lt;20（震荡）时，应谨慎对待 CMO 的交叉信号。在构建量化策略时，CMO 常与 MACD 结合 —— 当 CMO 顶背离且 MACD 柱状图缩小时，形成双重确认的卖出信号，准确率比单一指标提升约 30%。</p>
-<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="TTR.html#cb427-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日CMO</span></span>
-<span id="cb427-2"><a href="TTR.html#cb427-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="TTR.html#cb426-1" tabindex="-1"></a><span class="co"># 绘制AAPL股价与14日CMO</span></span>
+<span id="cb426-2"><a href="TTR.html#cb426-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/cmo_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="TTR.html#cb428-1" tabindex="-1"></a><span class="fu">addCMO</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="TTR.html#cb427-1" tabindex="-1"></a><span class="fu">addCMO</span>(<span class="at">n =</span> <span class="dv">14</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/cmo_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="TTR.html#cb429-1" tabindex="-1"></a><span class="fu">addMACD</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="TTR.html#cb428-1" tabindex="-1"></a><span class="fu">addMACD</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/cmo_2-3.png" width="90%" /></p>
 </div>
 <div id="随机动量指标-smi精准过滤噪音的趋势反转探测器" class="section level3 hasAnchor" number="4.2.5">
@@ -754,24 +754,24 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p>在实际应用中，SMI 的 -100 至 +100 区间被划分为几个关键区域以指导交易决策。当 SMI 超过 +40 时，市场被视为处于强势状态，而超过 +80 则进入超买区域，表明上涨动能可能过度释放，回调风险增加；反之，当 SMI 低于 -40 时，市场处于弱势状态，低于 -80 则进入超卖区域，暗示下跌动能可能耗尽，反弹可能性增大。此外，SMI 与价格之间的背离是其最重要的信号之一。当价格创新高而 SMI 未能同步突破前期高点，形成顶背离，往往预示着上涨趋势即将结束；相反，价格创新低而 SMI 未能同步创出新低，形成底背离，则可能是下跌趋势即将反转的信号。</p>
 <p>SMI 的参数选择对其性能有重要影响。常见参数组合为 n=14、m=3，这种设置在大多数市场环境下都能提供平衡的信号质量和响应速度。对于短线交易，可调整为 n=9、m=2，使指标对价格变化更为敏感，及时捕捉短期波动；而中线策略则适用 n=21、m=5，以过滤更多短期噪音，专注于中期趋势的变化。</p>
 <p>以下代码展示了如何对苹果公司（AAPL）的股票进行分析：</p>
-<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="TTR.html#cb430-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="TTR.html#cb429-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/smi-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="TTR.html#cb431-1" tabindex="-1"></a><span class="fu">addSMI</span>()  <span class="co"># 参数可调整快慢周期</span></span></code></pre></div>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="TTR.html#cb430-1" tabindex="-1"></a><span class="fu">addSMI</span>()  <span class="co"># 参数可调整快慢周期</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/smi-2.png" width="90%" /></p>
 <p>在多指标协同分析方面，SMI 可以与多种技术指标形成有效的互补体系。与趋势指标结合时，可借助均线系统来辅助判断市场主趋势方向，进而对 SMI 发出的超买 / 超卖信号进行验证。当价格处于 200 日均线上方且均线呈明显多头排列时，即便 SMI 进入超买区域，也不宜急于做空，可等待 SMI 回落至 +40 下方再考虑；反之，若价格位于均线下方且均线呈空头排列，即便 SMI 进入超卖区域，其引发的反弹也可能仅是短暂修正，需谨慎对待。</p>
 <p>在与波动率指标配合方面，布林带能够辅助确认 SMI 信号的有效性。当 SMI 形成顶背离且价格触及布林带上轨时，下跌概率会显著增加；而当 SMI 形成底背离且价格触及布林带下轨时，反弹的可能性则会增强。此外，当布林带带宽收窄时出现的 SMI 交叉信号，往往预示着即将出现较大行情，值得密切关注。</p>
 <p>成交量指标（如 OBV）可用于验证 SMI 发出的反转信号。当 SMI 形成底背离且 OBV 指标开始向上突破时，表明多头动能得到确认，上涨趋势可能更具持续性；反之，当 SMI 形成顶背离且 OBV 指标下降时，则表明资金正在流出市场，下跌趋势可能进一步延续。</p>
 <p>突破型指标（如 ADX）能够帮助判断市场是否处于趋势行情中，从而提高 SMI 信号的使用效率。当 ADX 高于 25 且呈上升趋势时，表明市场处于较强趋势中，此时 SMI 的交叉信号可靠性较高；若 ADX 低于 20，则表明市场处于震荡状态，应谨慎使用 SMI 的超买超卖信号，避免追涨杀跌。</p>
 <p>将 SMI 与其他动量指标（如 MACD）组合使用，可通过双重确认来提高信号质量。当 SMI 从超卖区向上穿越 -40 且 MACD 柱状图由负转正时，形成双重看多信号，此时做多的可靠性较高；反之，当 SMI 从超买区向下穿越 +40 且 MACD 柱状图由正转负时，构成双重看空信号，此时做空的把握性更大。</p>
-<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="TTR.html#cb432-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="TTR.html#cb431-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/smi_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="TTR.html#cb433-1" tabindex="-1"></a><span class="fu">addSMI</span>()  <span class="co"># 参数可调整快慢周期</span></span></code></pre></div>
+<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="TTR.html#cb432-1" tabindex="-1"></a><span class="fu">addSMI</span>()  <span class="co"># 参数可调整快慢周期</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/smi_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="TTR.html#cb434-1" tabindex="-1"></a><span class="fu">addBBands</span>()  <span class="co"># 添加布林带辅助分析</span></span></code></pre></div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="TTR.html#cb433-1" tabindex="-1"></a><span class="fu">addBBands</span>()  <span class="co"># 添加布林带辅助分析</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/smi_2-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="TTR.html#cb435-1" tabindex="-1"></a><span class="fu">addADX</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="TTR.html#cb434-1" tabindex="-1"></a><span class="fu">addADX</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/smi_2-4.png" width="90%" /></p>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="TTR.html#cb436-1" tabindex="-1"></a><span class="fu">addMACD</span>()  <span class="co"># 添加MACD指标验证动量</span></span></code></pre></div>
+<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="TTR.html#cb435-1" tabindex="-1"></a><span class="fu">addMACD</span>()  <span class="co"># 添加MACD指标验证动量</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/smi_2-5.png" width="90%" /></p>
 <p>总之，SMI 作为一种先进的动量指标，通过独特的计算方法和直观的区间划分，为交易者提供了一种强大的工具。当与其他技术指标合理配合时，既能在复杂的市场环境中过滤噪音，又能提前预警趋势反转，帮助投资者做出更明智的交易决策。</p>
 </div>
@@ -783,24 +783,24 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p>其中，<span class="math inline">\(C_t\)</span> 为当前收盘价，<span class="math inline">\(C_{t-n}\)</span> 为 n 日前的收盘价。常见参数 n 设置为 12，代表计算 12 日价格变动率，这在日线图中能较好地平衡短期波动与中期趋势。对于短线交易，可将参数缩小至 6 或 9，提高指标灵敏度；中线策略则可扩大至 21 或 25，过滤短期噪音。</p>
 <p>在实战应用中，ROC 指标主要通过三种方式提供交易信号。一是超买超卖判断，当 ROC 值偏离零轴过远时，市场可能处于超买或超卖状态。例如，当 ROC 升至 + 10 上方（具体阈值需根据标的波动率调整），表明短期内价格涨幅过大，回调风险增加；反之，ROC 跌至 - 10 下方，可能预示价格超跌反弹。二是趋势确认与背离识别，在上升趋势中，ROC 应保持在零轴上方且随价格走高而上升，若价格创新高但 ROC 未能同步突破前期高点，形成顶背离，往往是上涨动能衰竭的信号；下跌趋势中，ROC 持续低于零轴，若价格创新低而 ROC 出现底背离，则可能酝酿反弹。三是交叉信号，当 ROC 从下向上穿越零轴，表明上涨动能开始占据优势，可视为潜在买入信号；从上向下穿越零轴，则意味着下跌动能增强，可能是卖出时机。</p>
 <p>在 R 语言中，通过 quantmod 包可便捷实现 ROC 指标的可视化分析：</p>
-<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="TTR.html#cb437-1" tabindex="-1"></a><span class="co"># 绘制苹果公司近5个月股价及12日ROC指标  </span></span>
-<span id="cb437-2"><a href="TTR.html#cb437-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="TTR.html#cb436-1" tabindex="-1"></a><span class="co"># 绘制苹果公司近5个月股价及12日ROC指标  </span></span>
+<span id="cb436-2"><a href="TTR.html#cb436-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)  </span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/roc-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="TTR.html#cb438-1" tabindex="-1"></a><span class="fu">addROC</span>(<span class="at">n =</span> <span class="dv">12</span>)  <span class="co"># 添加12日ROC，使用EMA平滑  </span></span></code></pre></div>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="TTR.html#cb437-1" tabindex="-1"></a><span class="fu">addROC</span>(<span class="at">n =</span> <span class="dv">12</span>)  <span class="co"># 添加12日ROC，使用EMA平滑  </span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/roc-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="TTR.html#cb439-1" tabindex="-1"></a><span class="fu">addROC</span>(<span class="at">n =</span> <span class="dv">21</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)  <span class="co"># 叠加21日ROC作为参考 </span></span></code></pre></div>
+<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="TTR.html#cb438-1" tabindex="-1"></a><span class="fu">addROC</span>(<span class="at">n =</span> <span class="dv">21</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)  <span class="co"># 叠加21日ROC作为参考 </span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/roc-3.png" width="90%" /></p>
 <p>上述代码展示了双周期 ROC 的叠加应用：12 日 ROC（红线）反映短期动能变化，21 日 ROC（蓝线）体现中期趋势。当短期 ROC 线穿越长期 ROC 线且方向与零轴交叉一致时，信号可靠性显著提升。例如，2024 年 2 月苹果股价在创下新高后，12 日 ROC 未能突破前高且跌破 21 日 ROC，随后股价回调逾 8%。</p>
 <p>在与其他指标配合使用时，ROC 可构建更完善的分析体系。结合移动均线使用时，当 ROC 上穿零轴且价格位于 20 日均线上方，形成双重看多信号；反之则加强看空判断。协同 MACD 使用时，ROC 与 MACD 柱状图同向放大时，趋势动能强劲；若两者出现背离，如 ROC 上升而 MACD 柱状图收缩，需警惕趋势反转。</p>
 <p>验证成交量时，ROC 突破零轴时，若伴随成交量放大，信号有效性增强；量能不足则可能是假突破。通过动态调整参数和多指标共振验证，ROC 指标能够成为捕捉市场转折点的有力工具。例如，在 2023 年 10 月特斯拉股价触底反弹前，14 日 ROC 率先形成底背离并突破零轴，较价格反转提前 4 个交易日发出信号，为投资者提供了宝贵的入场时机。</p>
-<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="TTR.html#cb440-1" tabindex="-1"></a><span class="co"># 绘制苹果公司近5个月股价及12日ROC指标  </span></span>
-<span id="cb440-2"><a href="TTR.html#cb440-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="TTR.html#cb439-1" tabindex="-1"></a><span class="co"># 绘制苹果公司近5个月股价及12日ROC指标  </span></span>
+<span id="cb439-2"><a href="TTR.html#cb439-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)  </span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/roc_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="TTR.html#cb441-1" tabindex="-1"></a><span class="fu">addROC</span>(<span class="at">n =</span> <span class="dv">12</span>)  <span class="co"># 添加12日ROC，使用EMA平滑  </span></span></code></pre></div>
+<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="TTR.html#cb440-1" tabindex="-1"></a><span class="fu">addROC</span>(<span class="at">n =</span> <span class="dv">12</span>)  <span class="co"># 添加12日ROC，使用EMA平滑  </span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/roc_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="TTR.html#cb442-1" tabindex="-1"></a><span class="fu">addROC</span>(<span class="at">n =</span> <span class="dv">21</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)  <span class="co"># 叠加21日ROC作为参考 </span></span></code></pre></div>
+<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="TTR.html#cb441-1" tabindex="-1"></a><span class="fu">addROC</span>(<span class="at">n =</span> <span class="dv">21</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)  <span class="co"># 叠加21日ROC作为参考 </span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/roc_2-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="TTR.html#cb443-1" tabindex="-1"></a><span class="fu">addMACD</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="TTR.html#cb442-1" tabindex="-1"></a><span class="fu">addMACD</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/roc_2-4.png" width="90%" /></p>
 </div>
 </div>
@@ -821,24 +821,24 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p>其中，C为收盘价，<span class="math inline">\(\text{STD}\)</span> 为标准差。</p>
 <p>这种设计使布林带能够自适应市场波动性 —— 当价格波动加剧时，轨道自动拓宽；波动收窄时，轨道相应收缩，形成一个动态的价格 “弹性区间”。在实际应用中，布林带主要通过三种方式提供交易信号：当价格触及上轨时，表明市场短期过热，可能处于超买状态，回调风险增加；触及下轨时，则反映市场短期超卖，反弹可能性上升。布林带收窄（即上下轨间距缩小）通常预示着市场即将出现大幅波动，这一现象被称为 “布林带挤压”，是趋势突破的重要前兆。而当价格突破上轨或下轨时，则可能预示着新趋势的形成。</p>
 <p>使用 quantmod 包可以便捷地绘制布林带</p>
-<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="TTR.html#cb444-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="TTR.html#cb443-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)  </span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/bb-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="TTR.html#cb445-1" tabindex="-1"></a><span class="fu">addBBands</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">sd =</span> <span class="dv">2</span>)  <span class="co"># 添加20日布林带，标准差为2  </span></span></code></pre></div>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="TTR.html#cb444-1" tabindex="-1"></a><span class="fu">addBBands</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">sd =</span> <span class="dv">2</span>)  <span class="co"># 添加20日布林带，标准差为2  </span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/bb-2.png" width="90%" /></p>
 <p>这段代码会生成包含中轨、上下轨的价格图表，直观展示股价在布林带中的相对位置。通过调整n和sd参数，可以根据不同交易周期和标的特性定制布林带的灵敏度。</p>
 <p>然而，布林带在使用中存在一定局限性。由于其基于移动平均线构建，对价格突变的反应存在滞后性，可能导致在趋势转折初期发出延迟信号。</p>
 <p>在强势趋势中，价格可能沿上轨或下轨持续运行，形成 “轨道骑行” 现象，此时单纯依据超买超卖信号交易容易过早离场。而在横盘震荡行情中，布林带上下轨会频繁被触及，产生大量虚假信号，增加交易成本。</p>
 <p>为弥补这些不足，布林带通常与其他指标结合使用。与动量指标（如 RSI、MACD）协同，可以过滤虚假突破信号：当价格触及布林带上轨且 RSI 超买或 MACD 出现顶背离时，形成双重看空信号；反之，价格触及下轨时配合 RSI 超卖或 MACD 底背离，强化看多判断。结合突破型指标（如 ADX），可以验证趋势强度：布林带收窄后价格突破上轨时，若 ADX 指标高于 25 且上升，表明趋势强劲，突破可信度高；若 ADX 低于 20，则需警惕假突破。成交量指标（如 OBV）也可辅助确认突破有效性：价格突破布林带时，若伴随成交量放大，突破更具说服力；量能不足的突破可能是昙花一现。此外，通过与均线系统结合，可以明确主趋势方向：当布林带中轨向上且价格位于中轨上方时，优先考虑做多；中轨向下且价格在下轨附近，做空更具优势。</p>
 <p>通过这种多指标协同的方式，布林带能够更精准地揭示市场节奏变化。例如，在 2024 年 3 月苹果股价触及布林带上轨时，RSI 同时进入超买区域且 MACD 柱状图收缩，形成三重看空信号，随后股价回调 10%；而在 2023 年 12 月股价触及下轨时，RSI 超卖、MACD 底背离且成交量放大，多重指标共振预示反弹，之后股价展开一轮 15% 的上涨行情。这种动态结合使交易者能够在捕捉趋势机会的同时，有效规避布林带单一指标的局限性。</p>
-<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="TTR.html#cb446-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="TTR.html#cb445-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)  </span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/bb_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="TTR.html#cb447-1" tabindex="-1"></a><span class="fu">addBBands</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">sd =</span> <span class="dv">2</span>)  <span class="co"># 添加20日布林带，标准差为2  </span></span></code></pre></div>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="TTR.html#cb446-1" tabindex="-1"></a><span class="fu">addBBands</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">sd =</span> <span class="dv">2</span>)  <span class="co"># 添加20日布林带，标准差为2  </span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/bb_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="TTR.html#cb448-1" tabindex="-1"></a><span class="fu">addRSI</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="TTR.html#cb447-1" tabindex="-1"></a><span class="fu">addRSI</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/bb_2-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="TTR.html#cb449-1" tabindex="-1"></a><span class="fu">addMACD</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="TTR.html#cb448-1" tabindex="-1"></a><span class="fu">addMACD</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/bb_2-4.png" width="90%" /></p>
-<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="TTR.html#cb450-1" tabindex="-1"></a><span class="fu">addADX</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="TTR.html#cb449-1" tabindex="-1"></a><span class="fu">addADX</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/bb_2-5.png" width="90%" /></p>
 </div>
 <div id="包络线-envelope价格波动的固定区间标尺" class="section level3 hasAnchor" number="4.3.2">
@@ -854,9 +854,9 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p>其中，C为收盘价，n为移动平均周期，<span class="math inline">\(\text{percent}\)</span> 为设定的百分比参数。常见的参数设置为<span class="math inline">\(n=20\)</span>（20 日移动平均）和 <span class="math inline">\(\text{percent}=0.1\)</span> （上下各 10% 的区间），这种配置在多数市场环境下能较好地平衡信号敏感度与可靠性。</p>
 <p>在实际应用中，包络线的主要作用是识别价格的相对极端位置。当价格触及上轨时，表明市场短期处于超买状态，回调概率增加；当价格触及下轨时，则表明市场短期超卖，反弹可能性上升。此外，包络线还可用于判断趋势强度：在强势上涨趋势中，价格往往会持续贴近上轨运行；而在下跌趋势中，价格则常贴近下轨。当价格频繁穿越中轨时，通常意味着市场处于无明确趋势的震荡状态。</p>
 <p>在 R 语言环境中，使用 quantmod 包可以便捷地绘制包络线并进行分析：</p>
-<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="TTR.html#cb451-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="TTR.html#cb450-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/envol-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="TTR.html#cb452-1" tabindex="-1"></a><span class="fu">addEnvelope</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">percent =</span> <span class="fl">0.1</span>)  <span class="co"># 20日包络线，上下各10%</span></span></code></pre></div>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="TTR.html#cb451-1" tabindex="-1"></a><span class="fu">addEnvelope</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">percent =</span> <span class="fl">0.1</span>)  <span class="co"># 20日包络线，上下各10%</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/envol-2.png" width="90%" /></p>
 <p>包络线采用 20 日移动平均和上下各 10% 的区间设置，RSI 使用 14 日周期并添加 30/70 超买超卖线。代码还实现了信号标记功能：当价格触及或突破包络线上轨时标记红色符号，触及或突破下轨时标记绿色符号，帮助交易者快速识别潜在交易机会。
 然而，包络线在使用中存在一定局限性。由于采用固定百分比设置通道宽度，当市场波动性突然增大时，包络线可能无法及时适应，导致价格频繁突破上下轨，产生虚假信号。在趋势行情中，固定区间也可能使包络线过早发出超买超卖信号，错过价格的持续运动。</p>
@@ -864,13 +864,13 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p>为弥补这些不足，包络线通常与其他指标结合使用。与 RSI 指标协同，可以过滤虚假的超买超卖信号：当价格触及包络线上轨且 RSI 同时进入超买区域时，看空信号更为可靠；反之，价格触及下轨时配合 RSI 超卖，看多信号更具说服力。</p>
 <p>结合 MACD 指标，可以确认价格突破的动量：当价格突破包络线上轨且 MACD 柱状图由负转正时，上涨动能增强；反之则下跌动能占优。成交量指标可用于验证突破的有效性：价格突破包络线时，若伴随成交量放大，突破更具可持续性；量能不足的突破可能是短暂的价格波动。</p>
 <p>通过这种多指标协同的方式，包络线能够更精准地揭示市场节奏变化。例如，在 2024 年 2 月苹果股价触及包络线上轨时，RSI 同时进入超买区域且 MACD 柱状图开始收缩，形成双重看空信号，随后股价出现了 8% 的回调；而在 2023 年 10 月股价触及下轨时，RSI 超卖、MACD 底背离且成交量放大，多重指标共振预示反弹，之后股价上涨了 12%。这种动态结合使交易者能够在利用包络线识别价格极端位置的同时，有效规避其单一指标的局限性。</p>
-<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="TTR.html#cb453-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="TTR.html#cb452-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/envol_2-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="TTR.html#cb454-1" tabindex="-1"></a><span class="fu">addEnvelope</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">percent =</span> <span class="fl">0.1</span>)  <span class="co"># 20日包络线，上下各10%</span></span></code></pre></div>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="TTR.html#cb453-1" tabindex="-1"></a><span class="fu">addEnvelope</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">percent =</span> <span class="fl">0.1</span>)  <span class="co"># 20日包络线，上下各10%</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/envol_2-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="TTR.html#cb455-1" tabindex="-1"></a><span class="fu">addMACD</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="TTR.html#cb454-1" tabindex="-1"></a><span class="fu">addMACD</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/envol_2-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="TTR.html#cb456-1" tabindex="-1"></a><span class="fu">addRSI</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="TTR.html#cb455-1" tabindex="-1"></a><span class="fu">addRSI</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/envol_2-4.png" width="90%" /></p>
 </div>
 <div id="平均真实波幅-atr市场波动性的精准度量" class="section level3 hasAnchor" number="4.3.3">
@@ -888,11 +888,11 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p>在仓位管理系统中，ATR 可用于计算最优头寸规模，例如基于风险平价原则，使每个交易品种的风险敞口与其 ATR 值成反比，从而实现组合风险的均衡分配。在趋势跟踪策略中，ATR 可作为趋势强度的过滤器，当价格突破且 ATR 同时放大时，表明趋势动能强劲，信号可靠性较高；反之，若价格突破但 ATR 未同步增加，则需警惕假突破风险。</p>
 <p>此外，在波动率预测模型中，ATR 常被用作历史波动率的替代指标，为期权定价和风险价值（VaR）计算提供数据支持。</p>
 <p>以下是 R 语言实现的完整演示代码，展示了如何计算并可视化 ATR 指标，以及如何将其应用于交易策略：</p>
-<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="TTR.html#cb457-1" tabindex="-1"></a><span class="co"># 计算14日ATR</span></span>
-<span id="cb457-2"><a href="TTR.html#cb457-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>, </span>
-<span id="cb457-3"><a href="TTR.html#cb457-3" tabindex="-1"></a>            <span class="at">name =</span> <span class="st">&quot;AAPL Stock Price with ATR&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="TTR.html#cb456-1" tabindex="-1"></a><span class="co"># 计算14日ATR</span></span>
+<span id="cb456-2"><a href="TTR.html#cb456-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>, </span>
+<span id="cb456-3"><a href="TTR.html#cb456-3" tabindex="-1"></a>            <span class="at">name =</span> <span class="st">&quot;AAPL Stock Price with ATR&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/atr-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="TTR.html#cb458-1" tabindex="-1"></a><span class="fu">addATR</span>(<span class="at">n =</span> <span class="dv">14</span>, <span class="at">on =</span> <span class="cn">NA</span>)  <span class="co"># 添加14日ATR指标</span></span></code></pre></div>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="TTR.html#cb457-1" tabindex="-1"></a><span class="fu">addATR</span>(<span class="at">n =</span> <span class="dv">14</span>, <span class="at">on =</span> <span class="cn">NA</span>)  <span class="co"># 添加14日ATR指标</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/atr-2.png" width="90%" /></p>
 <p>尽管 ATR 在量化投资中具有重要价值，但其也存在一定局限性。作为滞后指标，ATR 基于历史价格计算，可能无法及时反映市场突发变化，在黑天鹅事件中容易低估风险。此外，ATR 仅衡量波动幅度，不提供价格方向信息，单独使用时容易产生误导。不同市场环境下，ATR 的周期参数需要动态调整，固定参数设置可能导致信号滞后或过度敏感。
 为规避这些不足，ATR 通常需要与其他指标配合使用。在趋势确认方面，可结合移动平均线或 MACD 指标，在 ATR 放大时寻找趋势方向的一致性信号。在动量判断上，RSI 或 KDJ 指标可帮助识别超买超卖区域，避免在 ATR 放大但价格即将反转时入场。在波动率预测中，布林带与 ATR 结合使用能更准确地识别价格突破的真伪。在算法交易中，ATR 常与成交量指标配合，通过量价关系验证信号的可靠性。通过这种多指标协同的方式，量化投资者可以构建更全面、更稳健的交易决策体系，有效提升策略的稳定性和盈利能力。</p>
@@ -905,9 +905,9 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p>在量化投资领域，DPO 的应用场景广泛且高效。在周期识别方面，通过观察 DPO 曲线的波峰波谷，可以识别市场的潜在周期长度，帮助量化策略确定最佳持仓周期。</p>
 <p>在超买超卖判断中，DPO 结合阈值设定（如 ±0.5 倍标准差）能够生成高胜率的反转信号。例如，当 DPO 从负值区域向上穿越零时，常被视为买入信号；反之则为卖出信号。</p>
 <p>在动量策略中，DPO 可作为辅助指标过滤虚假突破，当价格创新高但 DPO 未能同步创新高时，表明上涨动能减弱，可能形成顶背离形态。此外，DPO 还可用于构建多因子模型，与其他技术指标（如 RSI、MACD）结合提升信号质量。</p>
-<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="TTR.html#cb459-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="TTR.html#cb458-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset =</span> <span class="st">&quot;last 5 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/dpo-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="TTR.html#cb460-1" tabindex="-1"></a><span class="fu">addDPO</span>()  <span class="co"># 20日区间震荡线</span></span></code></pre></div>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="TTR.html#cb459-1" tabindex="-1"></a><span class="fu">addDPO</span>()  <span class="co"># 20日区间震荡线</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/dpo-2.png" width="90%" /></p>
 <p>尽管 DPO 在周期分析和反转识别中表现出色，但其也存在一定局限性。作为震荡指标，DPO 在强趋势市场中容易频繁发出反向信号，导致策略表现不佳。此外，DPO 对参数设置较为敏感，不同周期选择可能产生差异较大的结果，缺乏统一的最优参数标准。同时，DPO 仅反映价格偏离程度，不提供趋势方向和强度信息，单独使用时可能导致误判。</p>
 <p>为规避这些不足，DPO 通常需要与其他指标配合使用。在趋势市场中，可结合 ADX 指标判断趋势强度，当 ADX 高于 25 时（强趋势市场）降低 DPO 信号权重，当 ADX 低于 20 时（震荡市场）提高 DPO 信号优先级。在信号确认方面，MACD 可作为 DPO 的有效补充，当 DPO 发出买入信号且 MACD 柱状图由负转正时，信号可靠性显著提升。在周期匹配上，DPO 可与傅里叶变换或小波分析结合，通过频谱分析确定市场主导周期，进而优化 DPO 参数设置。通过这种多指标协同的方式，投资者可以构建更全面、更稳健的交易决策体系，有效提升策略的适应性和盈利能力。</p>
@@ -925,9 +925,9 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p>其中，<span class="math inline">\(Q_i\)</span> 代表第i笔交易的成交量，n为当日总交易笔数。在金融数据分析中，成交量常与价格数据结合使用，形成量价关系的核心分析框架。例如，价格与成交量的相关性可通过 Pearson 相关系数衡量：</p>
 <p><span class="math display">\[\text{Corr}(P, V) = \frac{\text{Cov}(P, V)}{\sigma_P \cdot \sigma_V}\]</span></p>
 <p>其中，P代表价格序列，V代表成交量序列，<span class="math inline">\(\text{Cov}\)</span> 为协方差， <span class="math inline">\(\sigma\)</span> 为标准差。正相关表明量价配合良好，趋势可持续性较强；负相关则可能暗示趋势动能减弱。</p>
-<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="TTR.html#cb461-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="TTR.html#cb460-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/vo-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="TTR.html#cb462-1" tabindex="-1"></a><span class="fu">addVo</span>()  <span class="co"># 添加成交量柱状图</span></span></code></pre></div>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="TTR.html#cb461-1" tabindex="-1"></a><span class="fu">addVo</span>()  <span class="co"># 添加成交量柱状图</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/vo-2.png" width="90%" /></p>
 <p>尽管成交量指标在市场分析中具有重要价值，但其也存在一定局限性。首先，不同市场和品种的成交量规模差异巨大，直接比较可能产生误导，需要进行标准化处理。其次，成交量反映的是历史交易情况，具有滞后性，在快速变化的市场中可能无法及时捕捉转折点。此外，异常成交量（如大宗交易）可能扭曲整体数据，影响信号的准确性。</p>
 <p>为规避这些不足，成交量指标通常需要与其他技术工具结合使用。在趋势确认方面，可与移动平均线配合，当价格突破均线且成交量同步放大时，信号可靠性显著提升。在动量分析中，MACD 与成交量的结合能有效过滤虚假突破，例如当 MACD 金叉且成交量高于均值时，买入信号更为可靠。在波动率分析中，布林带与成交量的协同应用可识别潜在的突破机会，当价格触及布林带上轨且成交量激增时，可能预示趋势加速。通过这种多维度的分析方法，投资者可以更准确地解读成交量信息，提升交易决策的质量。</p>
@@ -948,9 +948,9 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 \]</span></p>
 <p>在量化投资中，CMF 具有广泛的应用场景。在趋势确认方面，当 CMF 持续高于零轴且呈上升趋势时，表明多头力量不断增强，可作为趋势延续的信号；反之，当 CMF 长期低于零轴且下行时，空头占据主导，应谨慎做多。在背离交易中，CMF 与价格的背离形态是重要的反转信号，量化策略可据此构建高胜率的逆向交易系统。在资金管理领域，CMF 可用于动态调整仓位规模，当 CMF 绝对值较大时，表明市场参与度高，可适当增加仓位；反之则降低风险暴露。此外，CMF 还可作为多因子模型的组成部分，与其他技术指标（如 MACD、RSI）结合使用，提升信号质量。</p>
 <p>以下是 R 语言实现的完整演示代码，展示了 CMF 指标的计算、可视化及其在交易策略中的应用：</p>
-<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="TTR.html#cb463-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="TTR.html#cb462-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/cmf-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="TTR.html#cb464-1" tabindex="-1"></a><span class="fu">addCMF</span>()  <span class="co"># 20日Chaikin资金流量</span></span></code></pre></div>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="TTR.html#cb463-1" tabindex="-1"></a><span class="fu">addCMF</span>()  <span class="co"># 20日Chaikin资金流量</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/cmf-2.png" width="90%" /></p>
 <p>尽管 CMF 在资金流向分析中具有独特优势，但其也存在一定局限性。作为滞后指标，CMF 依赖历史数据计算，可能无法及时捕捉市场的突发变化。在震荡市场中，CMF 容易产生频繁的虚假信号，导致交易成本增加。此外，CMF 对参数设置较为敏感，不同周期选择可能产生差异较大的结果，需要根据具体交易品种和时间框架进行优化。</p>
 <p>为规避这些不足，CMF 通常需要与其他指标配合使用。在趋势过滤方面，可结合 ADX 指标判断市场趋势强度，当 ADX 高于 25 时（强趋势市场）优先考虑 CMF 信号，当 ADX 低于 20 时（震荡市场）降低 CMF 权重。在信号确认方面，MACD 可作为 CMF 的有效补充，当 CMF 与 MACD 发出同向信号时，交易胜率显著提升。在时间周期选择上，可采用多周期 CMF 分析，例如同时观察日线和周线 CMF 指标，当两者方向一致时，信号可靠性更高。通过这种多维度的分析方法，投资者可以更准确地解读 CMF 指标，构建更稳健的量化交易策略。</p>
@@ -972,9 +972,9 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p><span class="math display">\[\alpha = \frac{2}{n + 1}\]</span>
 在量化投资中，MACD 具有广泛的应用场景。在趋势跟踪方面，当 MACD 线持续位于信号线上方且柱状图为正时，表明市场处于上升趋势，可采用多头策略；反之则采用空头策略。在动量交易中，柱状图的扩张与收缩可作为判断趋势强弱的依据，柱状图由负转正且逐渐放大时，表明上涨动量增强，可加仓买入；柱状图由正转负且持续收缩时，表明下跌动能加剧，应及时止损。在背离识别中，MACD 与价格的背离是重要的反转信号，当价格创新高而 MACD 未能同步创新高时，形成顶背离，预示上涨动力衰竭；当价格创新低而 MACD 未能同步创新低时，形成底背离，暗示下跌动能减弱。此外，MACD 还可用于多时间周期分析，例如日线 MACD 与周线 MACD 同向时，信号可靠性显著提升。</p>
 <p>以下是 R 语言实现的完整演示代码，展示了 MACD 指标的计算、可视化及其在交易策略中的应用：</p>
-<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="TTR.html#cb465-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="TTR.html#cb464-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/macd-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="TTR.html#cb466-1" tabindex="-1"></a><span class="fu">addMACD</span>()  <span class="co"># 标准参数设置</span></span></code></pre></div>
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="TTR.html#cb465-1" tabindex="-1"></a><span class="fu">addMACD</span>()  <span class="co"># 标准参数设置</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/macd-2.png" width="90%" /></p>
 <p>尽管 MACD 在趋势和动量分析中具有重要价值，但其也存在一定局限性。作为滞后指标，MACD 基于历史价格计算，可能无法及时捕捉市场的快速变化，在剧烈波动的市场中容易产生滞后信号。在横盘震荡行情中，MACD 频繁的金叉死叉会导致大量假信号，增加交易成本和错误决策风险。此外，MACD 参数的固定设置（如 12、26、9）可能不适用于所有市场和品种，需要根据具体情况进行优化。</p>
 <p>为规避这些不足，MACD 通常需要与其他指标配合使用。在趋势确认方面，可结合 ADX 指标判断市场趋势强度，当 ADX 高于 25 时（强趋势市场）优先考虑 MACD 信号，当 ADX 低于 20 时（震荡市场）降低 MACD 权重。在波动过滤方面，布林带可作为有效的辅助工具，当价格触及布林带上轨且 MACD 出现死叉时，卖出信号更为可靠；当价格触及布林带下轨且 MACD 出现金叉时，买入信号更具参考价值。在周期匹配上，可采用多周期 MACD 分析，例如同时观察日线和周线 MACD 指标，当两者方向一致时，信号可靠性更高。通过这种多维度的分析方法，投资者可以更准确地解读 MACD 指标，构建更稳健的量化交易策略。</p>
@@ -993,9 +993,9 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 \]</span></p>
 <p>这两种计算方式本质上都是衡量价格在特定周期内的变化幅度，前者反映绝对变动，后者体现相对变动率。在量化投资领域，动量指标具有广泛的应用场景。在趋势跟踪策略中，当动量值持续高于零时，表明市场处于上升趋势，可采用多头策略；反之则采用空头策略。在反转交易中，动量指标与价格的背离形态是重要的交易信号，量化模型可据此构建高胜率的逆向交易系统。在波动率分析中，动量指标的绝对值大小可作为市场波动强度的参考，当动量值急剧放大时，往往伴随市场波动率的增加，需注意控制风险。此外，动量指标还可用于构建多因子模型，与其他技术指标（如 MACD、RSI）结合使用，提升信号质量。</p>
 <p>以下是 R 语言实现的完整演示代码，展示了动量指标的计算、可视化及其在交易策略中的应用：</p>
-<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="TTR.html#cb467-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="TTR.html#cb466-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/mom-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="TTR.html#cb468-1" tabindex="-1"></a><span class="fu">addMomentum</span>()  <span class="co"># 10日动量指标</span></span></code></pre></div>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="TTR.html#cb467-1" tabindex="-1"></a><span class="fu">addMomentum</span>()  <span class="co"># 10日动量指标</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/mom-2.png" width="90%" /></p>
 <p>尽管动量指标在趋势和反转识别中具有重要价值，但其也存在一定局限性。作为滞后指标，动量指标基于历史价格计算，可能无法及时捕捉市场的快速变化，在剧烈波动的市场中容易产生滞后信号。在横盘震荡行情中，动量指标频繁穿越零轴会导致大量假信号，增加交易成本和错误决策风险。此外，动量指标对参数设置较为敏感，不同周期选择可能产生差异较大的结果，需要根据具体交易品种和时间框架进行优化。</p>
 <p>为规避这些不足，动量指标通常需要与其他指标配合使用。在趋势确认方面，可结合移动平均线判断市场趋势方向，当价格位于均线上方且动量指标为正时，表明上升趋势强劲，可增强买入信号的可靠性；反之则增强卖出信号的可靠性。在波动过滤方面，布林带可作为有效的辅助工具，当价格触及布林带上轨且动量指标开始走弱时，形成双重卖出信号；当价格触及布林带下轨且动量指标开始走强时，形成双重买入信号。在周期匹配上，可采用多周期动量分析，例如同时观察日线和周线动量指标，当两者方向一致时，信号可靠性更高。通过这种多维度的分析方法，投资者可以更准确地解读动量指标，构建更稳健的量化交易策略。</p>
@@ -1010,9 +1010,9 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p>因子 0.015 的作用是将 CCI 值标准化至常见波动区间，使 + 100 和 - 100 成为具有参考意义的临界值。</p>
 <p>在量化投资中，CCI 的应用场景丰富多样。在趋势跟踪策略中，当 CCI 从负值区向上突破 - 100 时，可视为趋势转强的信号，适合建立多头仓位；当 CCI 从正值区向下突破 + 100 时，表明趋势可能转弱，应考虑减仓或做空。在反转交易中，CCI 与价格的背离是重要的入场时机，例如价格创新高但 CCI 未能同步创新高，形成顶背离，往往预示后续下跌风险。在波动率交易中，CCI 的极端值（如超过 ±200）可作为市场过度反应的标志，此时逆向交易策略可能具有较高胜率。此外，CCI 还可用于仓位管理，当 CCI 处于超买 / 超卖区域时，适当降低仓位以控制风险。</p>
 <p>以下是 R 语言实现的完整演示代码，展示了 CCI 指标的计算、可视化及其在交易策略中的应用：</p>
-<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="TTR.html#cb469-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="TTR.html#cb468-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/cci-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb470-1"><a href="TTR.html#cb470-1" tabindex="-1"></a><span class="fu">addCCI</span>()  <span class="co"># 20日CCI指标</span></span></code></pre></div>
+<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="TTR.html#cb469-1" tabindex="-1"></a><span class="fu">addCCI</span>()  <span class="co"># 20日CCI指标</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/cci-2.png" width="90%" /></p>
 <p>尽管 CCI 在趋势反转识别中具有独特优势，但其也存在一定局限性。作为震荡指标，CCI 在强趋势市场中容易过早发出反转信号，导致投资者错过后续行情。此外，CCI 对参数设置较为敏感，不同周期选择可能产生差异较大的结果，需要根据具体交易品种和时间框架进行优化。在极端市场环境下，CCI 可能长时间处于超买或超卖区域，此时简单机械地跟随信号可能导致亏损。
 为规避这些不足，CCI 通常需要与其他指标配合使用。在趋势确认方面，可结合 ADX 指标判断市场趋势强度，当 ADX 高于 25 时（强趋势市场）降低 CCI 反转信号的权重，当 ADX 低于 20 时（震荡市场）提高 CCI 信号优先级。在信号过滤方面，MACD 可作为 CCI 的有效补充，当 CCI 发出买入信号且 MACD 柱状图由负转正时，信号可靠性显著提升。在波动率控制上，布林带与 CCI 结合使用能更准确地识别突破机会，当价格触及布林带上轨且 CCI 从超买区域回落时，形成双重卖出信号。通过这种多指标协同的方式，投资者可以更准确地解读 CCI 指标，构建更稳健的量化交易策略。</p>
@@ -1023,9 +1023,9 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p>从本质上讲，合约终止线并不直接参与价格预测或交易信号生成，而是通过可视化时间维度的关键节点，帮助投资者规避因合约到期引发的风险。在期货市场中，每个合约都有固定的到期日，临近到期时，合约流动性通常会逐渐降低，价格波动可能加剧，甚至出现与现货价格的大幅偏离（基差风险）。合约终止线通过在图表上明确标记这些关键日期，使投资者能够提前规划交易策略，避免因疏忽导致的强制平仓或实物交割风险。</p>
 <p>在量化投资中，合约终止线的应用主要体现在以下几个方面：首先，在多合约策略中，它帮助系统自动识别主力合约切换时机，确保策略的连续性。例如，在跨期套利策略中，当近月合约临近到期时，系统可根据终止线提示，提前将头寸转移至远月合约。其次，在风险管理系统中，合约终止线可作为风险触发器，当价格触及终止线附近时，自动降低仓位或调整止损参数，以应对可能的流动性风险。此外，在算法交易中，合约终止线可与其他技术指标结合，优化交易时机选择，例如在合约到期前两周减少新头寸建立，避免陷入流动性陷阱。
 以下是 R 语言实现的完整演示代码，展示了合约终止线的添加、可视化及其在交易策略中的应用：</p>
-<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="TTR.html#cb471-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb470-1"><a href="TTR.html#cb470-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">subset=</span><span class="st">&quot;last 3 months&quot;</span>,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/expiry_ex-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb472-1"><a href="TTR.html#cb472-1" tabindex="-1"></a><span class="fu">addExpiry</span>()  <span class="co"># 添加合约终止线</span></span></code></pre></div>
+<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="TTR.html#cb471-1" tabindex="-1"></a><span class="fu">addExpiry</span>()  <span class="co"># 添加合约终止线</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/expiry_ex-2.png" width="90%" /></p>
 <p>在技术指标的实际运用中，投资者需遵循两大核心原则以提升决策有效性。首先,避免同类指标的冗余叠加，例如m同时使用多个趋势指标（如 SMA、EMA、MACD）可能产生矛盾信号，因为它们本质上都在捕捉价格趋势，重复使用只会增加噪音而非增强判断可靠性。其次是参数动态调整的重要性，不同市场环境和交易品种具有独特的波动特性，固定参数往往难以适应变化。例如在高波动市场中，RSI 周期值可适当增大至 14 以上，以过滤短期剧烈波动带来的虚假超买超卖信号；而在低波动环境中，缩短周期能更敏锐地捕捉价格转折点。这种灵活调整需要投资者通过反复测试找到最适合特定市场状态的参数组合。</p>
 <p>指标组合策略的核心在于利用不同类型指标的互补性构建完整分析框架。趋势类与震荡类指标的结合（如 SMA+RSI）是最经典的组合之一，通过 SMA 确认主趋势方向，再用 RSI 在回调时寻找入场点，既能避免逆势交易，又能提高入场性价比。趋势类与成交量类指标的搭配（如 EMA+CMF）则聚焦于验证趋势的资金基础，当 EMA 显示上升趋势而 CMF 同步走高时，表明有持续资金流入支撑上涨；反之则可能预示趋势动能不足。波动率类与震荡类指标的协同（如 BBands+KDJ）特别适合捕捉突破与反转机会，当价格触及布林带上轨且 KDJ 形成死叉时，构成双重卖出信号；而价格触及下轨且 KDJ 金叉时，则可能是强势反弹的前兆。</p>
@@ -1040,79 +1040,79 @@ SMI = \left( \frac{EMA(MA, m)}{STD(MA, m)} \right) \times 100
 <p>setTA 函数是配置图表默认参数的核心工具，通过它可以统一设置后续所有图表的显示类型和默认技术指标。在实际应用中，建议首先清空原有的默认设置，以避免不必要的指标叠加。例如，使用 setDefaults (chartSeries, TA = NULL) 可以清除 chartSeries 函数的默认技术指标，确保每次绘图时从空白状态开始。</p>
 <p>随后，可以通过 expression () 函数组合多种指标，将成交量和布林带设置为默认显示：setDefaults (chartSeries, TA = expression (c (addVo (), addBBands ())))。</p>
 <p>这种设置方式适用于需要统一分析视角的场景，如团队协作或固定策略的重复验证。</p>
-<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="TTR.html#cb473-1" tabindex="-1"></a><span class="co"># 设置金融图表的默认参数</span></span>
-<span id="cb473-2"><a href="TTR.html#cb473-2" tabindex="-1"></a><span class="co"># 清空所有图表函数的默认技术指标</span></span>
-<span id="cb473-3"><a href="TTR.html#cb473-3" tabindex="-1"></a><span class="fu">setDefaults</span>(chartSeries, <span class="at">TA =</span> <span class="cn">NULL</span>)  <span class="co"># 清空默认技术指标</span></span>
-<span id="cb473-4"><a href="TTR.html#cb473-4" tabindex="-1"></a><span class="fu">setDefaults</span>(barChart, <span class="at">TA =</span> <span class="cn">NULL</span>)     <span class="co"># 修复函数名拼写错误</span></span>
-<span id="cb473-5"><a href="TTR.html#cb473-5" tabindex="-1"></a><span class="co"># candleChart已被弃用，使用chartSeries替代</span></span>
-<span id="cb473-6"><a href="TTR.html#cb473-6" tabindex="-1"></a></span>
-<span id="cb473-7"><a href="TTR.html#cb473-7" tabindex="-1"></a><span class="co"># 添加成交量和布林带作为默认技术指标</span></span>
-<span id="cb473-8"><a href="TTR.html#cb473-8" tabindex="-1"></a><span class="co"># 使用expression()替代substitute()</span></span>
-<span id="cb473-9"><a href="TTR.html#cb473-9" tabindex="-1"></a><span class="fu">setDefaults</span>(chartSeries, <span class="at">TA =</span> <span class="fu">expression</span>(<span class="fu">c</span>(<span class="fu">addVo</span>(), <span class="fu">addBBands</span>())))</span></code></pre></div>
+<div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb472-1"><a href="TTR.html#cb472-1" tabindex="-1"></a><span class="co"># 设置金融图表的默认参数</span></span>
+<span id="cb472-2"><a href="TTR.html#cb472-2" tabindex="-1"></a><span class="co"># 清空所有图表函数的默认技术指标</span></span>
+<span id="cb472-3"><a href="TTR.html#cb472-3" tabindex="-1"></a><span class="fu">setDefaults</span>(chartSeries, <span class="at">TA =</span> <span class="cn">NULL</span>)  <span class="co"># 清空默认技术指标</span></span>
+<span id="cb472-4"><a href="TTR.html#cb472-4" tabindex="-1"></a><span class="fu">setDefaults</span>(barChart, <span class="at">TA =</span> <span class="cn">NULL</span>)     <span class="co"># 修复函数名拼写错误</span></span>
+<span id="cb472-5"><a href="TTR.html#cb472-5" tabindex="-1"></a><span class="co"># candleChart已被弃用，使用chartSeries替代</span></span>
+<span id="cb472-6"><a href="TTR.html#cb472-6" tabindex="-1"></a></span>
+<span id="cb472-7"><a href="TTR.html#cb472-7" tabindex="-1"></a><span class="co"># 添加成交量和布林带作为默认技术指标</span></span>
+<span id="cb472-8"><a href="TTR.html#cb472-8" tabindex="-1"></a><span class="co"># 使用expression()替代substitute()</span></span>
+<span id="cb472-9"><a href="TTR.html#cb472-9" tabindex="-1"></a><span class="fu">setDefaults</span>(chartSeries, <span class="at">TA =</span> <span class="fu">expression</span>(<span class="fu">c</span>(<span class="fu">addVo</span>(), <span class="fu">addBBands</span>())))</span></code></pre></div>
 </div>
 <div id="添加自定义指标" class="section level3 hasAnchor" number="4.6.2">
 <h3><span class="header-section-number">4.6.2</span> 添加自定义指标<a href="#%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E6%A0%87" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>addTA () 函数是 quantmod 包中最灵活的指标添加工具，它不仅支持 TTR 包中预定义的所有指标，还能无缝集成用户自定义的指标函数。以 KDJ 指标为例，通过 eTTR::KDJ (AAPL) 计算得到 K、D、J 三条线后，可以使用 addTA () 分别将它们添加到图表中，并自定义颜色和线型。这种方式特别适合需要同时观察多个指标的场景，例如在判断超买超卖状态时，同时显示 KDJ 的三条线能提供更全面的信号验证。此外，addTA () 函数的 on 参数可用于指定指标显示位置，on=1 表示叠加在主图上，on=NA 则创建新的子图，极大增强了图表的可定制性。</p>
-<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="TTR.html#cb474-1" tabindex="-1"></a>kdj <span class="ot">&lt;-</span> eTTR<span class="sc">::</span><span class="fu">KDJ</span>(AAPL)</span>
-<span id="cb474-2"><a href="TTR.html#cb474-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>, <span class="at">name =</span> <span class="st">&quot;AAPL Stock with KDJ&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="TTR.html#cb473-1" tabindex="-1"></a>kdj <span class="ot">&lt;-</span> eTTR<span class="sc">::</span><span class="fu">KDJ</span>(AAPL)</span>
+<span id="cb473-2"><a href="TTR.html#cb473-2" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>, <span class="at">name =</span> <span class="st">&quot;AAPL Stock with KDJ&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/defi-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="TTR.html#cb475-1" tabindex="-1"></a><span class="co"># 计算KDJ指标（使用默认列名High, Low, Close）</span></span>
-<span id="cb475-2"><a href="TTR.html#cb475-2" tabindex="-1"></a><span class="fu">addTA</span>(kdj<span class="sc">$</span>K, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;K&quot;</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="TTR.html#cb474-1" tabindex="-1"></a><span class="co"># 计算KDJ指标（使用默认列名High, Low, Close）</span></span>
+<span id="cb474-2"><a href="TTR.html#cb474-2" tabindex="-1"></a><span class="fu">addTA</span>(kdj<span class="sc">$</span>K, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;K&quot;</span>)  </span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/defi-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="TTR.html#cb476-1" tabindex="-1"></a><span class="fu">addTA</span>(kdj<span class="sc">$</span>D, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;D&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="TTR.html#cb475-1" tabindex="-1"></a><span class="fu">addTA</span>(kdj<span class="sc">$</span>D, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;D&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/defi-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="TTR.html#cb477-1" tabindex="-1"></a><span class="fu">addTA</span>(kdj<span class="sc">$</span>J, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;J&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="TTR.html#cb476-1" tabindex="-1"></a><span class="fu">addTA</span>(kdj<span class="sc">$</span>J, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">legend =</span> <span class="st">&quot;J&quot;</span>) </span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/defi-4.png" width="90%" /></p>
 </div>
 <div id="创建新指标" class="section level3 hasAnchor" number="4.6.3">
 <h3><span class="header-section-number">4.6.3</span> 创建新指标<a href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E6%8C%87%E6%A0%87" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>对于需要反复使用的复杂指标组合，newTA () 函数提供了高效的封装解决方案。通过将指标计算函数及其参数封装为新的函数，可以在不同图表中快速调用。例如，使用 newTA (EMA, Cl, on=1, col=7) 可以创建一个专门绘制收盘价 EMA 的函数 newEMA ()，后续只需调用该函数即可快速添加 EMA 指标，无需重复输入参数。这种方式不仅提高了代码的复用性，还能确保在不同图表中使用相同的指标参数，增强分析结果的一致性。此外，新创建的指标函数支持参数重载，例如 newEMA (on=NA, col=5) 可以临时修改显示位置和颜色，满足特殊分析需求。</p>
-<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="TTR.html#cb478-1" tabindex="-1"></a><span class="co"># 创建自定义RSI函数</span></span>
-<span id="cb478-2"><a href="TTR.html#cb478-2" tabindex="-1"></a><span class="fu">library</span>(quantmod)</span>
-<span id="cb478-3"><a href="TTR.html#cb478-3" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="TTR.html#cb477-1" tabindex="-1"></a><span class="co"># 创建自定义RSI函数</span></span>
+<span id="cb477-2"><a href="TTR.html#cb477-2" tabindex="-1"></a><span class="fu">library</span>(quantmod)</span>
+<span id="cb477-3"><a href="TTR.html#cb477-3" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
-<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="TTR.html#cb480-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="TTR.html#cb479-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/newta-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="TTR.html#cb481-1" tabindex="-1"></a><span class="fu">addTA</span>(<span class="fu">EMA</span>(<span class="fu">Cl</span>(AAPL)), <span class="at">on=</span><span class="dv">1</span>, <span class="at">col=</span><span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="TTR.html#cb480-1" tabindex="-1"></a><span class="fu">addTA</span>(<span class="fu">EMA</span>(<span class="fu">Cl</span>(AAPL)), <span class="at">on=</span><span class="dv">1</span>, <span class="at">col=</span><span class="dv">6</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/newta-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="TTR.html#cb482-1" tabindex="-1"></a><span class="fu">addTA</span>(<span class="fu">OpCl</span>(AAPL), <span class="at">col=</span><span class="dv">4</span>, <span class="at">type=</span><span class="st">&#39;b&#39;</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="TTR.html#cb481-1" tabindex="-1"></a><span class="fu">addTA</span>(<span class="fu">OpCl</span>(AAPL), <span class="at">col=</span><span class="dv">4</span>, <span class="at">type=</span><span class="st">&#39;b&#39;</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/newta-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="TTR.html#cb483-1" tabindex="-1"></a><span class="co"># create new EMA TA function</span></span>
-<span id="cb483-2"><a href="TTR.html#cb483-2" tabindex="-1"></a>newEMA <span class="ot">&lt;-</span> <span class="fu">newTA</span>(EMA, Cl, <span class="at">on=</span><span class="dv">1</span>, <span class="at">col=</span><span class="dv">7</span>)</span>
-<span id="cb483-3"><a href="TTR.html#cb483-3" tabindex="-1"></a><span class="fu">newEMA</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="TTR.html#cb482-1" tabindex="-1"></a><span class="co"># create new EMA TA function</span></span>
+<span id="cb482-2"><a href="TTR.html#cb482-2" tabindex="-1"></a>newEMA <span class="ot">&lt;-</span> <span class="fu">newTA</span>(EMA, Cl, <span class="at">on=</span><span class="dv">1</span>, <span class="at">col=</span><span class="dv">7</span>)</span>
+<span id="cb482-3"><a href="TTR.html#cb482-3" tabindex="-1"></a><span class="fu">newEMA</span>()</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/newta-4.png" width="90%" /></p>
-<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="TTR.html#cb484-1" tabindex="-1"></a><span class="fu">newEMA</span>(<span class="at">on=</span><span class="cn">NA</span>, <span class="at">col=</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="TTR.html#cb483-1" tabindex="-1"></a><span class="fu">newEMA</span>(<span class="at">on=</span><span class="cn">NA</span>, <span class="at">col=</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/newta-5.png" width="90%" /></p>
 </div>
 <div id="查看已添加的指标" class="section level3 hasAnchor" number="4.6.4">
 <h3><span class="header-section-number">4.6.4</span> 查看已添加的指标<a href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%8C%87%E6%A0%87" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>在管理复杂图表时，listTA () 函数是不可或缺的工具，它能清晰列出当前图表中所有已添加的技术指标。这在需要调试或优化图表时尤为有用，通过查看指标列表，可以快速定位重复添加的指标或参数设置错误。例如，在创建包含多种指标的综合图表后，使用 listTA () 可以检查是否存在同类指标的冗余叠加，从而简化图表显示，提高分析效率。这种功能在构建多指标组合策略时特别有价值，能够帮助交易者保持图表的清晰度和信号的可靠性。</p>
-<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="TTR.html#cb485-1" tabindex="-1"></a><span class="fu">listTA</span>()  <span class="co"># 返回当前图表的所有指标列表</span></span></code></pre></div>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="TTR.html#cb484-1" tabindex="-1"></a><span class="fu">listTA</span>()  <span class="co"># 返回当前图表的所有指标列表</span></span></code></pre></div>
 </div>
 <div id="构建综合分析图表" class="section level3 hasAnchor" number="4.6.5">
 <h3><span class="header-section-number">4.6.5</span> 构建综合分析图表<a href="#%E6%9E%84%E5%BB%BA%E7%BB%BC%E5%90%88%E5%88%86%E6%9E%90%E5%9B%BE%E8%A1%A8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>综合运用上述辅助函数，可以构建功能强大的多指标分析图表。例如，在分析 AAPL 股票时，可以先使用 chartSeries 设置基本图表，然后依次添加趋势指标（如 EMA、SAR）、震荡指标（如 RSI、MACD）、波动率指标（如 BBands）和成交量指标（如 addVo）。这种多维度的指标组合能够从不同角度揭示市场信息：趋势指标帮助识别主方向，震荡指标提供超买超卖信号，波动率指标衡量市场不确定性，成交量指标验证价格变动的资金支持。通过合理布局这些指标，交易者可以获得更全面的市场视角，做出更明智的交易决策。</p>
-<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="TTR.html#cb486-1" tabindex="-1"></a><span class="co"># 创建一个包含多种指标的综合图表</span></span>
-<span id="cb486-2"><a href="TTR.html#cb486-2" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="TTR.html#cb485-1" tabindex="-1"></a><span class="co"># 创建一个包含多种指标的综合图表</span></span>
+<span id="cb485-2"><a href="TTR.html#cb485-2" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
-<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="TTR.html#cb488-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="TTR.html#cb487-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>, <span class="at">theme =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/comprehensive-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="TTR.html#cb489-1" tabindex="-1"></a><span class="co"># 添加趋势指标</span></span>
-<span id="cb489-2"><a href="TTR.html#cb489-2" tabindex="-1"></a><span class="fu">addEMA</span>()  <span class="co"># 短期趋势</span></span></code></pre></div>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="TTR.html#cb488-1" tabindex="-1"></a><span class="co"># 添加趋势指标</span></span>
+<span id="cb488-2"><a href="TTR.html#cb488-2" tabindex="-1"></a><span class="fu">addEMA</span>()  <span class="co"># 短期趋势</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/comprehensive-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="TTR.html#cb490-1" tabindex="-1"></a><span class="fu">addEMA</span>()  <span class="co"># 中期趋势</span></span></code></pre></div>
+<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="TTR.html#cb489-1" tabindex="-1"></a><span class="fu">addEMA</span>()  <span class="co"># 中期趋势</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/comprehensive-3.png" width="90%" /></p>
-<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="TTR.html#cb491-1" tabindex="-1"></a><span class="fu">addSAR</span>()  <span class="co"># 止损转向点</span></span></code></pre></div>
+<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="TTR.html#cb490-1" tabindex="-1"></a><span class="fu">addSAR</span>()  <span class="co"># 止损转向点</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/comprehensive-4.png" width="90%" /></p>
-<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="TTR.html#cb492-1" tabindex="-1"></a><span class="co"># 添加震荡指标</span></span>
-<span id="cb492-2"><a href="TTR.html#cb492-2" tabindex="-1"></a><span class="fu">addRSI</span>()  <span class="co"># 超买超卖判断</span></span></code></pre></div>
+<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="TTR.html#cb491-1" tabindex="-1"></a><span class="co"># 添加震荡指标</span></span>
+<span id="cb491-2"><a href="TTR.html#cb491-2" tabindex="-1"></a><span class="fu">addRSI</span>()  <span class="co"># 超买超卖判断</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/comprehensive-5.png" width="90%" /></p>
-<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="TTR.html#cb493-1" tabindex="-1"></a><span class="fu">addMACD</span>()  <span class="co"># 动量变化分析</span></span></code></pre></div>
+<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="TTR.html#cb492-1" tabindex="-1"></a><span class="fu">addMACD</span>()  <span class="co"># 动量变化分析</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/comprehensive-6.png" width="90%" /></p>
-<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="TTR.html#cb494-1" tabindex="-1"></a><span class="co"># 添加波动率和成交量指标</span></span>
-<span id="cb494-2"><a href="TTR.html#cb494-2" tabindex="-1"></a><span class="fu">addBBands</span>()  <span class="co"># 波动率分析</span></span></code></pre></div>
+<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="TTR.html#cb493-1" tabindex="-1"></a><span class="co"># 添加波动率和成交量指标</span></span>
+<span id="cb493-2"><a href="TTR.html#cb493-2" tabindex="-1"></a><span class="fu">addBBands</span>()  <span class="co"># 波动率分析</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/comprehensive-7.png" width="90%" /></p>
-<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="TTR.html#cb495-1" tabindex="-1"></a><span class="fu">addVo</span>()  <span class="co"># 成交量分析（on=-1表示在主图下方添加面板）</span></span></code></pre></div>
+<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="TTR.html#cb494-1" tabindex="-1"></a><span class="fu">addVo</span>()  <span class="co"># 成交量分析（on=-1表示在主图下方添加面板）</span></span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/comprehensive-8.png" width="90%" /></p>
 
 </div>
