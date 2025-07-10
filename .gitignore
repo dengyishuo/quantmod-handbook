@@ -1,6 +1,4 @@
-_book/
-_bookdown_files/
-bookdown_files/
+quanttmod_files/
 .RData
 .Rhistory
 .Rproj.user

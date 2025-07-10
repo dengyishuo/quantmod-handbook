@@ -4,11 +4,11 @@ bookdown::gitbook:
     toc:
       collapse: none
       before: |
-        <li><a href="./">中文书示例</a></li>
+        <li><a href="./">quantmod：从数据获取到策略实战全景指南</a></li>
       after: |
-        <li><a href="https://bookdown.org" target="blank">本书由 bookdown 强力驱动</a></li>
+        <li><a href="https://gewutang.org" target="blank">本书由邓一硕出品</a></li>
     download: [pdf, epub]
-    edit: https://github.com/yihui/bookdown-chinese/edit/master/%s
+    edit: https://github.com/dengyishuo/quantmod-handbook/%s
     sharing:
       github: yes
       facebook: no
