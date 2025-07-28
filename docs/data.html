@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第 1 章 数据获取指南 | quantmod：金融分析手册</title>
+  <title>第 1 章 数据获取指南 | quantmod:金融分析手册</title>
   <meta name="description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第 1 章 数据获取指南 | quantmod：金融分析手册" />
+  <meta property="og:title" content="第 1 章 数据获取指南 | quantmod:金融分析手册" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="/images/cover.jpg" />
   <meta property="og:description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="github-repo" content="dengyihsuo/quantmod-handbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第 1 章 数据获取指南 | quantmod：金融分析手册" />
+  <meta name="twitter:title" content="第 1 章 数据获取指南 | quantmod:金融分析手册" />
   
   <meta name="twitter:description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="twitter:image" content="/images/cover.jpg" />
@@ -23,7 +23,7 @@
 <meta name="author" content="邓一硕" />
 
 
-<meta name="date" content="2025-07-10" />
+<meta name="date" content="2025-07-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -309,7 +309,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">quantmod：金融分析手册</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">quantmod:金融分析手册</a>
           </h1>
         </div>
 
@@ -414,11 +414,27 @@ div.csl-indent {
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data.html#cb16-1" tabindex="-1"></a><span class="co"># 重新加载已存在的数据</span></span>
 <span id="cb16-2"><a href="data.html#cb16-2" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>, <span class="at">reload.Symbols =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;AAPL&quot;      &quot;600941.SS&quot; &quot;BTC-USD&quot;  
-## [4] &quot;EUR/USD&quot;</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data.html#cb18-1" tabindex="-1"></a><span class="co"># 使用自定义的股票代码映射</span></span>
-<span id="cb18-2"><a href="data.html#cb18-2" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">ChinaMobile=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;600941.SS&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
-<span id="cb18-3"><a href="data.html#cb18-3" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;ChinaMobile&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Failed to open
+## &#39;https://query2.finance.yahoo.com/v8/finance/chart/GSPC?period1=1167609600&amp;period2=1753660800&amp;interval=1d&#39;:
+## The requested URL returned error: 404</code></pre>
+<pre><code>## Warning: Unable to import &quot;GSPC&quot;.
+## cannot open the connection</code></pre>
+<pre><code>## Warning: Failed to open
+## &#39;https://query2.finance.yahoo.com/v8/finance/chart/GDAXI?period1=1167609600&amp;period2=1753660800&amp;interval=1d&#39;:
+## The requested URL returned error: 404</code></pre>
+<pre><code>## Warning: Unable to import &quot;GDAXI&quot;.
+## cannot open the connection</code></pre>
+<pre><code>## Warning: BTC-USD contains missing values.
+## Some functions will not work if objects
+## contain missing values in the middle of the
+## series. Consider using na.omit(),
+## na.approx(), na.fill(), etc to remove or
+## replace them.</code></pre>
+<pre><code>## [1] &quot;AAPL&quot;      &quot;600941.SS&quot; &quot;EEM&quot;      
+## [4] &quot;CRSOX&quot;     &quot;BTC-USD&quot;   &quot;EUR/USD&quot;</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data.html#cb23-1" tabindex="-1"></a><span class="co"># 使用自定义的股票代码映射</span></span>
+<span id="cb23-2"><a href="data.html#cb23-2" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">ChinaMobile=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;600941.SS&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
+<span id="cb23-3"><a href="data.html#cb23-3" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;ChinaMobile&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;ChinaMobile&quot;</code></pre>
 <p>通过以上方法，可以根据实际需求灵活获取各种金融数据，为后续的数据分析和建模工作做好准备。quantmod 包还提供了丰富的函数用于数据处理、可视化和统计分析，结合这些功能可以构建完整的金融数据分析工作流。</p>
 <div id="股票日交易数据获取指南" class="section level2 hasAnchor" number="1.1">
@@ -427,57 +443,57 @@ div.csl-indent {
 <h3><span class="header-section-number">1.1.1</span> 中国市场数据获取<a href="#%E4%B8%AD%E5%9B%BD%E5%B8%82%E5%9C%BA%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>在中国市场的金融数据获取中，quantmod 包的 getSymbols 函数通过特定代码格式实现数据源指定与数据抓取。中国股票市场以上海证券交易所（上交所）和深圳证券交易所（深交所）为核心，对应的数据后缀规则为：上交所股票需添加 .ss 后缀（如中国移动代码 600941.SS ），深交所股票则使用 .sz 后缀（如平安银行代码 000001.sz ）。这种标准化的代码格式不仅确保了数据接口的一致性，还能通过统一的函数调用实现跨市场数据获取，为后续的量化分析与策略开发提供规范化的数据基础。</p>
 <p>以下是获取中国市场不同股票和指数数据的示例代码：</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data.html#cb20-1" tabindex="-1"></a><span class="co"># 加载quantmod包</span></span>
-<span id="cb20-2"><a href="data.html#cb20-2" tabindex="-1"></a><span class="fu">library</span>(quantmod)</span>
-<span id="cb20-3"><a href="data.html#cb20-3" tabindex="-1"></a><span class="co"># 获取中国移动通讯公司股票数据（上交所代码：600941）</span></span>
-<span id="cb20-4"><a href="data.html#cb20-4" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;600941.SS&quot;</span>)</span>
-<span id="cb20-5"><a href="data.html#cb20-5" tabindex="-1"></a><span class="co"># 获取特定股票数据示例（代码：600635，上交所）</span></span>
-<span id="cb20-6"><a href="data.html#cb20-6" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;600635.ss&quot;</span>)</span>
-<span id="cb20-7"><a href="data.html#cb20-7" tabindex="-1"></a><span class="co"># 获取上证指数系列数据</span></span>
-<span id="cb20-8"><a href="data.html#cb20-8" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;000001.ss&quot;</span>)  <span class="co"># 上证A股指数</span></span>
-<span id="cb20-9"><a href="data.html#cb20-9" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;000002.ss&quot;</span>)  <span class="co"># 上证A股综合指数</span></span>
-<span id="cb20-10"><a href="data.html#cb20-10" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;000003.ss&quot;</span>)  <span class="co"># 上证B股指数</span></span>
-<span id="cb20-11"><a href="data.html#cb20-11" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;000008.ss&quot;</span>)  <span class="co"># 上证综合指数</span></span>
-<span id="cb20-12"><a href="data.html#cb20-12" tabindex="-1"></a><span class="co"># 获取沪深300指数数据</span></span>
-<span id="cb20-13"><a href="data.html#cb20-13" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;000300.ss&quot;</span>)</span>
-<span id="cb20-14"><a href="data.html#cb20-14" tabindex="-1"></a><span class="co"># 获取深圳证券交易所指数数据</span></span>
-<span id="cb20-15"><a href="data.html#cb20-15" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;399001.sz&quot;</span>)  <span class="co"># 深圳成指</span></span>
-<span id="cb20-16"><a href="data.html#cb20-16" tabindex="-1"></a><span class="co"># 获取特定公司股票数据（三一重工，上交所代码：600030）</span></span>
-<span id="cb20-17"><a href="data.html#cb20-17" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;600030.ss&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data.html#cb25-1" tabindex="-1"></a><span class="co"># 加载quantmod包</span></span>
+<span id="cb25-2"><a href="data.html#cb25-2" tabindex="-1"></a><span class="fu">library</span>(quantmod)</span>
+<span id="cb25-3"><a href="data.html#cb25-3" tabindex="-1"></a><span class="co"># 获取中国移动通讯公司股票数据（上交所代码：600941）</span></span>
+<span id="cb25-4"><a href="data.html#cb25-4" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;600941.SS&quot;</span>)</span>
+<span id="cb25-5"><a href="data.html#cb25-5" tabindex="-1"></a><span class="co"># 获取特定股票数据示例（代码：600635，上交所）</span></span>
+<span id="cb25-6"><a href="data.html#cb25-6" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;600635.ss&quot;</span>)</span>
+<span id="cb25-7"><a href="data.html#cb25-7" tabindex="-1"></a><span class="co"># 获取上证指数系列数据</span></span>
+<span id="cb25-8"><a href="data.html#cb25-8" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;000001.ss&quot;</span>)  <span class="co"># 上证A股指数</span></span>
+<span id="cb25-9"><a href="data.html#cb25-9" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;000002.ss&quot;</span>)  <span class="co"># 上证A股综合指数</span></span>
+<span id="cb25-10"><a href="data.html#cb25-10" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;000003.ss&quot;</span>)  <span class="co"># 上证B股指数</span></span>
+<span id="cb25-11"><a href="data.html#cb25-11" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;000008.ss&quot;</span>)  <span class="co"># 上证综合指数</span></span>
+<span id="cb25-12"><a href="data.html#cb25-12" tabindex="-1"></a><span class="co"># 获取沪深300指数数据</span></span>
+<span id="cb25-13"><a href="data.html#cb25-13" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;000300.ss&quot;</span>)</span>
+<span id="cb25-14"><a href="data.html#cb25-14" tabindex="-1"></a><span class="co"># 获取深圳证券交易所指数数据</span></span>
+<span id="cb25-15"><a href="data.html#cb25-15" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;399001.sz&quot;</span>)  <span class="co"># 深圳成指</span></span>
+<span id="cb25-16"><a href="data.html#cb25-16" tabindex="-1"></a><span class="co"># 获取特定公司股票数据（三一重工，上交所代码：600030）</span></span>
+<span id="cb25-17"><a href="data.html#cb25-17" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;600030.ss&quot;</span>)</span></code></pre></div>
 </div>
 <div id="获取美国市场数据" class="section level3 hasAnchor" number="1.1.2">
 <h3><span class="header-section-number">1.1.2</span> 获取美国市场数据<a href="#%E8%8E%B7%E5%8F%96%E7%BE%8E%E5%9B%BD%E5%B8%82%E5%9C%BA%E6%95%B0%E6%8D%AE" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>获取美国市场的股票数据同样使用getSymbols函数，但美国股票代码通常不需要添加后缀。以下是获取美国市场知名公司股票数据的示例代码：</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data.html#cb21-1" tabindex="-1"></a><span class="co"># 获取苹果公司股票数据（纳斯达克代码：AAPL）</span></span>
-<span id="cb21-2"><a href="data.html#cb21-2" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span>
-<span id="cb21-3"><a href="data.html#cb21-3" tabindex="-1"></a><span class="co"># 获取新东方教育科技集团股票数据（纳斯达克代码：EDU）</span></span>
-<span id="cb21-4"><a href="data.html#cb21-4" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;EDU&quot;</span>)</span>
-<span id="cb21-5"><a href="data.html#cb21-5" tabindex="-1"></a><span class="co"># 获取比特币数据（代码为：BTC-USD）</span></span>
-<span id="cb21-6"><a href="data.html#cb21-6" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;BTC-USD&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data.html#cb26-1" tabindex="-1"></a><span class="co"># 获取苹果公司股票数据（纳斯达克代码：AAPL）</span></span>
+<span id="cb26-2"><a href="data.html#cb26-2" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span>
+<span id="cb26-3"><a href="data.html#cb26-3" tabindex="-1"></a><span class="co"># 获取新东方教育科技集团股票数据（纳斯达克代码：EDU）</span></span>
+<span id="cb26-4"><a href="data.html#cb26-4" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;EDU&quot;</span>)</span>
+<span id="cb26-5"><a href="data.html#cb26-5" tabindex="-1"></a><span class="co"># 获取比特币数据（代码为：BTC-USD）</span></span>
+<span id="cb26-6"><a href="data.html#cb26-6" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;BTC-USD&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="交易数据的管理与重命名" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> 交易数据的管理与重命名<a href="#%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE%E7%9A%84%E7%AE%A1%E7%90%86%E4%B8%8E%E9%87%8D%E5%91%BD%E5%90%8D" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>在实际应用中，直接使用股票代码获取的数据对象名往往不易记忆和使用。我们可以通过 setSymbolLookup 函数建立自定义代码映射，为数据对象设置更具描述性的名称。</p>
 <p>以下是数据重命名的示例代码：</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data.html#cb22-1" tabindex="-1"></a><span class="co"># 为上证A股综合指数设置自定义名称&quot;A.Share.index&quot;</span></span>
-<span id="cb22-2"><a href="data.html#cb22-2" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">A.Share.index=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;000002.ss&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
-<span id="cb22-3"><a href="data.html#cb22-3" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;A.Share.index&quot;</span>)</span>
-<span id="cb22-4"><a href="data.html#cb22-4" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="data.html#cb22-5" tabindex="-1"></a><span class="co"># 为上证综合指数设置自定义名称&quot;Conglomerate.index&quot;</span></span>
-<span id="cb22-6"><a href="data.html#cb22-6" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">Conglomerate.index=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;000008.ss&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
-<span id="cb22-7"><a href="data.html#cb22-7" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;Conglomerate.index&quot;</span>)</span>
-<span id="cb22-8"><a href="data.html#cb22-8" tabindex="-1"></a><span class="co"># 为沪深300指数设置自定义名称&quot;CSI300&quot;</span></span>
-<span id="cb22-9"><a href="data.html#cb22-9" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">CSI300=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;000300.ss&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
-<span id="cb22-10"><a href="data.html#cb22-10" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;CSI300&quot;</span>)</span>
-<span id="cb22-11"><a href="data.html#cb22-11" tabindex="-1"></a><span class="co"># 为深圳成指设置自定义名称&quot;component.index&quot;，并自动赋值</span></span>
-<span id="cb22-12"><a href="data.html#cb22-12" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">component.index=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;399001.sz&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
-<span id="cb22-13"><a href="data.html#cb22-13" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;component.index&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb22-14"><a href="data.html#cb22-14" tabindex="-1"></a><span class="co"># 为三一重工股票设置自定义名称&quot;SANY.HEAVY&quot;</span></span>
-<span id="cb22-15"><a href="data.html#cb22-15" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">SANY.HEAVY=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;600030.ss&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
-<span id="cb22-16"><a href="data.html#cb22-16" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;SANY.HEAVY&quot;</span>)</span>
-<span id="cb22-17"><a href="data.html#cb22-17" tabindex="-1"></a><span class="co"># 查看数据前几行</span></span>
-<span id="cb22-18"><a href="data.html#cb22-18" tabindex="-1"></a><span class="fu">head</span>(COMPONENT.INDEX)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data.html#cb27-1" tabindex="-1"></a><span class="co"># 为上证A股综合指数设置自定义名称&quot;A.Share.index&quot;</span></span>
+<span id="cb27-2"><a href="data.html#cb27-2" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">A.Share.index=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;000002.ss&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
+<span id="cb27-3"><a href="data.html#cb27-3" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;A.Share.index&quot;</span>)</span>
+<span id="cb27-4"><a href="data.html#cb27-4" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="data.html#cb27-5" tabindex="-1"></a><span class="co"># 为上证综合指数设置自定义名称&quot;Conglomerate.index&quot;</span></span>
+<span id="cb27-6"><a href="data.html#cb27-6" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">Conglomerate.index=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;000008.ss&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
+<span id="cb27-7"><a href="data.html#cb27-7" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;Conglomerate.index&quot;</span>)</span>
+<span id="cb27-8"><a href="data.html#cb27-8" tabindex="-1"></a><span class="co"># 为沪深300指数设置自定义名称&quot;CSI300&quot;</span></span>
+<span id="cb27-9"><a href="data.html#cb27-9" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">CSI300=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;000300.ss&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
+<span id="cb27-10"><a href="data.html#cb27-10" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;CSI300&quot;</span>)</span>
+<span id="cb27-11"><a href="data.html#cb27-11" tabindex="-1"></a><span class="co"># 为深圳成指设置自定义名称&quot;component.index&quot;，并自动赋值</span></span>
+<span id="cb27-12"><a href="data.html#cb27-12" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">component.index=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;399001.sz&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
+<span id="cb27-13"><a href="data.html#cb27-13" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;component.index&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb27-14"><a href="data.html#cb27-14" tabindex="-1"></a><span class="co"># 为三一重工股票设置自定义名称&quot;SANY.HEAVY&quot;</span></span>
+<span id="cb27-15"><a href="data.html#cb27-15" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">SANY.HEAVY=</span><span class="fu">list</span>(<span class="at">name=</span><span class="st">&quot;600030.ss&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>))</span>
+<span id="cb27-16"><a href="data.html#cb27-16" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;SANY.HEAVY&quot;</span>)</span>
+<span id="cb27-17"><a href="data.html#cb27-17" tabindex="-1"></a><span class="co"># 查看数据前几行</span></span>
+<span id="cb27-18"><a href="data.html#cb27-18" tabindex="-1"></a><span class="fu">head</span>(COMPONENT.INDEX)</span></code></pre></div>
 <p>通过上述方法，我们可以更加高效地获取和管理股票交易数据，为后续的金融分析工作打下坚实基础。无论是中国市场还是美国市场的股票数据，都能通过简单的代码实现快速获取和规范命名。</p>
 </div>
 <div id="股息与拆股数据获取指南" class="section level2 hasAnchor" number="1.3">
@@ -486,11 +502,11 @@ div.csl-indent {
 <p>就股息发放而言，其会导致股价产生除息缺口（如每股派息 1 美元，股价理论上应下跌 1
 美元），若不进行调整，会使价格序列出现断层，导致收益率计算失真，必须根据派息信息对股价进行调整。</p>
 <p>通过 quantmod 包中的 getDividends 函数可直接抓取上市公司历史股息记录，代码如下：</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data.html#cb23-1" tabindex="-1"></a><span class="fu">getDividends</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data.html#cb28-1" tabindex="-1"></a><span class="fu">getDividends</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
 <p>通过 adjustOHLC 函数可对上市公司的股价进行除息调整，调整后 Open/High/Low/Close 价格会基于股息金额向下修正，确保价格序列的连续性。以苹果公司为例：</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data.html#cb24-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>, <span class="at">from=</span><span class="st">&quot;1990-01-01&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data.html#cb29-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>, <span class="at">from=</span><span class="st">&quot;1990-01-01&quot;</span>, <span class="at">src=</span><span class="st">&quot;yahoo&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data.html#cb26-1" tabindex="-1"></a><span class="fu">head</span>(AAPL)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data.html#cb31-1" tabindex="-1"></a><span class="fu">head</span>(AAPL)</span></code></pre></div>
 <pre><code>##            AAPL.Open AAPL.High AAPL.Low
 ## 1990-01-02    0.3147    0.3348   0.3125
 ## 1990-01-03    0.3393    0.3393   0.3348
@@ -512,7 +528,7 @@ div.csl-indent {
 ## 1990-01-05        0.2650
 ## 1990-01-08        0.2668
 ## 1990-01-09        0.2641</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data.html#cb28-1" tabindex="-1"></a><span class="fu">head</span>(AAPL.a <span class="ot">&lt;-</span> <span class="fu">adjustOHLC</span>(AAPL))</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="data.html#cb33-1" tabindex="-1"></a><span class="fu">head</span>(AAPL.a <span class="ot">&lt;-</span> <span class="fu">adjustOHLC</span>(AAPL))</span></code></pre></div>
 <pre><code>##            AAPL.Open AAPL.High  AAPL.Low
 ## 1990-01-02 4.321e-08 4.597e-08 4.291e-08
 ## 1990-01-03 4.658e-08 4.658e-08 4.597e-08
@@ -534,7 +550,7 @@ div.csl-indent {
 ## 1990-01-05        0.2650
 ## 1990-01-08        0.2668
 ## 1990-01-09        0.2641</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data.html#cb30-1" tabindex="-1"></a><span class="fu">head</span>(AAPL.uA <span class="ot">&lt;-</span> <span class="fu">adjustOHLC</span>(AAPL, <span class="at">use.Adjusted=</span><span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data.html#cb35-1" tabindex="-1"></a><span class="fu">head</span>(AAPL.uA <span class="ot">&lt;-</span> <span class="fu">adjustOHLC</span>(AAPL, <span class="at">use.Adjusted=</span><span class="cn">TRUE</span>))</span></code></pre></div>
 <pre><code>##            AAPL.Open AAPL.High AAPL.Low
 ## 1990-01-02    0.2475    0.2633   0.2457
 ## 1990-01-03    0.2668    0.2668   0.2633
@@ -559,7 +575,7 @@ div.csl-indent {
 <p>拆股行为（如 1 拆 2、2 拆 3）会使股价按比例下降（例如 100 美元的股票 1 拆 2 后变为 50 美元），同时股东持股数量相应增加，理论上资产总价值不变。但如果缺乏拆股数据，价格序列会出现 “断崖式下跌”，直接干扰量化分析的准确性：首先，这会误导价格趋势判断， 若某股票拆股后股价从 100 美元降至 50 美元，不结合拆股信息的 K 线分析会误判为 “暴跌”，而实际股东权益并未受损；其次，拆股导致的价格断层会扭曲技术指标计算，移动平均线、波动率、MACD 等依赖历史价格的指标可能产生虚假信号（如非市场波动导致的 “金叉” 或 “死叉”）；此外，拆股数据是复权价格计算的核心基础，缺失拆股比例将无法通过前复权（将历史价格按当前股价调整）或后复权（将当前股价按历史价格调整）还原股票的真实走势。</p>
 <p>在量化投资中，准确的价格序列是策略回测、风险评估和收益计算的基石，而 getSplits 函数正是获取上市公司拆股数据的关键工具。通过 getSplits(“AAPL”) 等调用方式，可直接获取标的股票的拆股历史（如拆股日期、拆股比例），这些数据与价格复权算法结合，能有效消除拆股对价格序列的干扰，确保技术分析信号的可靠性与策略回测结果的真实性。</p>
 <p>使用 getSplits 函数可以获取上市公司的拆股数据：</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data.html#cb32-1" tabindex="-1"></a><span class="fu">getSplits</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data.html#cb37-1" tabindex="-1"></a><span class="fu">getSplits</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
 <pre><code>##            AAPL.spl
 ## 1987-06-16   0.5000
 ## 2000-06-21   0.5000
@@ -573,14 +589,14 @@ div.csl-indent {
 <p>期权是一种赋予持有者在约定时间内以特定价格买卖标的资产权利的金融工具，兼具风险对冲与投机功能。例如投资者买入苹果股票看跌期权，可在股价下跌时锁定损失；也可通过卖出看涨期权赚取权利金。其杠杆特性还能以小资金博取股价波动收益，同时通过组合策略（如跨式期权）对冲市场不确定性。</p>
 <p>这些数据蕴含市场对标的资产的预期，如期权成交量、持仓量激增可能预示股价异动；隐含波动率可反映投资者恐慌或贪婪情绪，是量化策略中定价和风险评估的关键参数。此外，通过分析行权价分布，能判断市场对股价的支撑与压力位，为投资决策提供多维参考。</p>
 <p>利用 getOptionChain 函数可以获取上市公司的期权交易数据：</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data.html#cb34-1" tabindex="-1"></a><span class="co"># 获取苹果公司的期权交易数据</span></span>
-<span id="cb34-2"><a href="data.html#cb34-2" tabindex="-1"></a>AAPL.OPT <span class="ot">&lt;-</span> <span class="fu">getOptionChain</span>(<span class="st">&quot;AAPL&quot;</span>)</span>
-<span id="cb34-3"><a href="data.html#cb34-3" tabindex="-1"></a>AAPL.OPTS <span class="ot">&lt;-</span> <span class="fu">getOptionChain</span>(<span class="st">&quot;AAPL&quot;</span>, <span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data.html#cb39-1" tabindex="-1"></a><span class="co"># 获取苹果公司的期权交易数据</span></span>
+<span id="cb39-2"><a href="data.html#cb39-2" tabindex="-1"></a>AAPL.OPT <span class="ot">&lt;-</span> <span class="fu">getOptionChain</span>(<span class="st">&quot;AAPL&quot;</span>)</span>
+<span id="cb39-3"><a href="data.html#cb39-3" tabindex="-1"></a>AAPL.OPTS <span class="ot">&lt;-</span> <span class="fu">getOptionChain</span>(<span class="st">&quot;AAPL&quot;</span>, <span class="cn">NULL</span>)</span></code></pre></div>
 <p>与此相关的还有 options.expiry 函数和 futures.expiry 函数。options.expiry 函数可精准获取期权合约的到期日信息，对交易策略管理意义重大。通过该函数，交易者能清晰知晓期权合约的失效时间，避免因遗忘到期日导致权利金损失，同时可结合到期日分析期权时间价值衰减规律，辅助判断短期投机价值或长期对冲成本。此外，它还能帮助筛选流动性较好的合约月份，提升交易效率。futures.expiry 函数则是期货交易中的重要工具，主要用于获取期货合约的到期或交割日期。借助该函数，交易者可构建连续的期货价格序列，避免合约切换导致的数据断层，同时提前规避交割风险，尤其对不具备实物交割资格的投资者至关重要。另外，它还能为基差分析和套利策略提供支持，助力捕捉市场交易机会。</p>
 <p>看一个关于 AAPL 的实例：</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data.html#cb35-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data.html#cb40-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data.html#cb37-1" tabindex="-1"></a><span class="fu">options.expiry</span>(AAPL)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data.html#cb42-1" tabindex="-1"></a><span class="fu">options.expiry</span>(AAPL)</span></code></pre></div>
 <pre><code>##   [1]   12   32   51   75   95  114  138  158
 ##   [9]  182  202  222  246  264  283  326  346
 ##  [17]  370  389  409  433  453  478  497  515
@@ -608,8 +624,8 @@ div.csl-indent {
 ## [193] 4124 4143 4166 4186 4205 4230 4250 4269
 ## [201] 4291 4311 4330 4354 4374 4397 4416 4436
 ## [209] 4460 4480 4500 4524 4541 4564 4584 4623
-## [217] 4646</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data.html#cb39-1" tabindex="-1"></a><span class="fu">futures.expiry</span>(AAPL)</span></code></pre></div>
+## [217] 4646 4665</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data.html#cb44-1" tabindex="-1"></a><span class="fu">futures.expiry</span>(AAPL)</span></code></pre></div>
 <pre><code>##  [1]   51  114  182  246  370  433  497  558
 ##  [9]  621  684  748  809  872  935  999 1061
 ## [17] 1124 1187 1251 1312 1375 1443 1505 1561
@@ -620,7 +636,7 @@ div.csl-indent {
 ## [57] 3641 3704 3768 3830 3893 3955 4019 4080
 ## [65] 4143 4205 4269 4330 4397 4460 4524 4584
 ## [73] 4646</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="data.html#cb41-1" tabindex="-1"></a><span class="fu">print</span>(AAPL[<span class="fu">options.expiry</span>(AAPL)])</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data.html#cb46-1" tabindex="-1"></a><span class="fu">print</span>(AAPL[<span class="fu">options.expiry</span>(AAPL)])</span></code></pre></div>
 <pre><code>##            AAPL.Open AAPL.High AAPL.Low
 ## 2007-01-19     3.165     3.202    3.147
 ## 2007-02-16     3.045     3.050    3.024
@@ -633,7 +649,6 @@ div.csl-indent {
 ## 2007-09-21     5.041     5.166    5.011
 ## 2007-10-19     6.223     6.237    6.071
 ##        ...                             
-## 2024-08-16   223.920   226.830  223.650
 ## 2024-09-20   229.970   233.090  227.620
 ## 2024-10-18   236.180   236.180  234.010
 ## 2024-11-15   226.400   226.920  224.270
@@ -643,6 +658,7 @@ div.csl-indent {
 ## 2025-03-21   211.560   218.840  211.280
 ## 2025-05-16   212.360   212.570  209.770
 ## 2025-06-20   198.240   201.700  196.860
+## 2025-07-18   210.870   211.790  209.700
 ##            AAPL.Close AAPL.Volume
 ## 2007-01-19      3.161   1.364e+09
 ## 2007-02-16      3.030   3.999e+08
@@ -655,7 +671,6 @@ div.csl-indent {
 ## 2007-09-21      5.148   1.139e+09
 ## 2007-10-19      6.086   1.292e+09
 ##        ...                       
-## 2024-08-16    226.050   4.434e+07
 ## 2024-09-20    228.200   3.187e+08
 ## 2024-10-18    235.000   4.643e+07
 ## 2024-11-15    225.000   4.792e+07
@@ -665,6 +680,7 @@ div.csl-indent {
 ## 2025-03-21    218.270   9.413e+07
 ## 2025-05-16    211.260   5.474e+07
 ## 2025-06-20    201.000   9.681e+07
+## 2025-07-18    211.180   4.897e+07
 ##            AAPL.Adjusted
 ## 2007-01-19         2.660
 ## 2007-02-16         2.549
@@ -677,7 +693,6 @@ div.csl-indent {
 ## 2007-09-21         4.332
 ## 2007-10-19         5.122
 ##        ...              
-## 2024-08-16       225.258
 ## 2024-09-20       227.401
 ## 2024-10-18       234.177
 ## 2024-11-15       224.459
@@ -686,60 +701,61 @@ div.csl-indent {
 ## 2025-02-21       245.228
 ## 2025-03-21       217.984
 ## 2025-05-16       211.260
-## 2025-06-20       201.000</code></pre>
+## 2025-06-20       201.000
+## 2025-07-18       211.180</code></pre>
 </div>
 <div id="汇市数据获取指南" class="section level2 hasAnchor" number="1.5">
 <h2><span class="header-section-number">1.5</span> 汇市数据获取指南<a href="#%E6%B1%87%E5%B8%82%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E6%8C%87%E5%8D%97" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>getFX 函数可以帮助我们从<a href="http://www.onada.com">oanda</a>获取汇率数据。</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="data.html#cb43-1" tabindex="-1"></a><span class="fu">getFX</span>(<span class="st">&quot;USD/JPY&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data.html#cb48-1" tabindex="-1"></a><span class="fu">getFX</span>(<span class="st">&quot;USD/JPY&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;USD/JPY&quot;</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="data.html#cb45-1" tabindex="-1"></a><span class="fu">head</span>(USDJPY)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data.html#cb50-1" tabindex="-1"></a><span class="fu">head</span>(USDJPY)</span></code></pre></div>
 <pre><code>##            USD.JPY
-## 2025-01-12   157.7
-## 2025-01-13   157.5
-## 2025-01-14   157.8
-## 2025-01-15   157.0
-## 2025-01-16   155.7
-## 2025-01-17   155.8</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data.html#cb47-1" tabindex="-1"></a><span class="fu">getFX</span>(<span class="st">&quot;EUR/USD&quot;</span>,<span class="at">from=</span><span class="st">&quot;2005-01-01&quot;</span>)</span></code></pre></div>
+## 2025-01-30   154.4
+## 2025-01-31   154.7
+## 2025-02-01   155.2
+## 2025-02-02   155.2
+## 2025-02-03   155.1
+## 2025-02-04   154.9</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data.html#cb52-1" tabindex="-1"></a><span class="fu">getFX</span>(<span class="st">&quot;EUR/USD&quot;</span>,<span class="at">from=</span><span class="st">&quot;2005-01-01&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in doTryCatch(return(expr), name,
 ## parentenv, handler): Oanda only provides
 ## historical data for the past 180 days.
 ## Symbol: EUR/USD</code></pre>
 <pre><code>## [1] &quot;EUR/USD&quot;</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data.html#cb50-1" tabindex="-1"></a><span class="fu">head</span>(EURUSD)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data.html#cb55-1" tabindex="-1"></a><span class="fu">head</span>(EURUSD)</span></code></pre></div>
 <pre><code>##            EUR.USD
-## 2025-01-11   1.024
-## 2025-01-12   1.024
-## 2025-01-13   1.022
-## 2025-01-14   1.027
-## 2025-01-15   1.030
-## 2025-01-16   1.029</code></pre>
+## 2025-01-29   1.042
+## 2025-01-30   1.042
+## 2025-01-31   1.038
+## 2025-02-01   1.036
+## 2025-02-02   1.035
+## 2025-02-03   1.026</code></pre>
 <p>也可以使用下面的方式获取汇率数据。</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data.html#cb52-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;USD/EUR&quot;</span>,<span class="at">src=</span><span class="st">&quot;oanda&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data.html#cb57-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;USD/EUR&quot;</span>,<span class="at">src=</span><span class="st">&quot;oanda&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;USD/EUR&quot;</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="data.html#cb54-1" tabindex="-1"></a><span class="fu">head</span>(USDEUR)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="data.html#cb59-1" tabindex="-1"></a><span class="fu">head</span>(USDEUR)</span></code></pre></div>
 <pre><code>##            USD.EUR
-## 2025-01-12  0.9762
-## 2025-01-13  0.9785
-## 2025-01-14  0.9738
-## 2025-01-15  0.9708
-## 2025-01-16  0.9716
-## 2025-01-17  0.9717</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="data.html#cb56-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;USD/EUR&quot;</span>,<span class="at">src=</span><span class="st">&quot;oanda&quot;</span>,<span class="at">from=</span><span class="st">&quot;2005-01-01&quot;</span>)</span></code></pre></div>
+## 2025-01-30  0.9601
+## 2025-01-31  0.9631
+## 2025-02-01  0.9652
+## 2025-02-02  0.9660
+## 2025-02-03  0.9742
+## 2025-02-04  0.9668</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data.html#cb61-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;USD/EUR&quot;</span>,<span class="at">src=</span><span class="st">&quot;oanda&quot;</span>,<span class="at">from=</span><span class="st">&quot;2005-01-01&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in doTryCatch(return(expr), name,
 ## parentenv, handler): Oanda only provides
 ## historical data for the past 180 days.
 ## Symbol: USD/EUR</code></pre>
 <pre><code>## [1] &quot;USD/EUR&quot;</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="data.html#cb59-1" tabindex="-1"></a><span class="fu">head</span>(USDEUR)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="data.html#cb64-1" tabindex="-1"></a><span class="fu">head</span>(USDEUR)</span></code></pre></div>
 <pre><code>##            USD.EUR
-## 2025-01-11  0.9762
-## 2025-01-12  0.9762
-## 2025-01-13  0.9785
-## 2025-01-14  0.9738
-## 2025-01-15  0.9708
-## 2025-01-16  0.9716</code></pre>
+## 2025-01-29  0.9598
+## 2025-01-30  0.9601
+## 2025-01-31  0.9631
+## 2025-02-01  0.9652
+## 2025-02-02  0.9660
+## 2025-02-03  0.9742</code></pre>
 </div>
 <div id="贵重金属数据获取指南" class="section level2 hasAnchor" number="1.6">
 <h2><span class="header-section-number">1.6</span> 贵重金属数据获取指南<a href="#%E8%B4%B5%E9%87%8D%E9%87%91%E5%B1%9E%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E6%8C%87%E5%8D%97" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -747,83 +763,83 @@ div.csl-indent {
 <div id="黄金价格获取" class="section level3 hasAnchor" number="1.6.1">
 <h3><span class="header-section-number">1.6.1</span> 黄金价格获取<a href="#%E9%BB%84%E9%87%91%E4%BB%B7%E6%A0%BC%E8%8E%B7%E5%8F%96" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>黄金通常以”XAU/USD”（黄金兑美元）表示：</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data.html#cb61-1" tabindex="-1"></a><span class="co"># 方法1：自动赋值（推荐）</span></span>
-<span id="cb61-2"><a href="data.html#cb61-2" tabindex="-1"></a><span class="fu">getFX</span>(<span class="st">&quot;XAU/USD&quot;</span>, <span class="at">from =</span> <span class="st">&quot;2005-01-01&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data.html#cb66-1" tabindex="-1"></a><span class="co"># 方法1：自动赋值（推荐）</span></span>
+<span id="cb66-2"><a href="data.html#cb66-2" tabindex="-1"></a><span class="fu">getFX</span>(<span class="st">&quot;XAU/USD&quot;</span>, <span class="at">from =</span> <span class="st">&quot;2005-01-01&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Warning in doTryCatch(return(expr), name,
 ## parentenv, handler): Oanda only provides
 ## historical data for the past 180 days.
 ## Symbol: XAU/USD</code></pre>
 <pre><code>## [1] &quot;XAU/USD&quot;</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="data.html#cb64-1" tabindex="-1"></a><span class="fu">head</span>(XAUUSD)  <span class="co"># 查看黄金数据</span></span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="data.html#cb69-1" tabindex="-1"></a><span class="fu">head</span>(XAUUSD)  <span class="co"># 查看黄金数据</span></span></code></pre></div>
 <pre><code>##            XAU.USD
-## 2025-01-11    2689
-## 2025-01-12    2689
-## 2025-01-13    2675
-## 2025-01-14    2671
-## 2025-01-15    2685
-## 2025-01-16    2707</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data.html#cb66-1" tabindex="-1"></a><span class="co"># 方法2：手动赋值</span></span>
-<span id="cb66-2"><a href="data.html#cb66-2" tabindex="-1"></a>gold_data <span class="ot">&lt;-</span> <span class="fu">getFX</span>(<span class="st">&quot;XAU/USD&quot;</span>, <span class="at">from =</span> <span class="st">&quot;2005-01-01&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+## 2025-01-29    2759
+## 2025-01-30    2779
+## 2025-01-31    2800
+## 2025-02-01    2798
+## 2025-02-02    2798
+## 2025-02-03    2802</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data.html#cb71-1" tabindex="-1"></a><span class="co"># 方法2：手动赋值</span></span>
+<span id="cb71-2"><a href="data.html#cb71-2" tabindex="-1"></a>gold_data <span class="ot">&lt;-</span> <span class="fu">getFX</span>(<span class="st">&quot;XAU/USD&quot;</span>, <span class="at">from =</span> <span class="st">&quot;2005-01-01&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## Warning in doTryCatch(return(expr), name,
 ## parentenv, handler): Oanda only provides
 ## historical data for the past 180 days.
 ## Symbol: XAU/USD</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data.html#cb68-1" tabindex="-1"></a><span class="fu">head</span>(gold_data)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="data.html#cb73-1" tabindex="-1"></a><span class="fu">head</span>(gold_data)</span></code></pre></div>
 <pre><code>##            XAU.USD
-## 2025-01-11    2689
-## 2025-01-12    2689
-## 2025-01-13    2675
-## 2025-01-14    2671
-## 2025-01-15    2685
-## 2025-01-16    2707</code></pre>
+## 2025-01-29    2759
+## 2025-01-30    2779
+## 2025-01-31    2800
+## 2025-02-01    2798
+## 2025-02-02    2798
+## 2025-02-03    2802</code></pre>
 </div>
 <div id="钯金数据获取" class="section level3 hasAnchor" number="1.6.2">
 <h3><span class="header-section-number">1.6.2</span> 钯金数据获取<a href="#%E9%92%AF%E9%87%91%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>钯金通常以”XPD/USD”表示：</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data.html#cb70-1" tabindex="-1"></a><span class="fu">getFX</span>(<span class="st">&quot;XPD/USD&quot;</span>, <span class="at">from =</span> <span class="st">&quot;2005-01-01&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="data.html#cb75-1" tabindex="-1"></a><span class="fu">getFX</span>(<span class="st">&quot;XPD/USD&quot;</span>, <span class="at">from =</span> <span class="st">&quot;2005-01-01&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Warning in doTryCatch(return(expr), name,
 ## parentenv, handler): Oanda only provides
 ## historical data for the past 180 days.
 ## Symbol: XPD/USD</code></pre>
 <pre><code>## [1] &quot;XPD/USD&quot;</code></pre>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="data.html#cb73-1" tabindex="-1"></a><span class="fu">head</span>(XPDUSD)  <span class="co"># 查看钯金数据</span></span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="data.html#cb78-1" tabindex="-1"></a><span class="fu">head</span>(XPDUSD)  <span class="co"># 查看钯金数据</span></span></code></pre></div>
 <pre><code>##            XPD.USD
-## 2025-01-11   962.1
-## 2025-01-12   962.1
-## 2025-01-13   950.7
-## 2025-01-14   946.4
-## 2025-01-15   956.7
-## 2025-01-16   959.6</code></pre>
+## 2025-01-29   966.4
+## 2025-01-30   998.0
+## 2025-01-31  1036.0
+## 2025-02-01  1067.2
+## 2025-02-02  1066.5
+## 2025-02-03  1051.2</code></pre>
 </div>
 <div id="铂金数据获取" class="section level3 hasAnchor" number="1.6.3">
 <h3><span class="header-section-number">1.6.3</span> 铂金数据获取<a href="#%E9%93%82%E9%87%91%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>铂金通常以”XPT/USD”表示：</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="data.html#cb75-1" tabindex="-1"></a><span class="fu">getFX</span>(<span class="st">&quot;XPT/USD&quot;</span>, <span class="at">from =</span> <span class="st">&quot;2005-01-01&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="data.html#cb80-1" tabindex="-1"></a><span class="fu">getFX</span>(<span class="st">&quot;XPT/USD&quot;</span>, <span class="at">from =</span> <span class="st">&quot;2005-01-01&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## Warning in doTryCatch(return(expr), name,
 ## parentenv, handler): Oanda only provides
 ## historical data for the past 180 days.
 ## Symbol: XPT/USD</code></pre>
 <pre><code>## [1] &quot;XPT/USD&quot;</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="data.html#cb78-1" tabindex="-1"></a><span class="fu">head</span>(XPTUSD)  <span class="co"># 查看铂金数据</span></span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="data.html#cb83-1" tabindex="-1"></a><span class="fu">head</span>(XPTUSD)  <span class="co"># 查看铂金数据</span></span></code></pre></div>
 <pre><code>##            XPT.USD
-## 2025-01-11   978.4
-## 2025-01-12   978.4
-## 2025-01-13   968.6
-## 2025-01-14   948.6
-## 2025-01-15   935.0
-## 2025-01-16   935.8</code></pre>
+## 2025-01-29   956.4
+## 2025-01-30   994.5
+## 2025-01-31  1023.4
+## 2025-02-01  1032.0
+## 2025-02-02  1031.7
+## 2025-02-03  1003.4</code></pre>
 </div>
 <div id="批量获取多种贵金属数据" class="section level3 hasAnchor" number="1.6.4">
 <h3><span class="header-section-number">1.6.4</span> 批量获取多种贵金属数据<a href="#%E6%89%B9%E9%87%8F%E8%8E%B7%E5%8F%96%E5%A4%9A%E7%A7%8D%E8%B4%B5%E9%87%91%E5%B1%9E%E6%95%B0%E6%8D%AE" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>结合 lapply 批量获取多种贵金属数据：</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="data.html#cb80-1" tabindex="-1"></a><span class="co"># 定义需要获取的贵金属代码</span></span>
-<span id="cb80-2"><a href="data.html#cb80-2" tabindex="-1"></a>symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;XAU/USD&quot;</span>, <span class="st">&quot;XPD/USD&quot;</span>, <span class="st">&quot;XPT/USD&quot;</span>)</span>
-<span id="cb80-3"><a href="data.html#cb80-3" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;gold&quot;</span>, <span class="st">&quot;palladium&quot;</span>, <span class="st">&quot;platinum&quot;</span>)</span>
-<span id="cb80-4"><a href="data.html#cb80-4" tabindex="-1"></a></span>
-<span id="cb80-5"><a href="data.html#cb80-5" tabindex="-1"></a><span class="co"># 批量获取数据并命名</span></span>
-<span id="cb80-6"><a href="data.html#cb80-6" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> <span class="fu">lapply</span>(symbols, <span class="cf">function</span>(x) {</span>
-<span id="cb80-7"><a href="data.html#cb80-7" tabindex="-1"></a>  <span class="fu">getFX</span>(x, <span class="at">from =</span> <span class="st">&quot;2005-01-01&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb80-8"><a href="data.html#cb80-8" tabindex="-1"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="data.html#cb85-1" tabindex="-1"></a><span class="co"># 定义需要获取的贵金属代码</span></span>
+<span id="cb85-2"><a href="data.html#cb85-2" tabindex="-1"></a>symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;XAU/USD&quot;</span>, <span class="st">&quot;XPD/USD&quot;</span>, <span class="st">&quot;XPT/USD&quot;</span>)</span>
+<span id="cb85-3"><a href="data.html#cb85-3" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;gold&quot;</span>, <span class="st">&quot;palladium&quot;</span>, <span class="st">&quot;platinum&quot;</span>)</span>
+<span id="cb85-4"><a href="data.html#cb85-4" tabindex="-1"></a></span>
+<span id="cb85-5"><a href="data.html#cb85-5" tabindex="-1"></a><span class="co"># 批量获取数据并命名</span></span>
+<span id="cb85-6"><a href="data.html#cb85-6" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> <span class="fu">lapply</span>(symbols, <span class="cf">function</span>(x) {</span>
+<span id="cb85-7"><a href="data.html#cb85-7" tabindex="-1"></a>  <span class="fu">getFX</span>(x, <span class="at">from =</span> <span class="st">&quot;2005-01-01&quot;</span>, <span class="at">auto.assign =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb85-8"><a href="data.html#cb85-8" tabindex="-1"></a>})</span></code></pre></div>
 <pre><code>## Warning in doTryCatch(return(expr), name,
 ## parentenv, handler): Oanda only provides
 ## historical data for the past 180 days.
@@ -836,138 +852,196 @@ div.csl-indent {
 ## parentenv, handler): Oanda only provides
 ## historical data for the past 180 days.
 ## Symbol: XPT/USD</code></pre>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="data.html#cb84-1" tabindex="-1"></a><span class="fu">names</span>(data_list) <span class="ot">&lt;-</span> names</span>
-<span id="cb84-2"><a href="data.html#cb84-2" tabindex="-1"></a></span>
-<span id="cb84-3"><a href="data.html#cb84-3" tabindex="-1"></a><span class="co"># 访问数据</span></span>
-<span id="cb84-4"><a href="data.html#cb84-4" tabindex="-1"></a><span class="fu">head</span>(data_list<span class="sc">$</span>gold)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="data.html#cb89-1" tabindex="-1"></a><span class="fu">names</span>(data_list) <span class="ot">&lt;-</span> names</span>
+<span id="cb89-2"><a href="data.html#cb89-2" tabindex="-1"></a></span>
+<span id="cb89-3"><a href="data.html#cb89-3" tabindex="-1"></a><span class="co"># 访问数据</span></span>
+<span id="cb89-4"><a href="data.html#cb89-4" tabindex="-1"></a><span class="fu">head</span>(data_list<span class="sc">$</span>gold)</span></code></pre></div>
 <pre><code>##            XAU.USD
-## 2025-01-11    2689
-## 2025-01-12    2689
-## 2025-01-13    2675
-## 2025-01-14    2671
-## 2025-01-15    2685
-## 2025-01-16    2707</code></pre>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="data.html#cb86-1" tabindex="-1"></a><span class="fu">head</span>(data_list<span class="sc">$</span>palladium)</span></code></pre></div>
+## 2025-01-29    2759
+## 2025-01-30    2779
+## 2025-01-31    2800
+## 2025-02-01    2798
+## 2025-02-02    2798
+## 2025-02-03    2802</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="data.html#cb91-1" tabindex="-1"></a><span class="fu">head</span>(data_list<span class="sc">$</span>palladium)</span></code></pre></div>
 <pre><code>##            XPD.USD
-## 2025-01-11   962.1
-## 2025-01-12   962.1
-## 2025-01-13   950.7
-## 2025-01-14   946.4
-## 2025-01-15   956.7
-## 2025-01-16   959.6</code></pre>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="data.html#cb88-1" tabindex="-1"></a><span class="co"># 检查环境中是否存在对象</span></span>
-<span id="cb88-2"><a href="data.html#cb88-2" tabindex="-1"></a><span class="fu">ls</span>()  <span class="co"># 应显示 XAUUSD、XPDUSD、XPTUSD 等对象</span></span></code></pre></div>
-<pre><code>##  [1] &quot;600941.SS&quot;            
-##  [2] &quot;AAPL&quot;                 
-##  [3] &quot;aapl_all_returns&quot;     
-##  [4] &quot;aapl_annual_return1&quot;  
-##  [5] &quot;aapl_annual_return2&quot;  
-##  [6] &quot;aapl_cl&quot;              
-##  [7] &quot;aapl_ClCl&quot;            
-##  [8] &quot;aapl_daily_return1&quot;   
-##  [9] &quot;aapl_daily_return2&quot;   
-## [10] &quot;aapl_data&quot;            
-## [11] &quot;aapl_features&quot;        
-## [12] &quot;aapl_first20&quot;         
-## [13] &quot;aapl_first3m&quot;         
-## [14] &quot;aapl_future_return&quot;   
-## [15] &quot;aapl_HiCl&quot;            
-## [16] &quot;aapl_lag1&quot;            
-## [17] &quot;aapl_lag5&quot;            
-## [18] &quot;aapl_last10&quot;          
-## [19] &quot;aapl_last6m&quot;          
-## [20] &quot;aapl_LoCl&quot;            
-## [21] &quot;aapl_LoHi&quot;            
-## [22] &quot;aapl_monthly_return&quot;  
-## [23] &quot;aapl_next1&quot;           
-## [24] &quot;aapl_OpCl&quot;            
-## [25] &quot;aapl_OpHi&quot;            
-## [26] &quot;aapl_OpLo&quot;            
-## [27] &quot;aapl_OpOp&quot;            
-## [28] &quot;aapl_q2&quot;              
-## [29] &quot;aapl_quarterly_return&quot;
-## [30] &quot;aapl_return&quot;          
-## [31] &quot;aapl_weekly_return&quot;   
-## [32] &quot;AAPL.a&quot;               
-## [33] &quot;AAPL.OPT&quot;             
-## [34] &quot;AAPL.OPTS&quot;            
-## [35] &quot;AAPL.uA&quot;              
-## [36] &quot;allReturns&quot;           
-## [37] &quot;BTC-USD&quot;              
-## [38] &quot;CHINAMOBILE&quot;          
-## [39] &quot;combined_data&quot;        
-## [40] &quot;custom_theme&quot;         
-## [41] &quot;daily_returns&quot;        
-## [42] &quot;dark_theme&quot;           
-## [43] &quot;data_list&quot;            
-## [44] &quot;end_idx&quot;              
-## [45] &quot;end_price&quot;            
-## [46] &quot;EURUSD&quot;               
-## [47] &quot;event_dates&quot;          
-## [48] &quot;event_index&quot;          
-## [49] &quot;first20_extended&quot;     
-## [50] &quot;gold_data&quot;            
-## [51] &quot;has_na&quot;               
-## [52] &quot;i&quot;                    
-## [53] &quot;intraday_diff&quot;        
-## [54] &quot;log_returns&quot;          
-## [55] &quot;monthly_AAPL&quot;         
-## [56] &quot;monthly_data&quot;         
-## [57] &quot;monthly_volatility&quot;   
-## [58] &quot;myEnv&quot;                
-## [59] &quot;names&quot;                
-## [60] &quot;p&quot;                    
-## [61] &quot;param_df&quot;             
-## [62] &quot;parameters&quot;           
-## [63] &quot;price_change&quot;         
-## [64] &quot;price_drop&quot;           
-## [65] &quot;quarterly_max_volume&quot; 
-## [66] &quot;required_packages&quot;    
-## [67] &quot;result_df&quot;            
-## [68] &quot;returns_df&quot;           
-## [69] &quot;returns_long&quot;         
-## [70] &quot;returns_merged&quot;       
-## [71] &quot;simple_theme&quot;         
-## [72] &quot;start_idx&quot;            
-## [73] &quot;start_price&quot;          
-## [74] &quot;subset_data&quot;          
-## [75] &quot;symbols&quot;              
-## [76] &quot;USDEUR&quot;               
-## [77] &quot;USDJPY&quot;               
-## [78] &quot;uses&quot;                 
-## [79] &quot;weekly_AAPL&quot;          
-## [80] &quot;weekly_data&quot;          
-## [81] &quot;weekly_high&quot;          
-## [82] &quot;weekly_max_close&quot;     
-## [83] &quot;weekly_returns&quot;       
-## [84] &quot;XAUUSD&quot;               
-## [85] &quot;XPDUSD&quot;               
-## [86] &quot;XPTUSD&quot;               
-## [87] &quot;year_date&quot;            
-## [88] &quot;year_endpoints&quot;       
-## [89] &quot;year_returns&quot;         
-## [90] &quot;years&quot;</code></pre>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="data.html#cb90-1" tabindex="-1"></a><span class="co"># 查看数据结构</span></span>
-<span id="cb90-2"><a href="data.html#cb90-2" tabindex="-1"></a><span class="fu">str</span>(XAUUSD)  <span class="co"># 应显示时间序列数据结构</span></span></code></pre></div>
-<pre><code>## An xts object on 2025-01-11 / 2025-07-09 containing: 
+## 2025-01-29   966.4
+## 2025-01-30   998.0
+## 2025-01-31  1036.0
+## 2025-02-01  1067.2
+## 2025-02-02  1066.5
+## 2025-02-03  1051.2</code></pre>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="data.html#cb93-1" tabindex="-1"></a><span class="co"># 检查环境中是否存在对象</span></span>
+<span id="cb93-2"><a href="data.html#cb93-2" tabindex="-1"></a><span class="fu">ls</span>()  <span class="co"># 应显示 XAUUSD、XPDUSD、XPTUSD 等对象</span></span></code></pre></div>
+<pre><code>##   [1] &quot;600941.SS&quot;             
+##   [2] &quot;AAPL&quot;                  
+##   [3] &quot;aapl_all_returns&quot;      
+##   [4] &quot;aapl_annual_return1&quot;   
+##   [5] &quot;aapl_annual_return2&quot;   
+##   [6] &quot;aapl_cl&quot;               
+##   [7] &quot;aapl_ClCl&quot;             
+##   [8] &quot;aapl_daily_return1&quot;    
+##   [9] &quot;aapl_daily_return2&quot;    
+##  [10] &quot;aapl_data&quot;             
+##  [11] &quot;aapl_features&quot;         
+##  [12] &quot;aapl_first20&quot;          
+##  [13] &quot;aapl_first3m&quot;          
+##  [14] &quot;aapl_future_return&quot;    
+##  [15] &quot;aapl_HiCl&quot;             
+##  [16] &quot;aapl_lag1&quot;             
+##  [17] &quot;aapl_lag5&quot;             
+##  [18] &quot;aapl_last10&quot;           
+##  [19] &quot;aapl_last6m&quot;           
+##  [20] &quot;aapl_LoCl&quot;             
+##  [21] &quot;aapl_LoHi&quot;             
+##  [22] &quot;aapl_monthly_return&quot;   
+##  [23] &quot;aapl_next1&quot;            
+##  [24] &quot;aapl_OpCl&quot;             
+##  [25] &quot;aapl_OpHi&quot;             
+##  [26] &quot;aapl_OpLo&quot;             
+##  [27] &quot;aapl_OpOp&quot;             
+##  [28] &quot;aapl_q2&quot;               
+##  [29] &quot;aapl_quarterly_return&quot; 
+##  [30] &quot;aapl_return&quot;           
+##  [31] &quot;aapl_weekly_return&quot;    
+##  [32] &quot;AAPL.a&quot;                
+##  [33] &quot;AAPL.OPT&quot;              
+##  [34] &quot;AAPL.OPTS&quot;             
+##  [35] &quot;AAPL.uA&quot;               
+##  [36] &quot;allReturns&quot;            
+##  [37] &quot;arch_lm_test&quot;          
+##  [38] &quot;BTC-USD&quot;               
+##  [39] &quot;Canada&quot;                
+##  [40] &quot;CHINAMOBILE&quot;           
+##  [41] &quot;cl&quot;                    
+##  [42] &quot;combined_data&quot;         
+##  [43] &quot;CRSOX&quot;                 
+##  [44] &quot;custom_theme&quot;          
+##  [45] &quot;daily_returns&quot;         
+##  [46] &quot;dark_theme&quot;            
+##  [47] &quot;Dat&quot;                   
+##  [48] &quot;data_list&quot;             
+##  [49] &quot;data_matrix&quot;           
+##  [50] &quot;diff_data&quot;             
+##  [51] &quot;EEM&quot;                   
+##  [52] &quot;end_idx&quot;               
+##  [53] &quot;end_price&quot;             
+##  [54] &quot;EURUSD&quot;                
+##  [55] &quot;event_dates&quot;           
+##  [56] &quot;event_index&quot;           
+##  [57] &quot;first20_extended&quot;      
+##  [58] &quot;fit&quot;                   
+##  [59] &quot;fit_adcc&quot;              
+##  [60] &quot;fit_ar&quot;                
+##  [61] &quot;fit_arch&quot;              
+##  [62] &quot;fit_arima&quot;             
+##  [63] &quot;fit_auto_arima&quot;        
+##  [64] &quot;fit_garch&quot;             
+##  [65] &quot;fit_ma&quot;                
+##  [66] &quot;fit_var&quot;               
+##  [67] &quot;fit1&quot;                  
+##  [68] &quot;forecast_ar&quot;           
+##  [69] &quot;forecast_arch&quot;         
+##  [70] &quot;forecast_arima&quot;        
+##  [71] &quot;forecast_auto_arima&quot;   
+##  [72] &quot;forecast_garch&quot;        
+##  [73] &quot;forecast_ma&quot;           
+##  [74] &quot;forecast_var&quot;          
+##  [75] &quot;GDAXI&quot;                 
+##  [76] &quot;GDAXI.DE&quot;              
+##  [77] &quot;gold_data&quot;             
+##  [78] &quot;GSPC&quot;                  
+##  [79] &quot;has_na&quot;                
+##  [80] &quot;i&quot;                     
+##  [81] &quot;interest_rate&quot;         
+##  [82] &quot;intraday_diff&quot;         
+##  [83] &quot;lag_order&quot;             
+##  [84] &quot;lag_selection&quot;         
+##  [85] &quot;loess_fit&quot;             
+##  [86] &quot;log_returns&quot;           
+##  [87] &quot;merged_data&quot;           
+##  [88] &quot;monthly_AAPL&quot;          
+##  [89] &quot;monthly_data&quot;          
+##  [90] &quot;monthly_volatility&quot;    
+##  [91] &quot;multf&quot;                 
+##  [92] &quot;myEnv&quot;                 
+##  [93] &quot;names&quot;                 
+##  [94] &quot;p&quot;                     
+##  [95] &quot;param_df&quot;              
+##  [96] &quot;parameters&quot;            
+##  [97] &quot;price&quot;                 
+##  [98] &quot;price_change&quot;          
+##  [99] &quot;price_data&quot;            
+## [100] &quot;price_drop&quot;            
+## [101] &quot;quarterly_max_volume&quot;  
+## [102] &quot;required_packages&quot;     
+## [103] &quot;residuals_ar&quot;          
+## [104] &quot;residuals_arima&quot;       
+## [105] &quot;residuals_ma&quot;          
+## [106] &quot;result_df&quot;             
+## [107] &quot;return_data&quot;           
+## [108] &quot;return_matrix&quot;         
+## [109] &quot;return1&quot;               
+## [110] &quot;return2&quot;               
+## [111] &quot;returns&quot;               
+## [112] &quot;returns_df&quot;            
+## [113] &quot;returns_long&quot;          
+## [114] &quot;returns_merged&quot;        
+## [115] &quot;simple_theme&quot;          
+## [116] &quot;smoothed&quot;              
+## [117] &quot;smoothed_data&quot;         
+## [118] &quot;spec1&quot;                 
+## [119] &quot;spec1a&quot;                
+## [120] &quot;start_idx&quot;             
+## [121] &quot;start_price&quot;           
+## [122] &quot;std_residuals&quot;         
+## [123] &quot;std_residuals_fit_adcc&quot;
+## [124] &quot;std_residuals_fit1&quot;    
+## [125] &quot;stock_price&quot;           
+## [126] &quot;subset_data&quot;           
+## [127] &quot;symbols&quot;               
+## [128] &quot;ts_data&quot;               
+## [129] &quot;ts_returns&quot;            
+## [130] &quot;USDEUR&quot;                
+## [131] &quot;USDJPY&quot;                
+## [132] &quot;uses&quot;                  
+## [133] &quot;uspec&quot;                 
+## [134] &quot;weekly_AAPL&quot;           
+## [135] &quot;weekly_data&quot;           
+## [136] &quot;weekly_high&quot;           
+## [137] &quot;weekly_max_close&quot;      
+## [138] &quot;weekly_returns&quot;        
+## [139] &quot;weighted_smoothed&quot;     
+## [140] &quot;weights&quot;               
+## [141] &quot;XAUUSD&quot;                
+## [142] &quot;XPDUSD&quot;                
+## [143] &quot;XPTUSD&quot;                
+## [144] &quot;xspec&quot;                 
+## [145] &quot;year_date&quot;             
+## [146] &quot;year_endpoints&quot;        
+## [147] &quot;year_returns&quot;          
+## [148] &quot;years&quot;</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="data.html#cb95-1" tabindex="-1"></a><span class="co"># 查看数据结构</span></span>
+<span id="cb95-2"><a href="data.html#cb95-2" tabindex="-1"></a><span class="fu">str</span>(XAUUSD)  <span class="co"># 应显示时间序列数据结构</span></span></code></pre></div>
+<pre><code>## An xts object on 2025-01-29 / 2025-07-27 containing: 
 ##   Data:    double [180, 1]
 ##   Columns: XAU.USD
 ##   Index:   Date [180] (TZ: &quot;UTC&quot;)
 ##   xts Attributes:
 ##     $ src    : chr &quot;oanda&quot;
 ##     $ updated: POSIXct[1:1], format:  ...</code></pre>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="data.html#cb92-1" tabindex="-1"></a><span class="co"># 绘制价格走势图</span></span>
-<span id="cb92-2"><a href="data.html#cb92-2" tabindex="-1"></a><span class="fu">plot</span>(XAUUSD)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="data.html#cb97-1" tabindex="-1"></a><span class="co"># 绘制价格走势图</span></span>
+<span id="cb97-2"><a href="data.html#cb97-2" tabindex="-1"></a><span class="fu">plot</span>(XAUUSD)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/vis_xau-1.png" width="90%" /></p>
 </div>
 </div>
 <div id="美联储经济数据获取指南" class="section level2 hasAnchor" number="1.7">
 <h2><span class="header-section-number">1.7</span> 美联储经济数据获取指南<a href="#%E7%BE%8E%E8%81%94%E5%82%A8%E7%BB%8F%E6%B5%8E%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E6%8C%87%E5%8D%97" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>getSymbols.FRED 函数可以获取美联储主页上的美国经济数据。函数基本用法如下：</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="data.html#cb93-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&#39;CPIAUCNS&#39;</span>,<span class="at">src=</span><span class="st">&#39;FRED&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="data.html#cb98-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&#39;CPIAUCNS&#39;</span>,<span class="at">src=</span><span class="st">&#39;FRED&#39;</span>)</span></code></pre></div>
 <p>或者：</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="data.html#cb94-1" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">CPIAUCNS=</span><span class="st">&#39;FRED&#39;</span>)</span>
-<span id="cb94-2"><a href="data.html#cb94-2" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&#39;CPIAUCNS&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="data.html#cb99-1" tabindex="-1"></a><span class="fu">setSymbolLookup</span>(<span class="at">CPIAUCNS=</span><span class="st">&#39;FRED&#39;</span>)</span>
+<span id="cb99-2"><a href="data.html#cb99-2" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&#39;CPIAUCNS&#39;</span>)</span></code></pre></div>
 </div>
 <div id="数据库数据获取指南" class="section level2 hasAnchor" number="1.8">
 <h2><span class="header-section-number">1.8</span> 数据库数据获取指南<a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E6%8C%87%E5%8D%97" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -990,27 +1064,35 @@ div.csl-indent {
 <h2><span class="header-section-number">1.9</span> 查看和移除数据<a href="#%E6%9F%A5%E7%9C%8B%E5%92%8C%E7%A7%BB%E9%99%A4%E6%95%B0%E6%8D%AE" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="查看数据" class="section level3 hasAnchor" number="1.9.1">
 <h3><span class="header-section-number">1.9.1</span> 查看数据<a href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="data.html#cb95-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="data.html#cb100-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="data.html#cb97-1" tabindex="-1"></a><span class="fu">showSymbols</span>(<span class="at">env=</span>.GlobalEnv)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="data.html#cb102-1" tabindex="-1"></a><span class="fu">showSymbols</span>(<span class="at">env=</span>.GlobalEnv)</span></code></pre></div>
 <pre><code>##        AAPL     USD/EUR ChinaMobile 
 ##     &quot;yahoo&quot;     &quot;oanda&quot;     &quot;yahoo&quot; 
-##   600941.SS     BTC-USD     EUR/USD 
-##     &quot;yahoo&quot;     &quot;yahoo&quot;     &quot;oanda&quot;</code></pre>
+##   600941.SS         EEM       CRSOX 
+##     &quot;yahoo&quot;     &quot;yahoo&quot;     &quot;yahoo&quot; 
+##     BTC-USD     EUR/USD        GSPC 
+##     &quot;yahoo&quot;     &quot;oanda&quot;     &quot;yahoo&quot; 
+##       GDAXI 
+##     &quot;yahoo&quot;</code></pre>
 </div>
 <div id="移除数据" class="section level3 hasAnchor" number="1.9.2">
 <h3><span class="header-section-number">1.9.2</span> 移除数据<a href="#%E7%A7%BB%E9%99%A4%E6%95%B0%E6%8D%AE" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="data.html#cb99-1" tabindex="-1"></a><span class="fu">removeSymbols</span>(<span class="st">&quot;EDU&quot;</span>)</span>
-<span id="cb99-2"><a href="data.html#cb99-2" tabindex="-1"></a><span class="fu">showSymbols</span>(<span class="at">env=</span>.GlobalEnv)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="data.html#cb104-1" tabindex="-1"></a><span class="fu">removeSymbols</span>(<span class="st">&quot;EDU&quot;</span>)</span>
+<span id="cb104-2"><a href="data.html#cb104-2" tabindex="-1"></a><span class="fu">showSymbols</span>(<span class="at">env=</span>.GlobalEnv)</span></code></pre></div>
 <pre><code>##        AAPL     USD/EUR ChinaMobile 
 ##     &quot;yahoo&quot;     &quot;oanda&quot;     &quot;yahoo&quot; 
-##   600941.SS     BTC-USD     EUR/USD 
-##     &quot;yahoo&quot;     &quot;yahoo&quot;     &quot;oanda&quot;</code></pre>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="data.html#cb101-1" tabindex="-1"></a><span class="fu">getQuote</span>(<span class="st">&quot;AAPL&quot;</span>)</span>
-<span id="cb101-2"><a href="data.html#cb101-2" tabindex="-1"></a><span class="fu">getQuote</span>(<span class="st">&quot;QQQQ;SPY;^VXN&quot;</span>,<span class="at">what=</span><span class="fu">yahooQF</span>(<span class="fu">c</span>(<span class="st">&quot;Bid&quot;</span>,<span class="st">&quot;Ask&quot;</span>)))</span>
-<span id="cb101-3"><a href="data.html#cb101-3" tabindex="-1"></a><span class="fu">standardQuote</span>()</span>
-<span id="cb101-4"><a href="data.html#cb101-4" tabindex="-1"></a><span class="fu">yahooQF</span>()</span></code></pre></div>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="data.html#cb102-1" tabindex="-1"></a><span class="fu">attachSymbols</span>(<span class="st">&quot;MSFT&quot;</span>)</span></code></pre></div>
+##   600941.SS         EEM       CRSOX 
+##     &quot;yahoo&quot;     &quot;yahoo&quot;     &quot;yahoo&quot; 
+##     BTC-USD     EUR/USD        GSPC 
+##     &quot;yahoo&quot;     &quot;oanda&quot;     &quot;yahoo&quot; 
+##       GDAXI 
+##     &quot;yahoo&quot;</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="data.html#cb106-1" tabindex="-1"></a><span class="fu">getQuote</span>(<span class="st">&quot;AAPL&quot;</span>)</span>
+<span id="cb106-2"><a href="data.html#cb106-2" tabindex="-1"></a><span class="fu">getQuote</span>(<span class="st">&quot;QQQQ;SPY;^VXN&quot;</span>,<span class="at">what=</span><span class="fu">yahooQF</span>(<span class="fu">c</span>(<span class="st">&quot;Bid&quot;</span>,<span class="st">&quot;Ask&quot;</span>)))</span>
+<span id="cb106-3"><a href="data.html#cb106-3" tabindex="-1"></a><span class="fu">standardQuote</span>()</span>
+<span id="cb106-4"><a href="data.html#cb106-4" tabindex="-1"></a><span class="fu">yahooQF</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="data.html#cb107-1" tabindex="-1"></a><span class="fu">attachSymbols</span>(<span class="st">&quot;MSFT&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>

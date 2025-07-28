@@ -8,8 +8,6 @@ addPoints(
 )
 
 
-
-
 library(quantmod)
 getSymbols("AAPL")
 # 获取子集数据

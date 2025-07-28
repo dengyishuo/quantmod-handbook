@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第 5 章 量化建模与回测：从模型设定到策略验证 | quantmod：金融分析手册</title>
+  <title>第 5 章 量化建模与回测：从模型设定到策略验证 | quantmod:金融分析手册</title>
   <meta name="description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第 5 章 量化建模与回测：从模型设定到策略验证 | quantmod：金融分析手册" />
+  <meta property="og:title" content="第 5 章 量化建模与回测：从模型设定到策略验证 | quantmod:金融分析手册" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="/images/cover.jpg" />
   <meta property="og:description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="github-repo" content="dengyihsuo/quantmod-handbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第 5 章 量化建模与回测：从模型设定到策略验证 | quantmod：金融分析手册" />
+  <meta name="twitter:title" content="第 5 章 量化建模与回测：从模型设定到策略验证 | quantmod:金融分析手册" />
   
   <meta name="twitter:description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="twitter:image" content="/images/cover.jpg" />
@@ -23,7 +23,7 @@
 <meta name="author" content="邓一硕" />
 
 
-<meta name="date" content="2025-07-10" />
+<meta name="date" content="2025-07-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -309,7 +309,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">quantmod：金融分析手册</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">quantmod:金融分析手册</a>
           </h1>
         </div>
 
@@ -325,15 +325,15 @@ div.csl-indent {
 <div id="设定模型形式" class="section level3 hasAnchor" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> 设定模型形式<a href="#%E8%AE%BE%E5%AE%9A%E6%A8%A1%E5%9E%8B%E5%BD%A2%E5%BC%8F" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>模型构建始于对目标变量与解释变量关系的数学表达。通过 specifyModel 函数，用户可以采用类似 R 语言中线性回归的公式语法来定义模型结构。例如，使用 <code>Next(OpCl(AAPL)) ~ Lag(OpHi(AAPL),0:3) + Hi(IXIC)</code>可以构建一个预测苹果公司次日开盘收盘价差的模型。</p>
-<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="model.html#cb495-1" tabindex="-1"></a><span class="co"># 加载包</span></span>
-<span id="cb495-2"><a href="model.html#cb495-2" tabindex="-1"></a><span class="fu">require</span>(quantmod)</span>
-<span id="cb495-3"><a href="model.html#cb495-3" tabindex="-1"></a><span class="co"># 下载数据</span></span>
-<span id="cb495-4"><a href="model.html#cb495-4" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="fu">c</span>(<span class="st">&quot;^IXIC&quot;</span>,<span class="st">&quot;AAPL&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="model.html#cb500-1" tabindex="-1"></a><span class="co"># 加载包</span></span>
+<span id="cb500-2"><a href="model.html#cb500-2" tabindex="-1"></a><span class="fu">require</span>(quantmod)</span>
+<span id="cb500-3"><a href="model.html#cb500-3" tabindex="-1"></a><span class="co"># 下载数据</span></span>
+<span id="cb500-4"><a href="model.html#cb500-4" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="fu">c</span>(<span class="st">&quot;^IXIC&quot;</span>,<span class="st">&quot;AAPL&quot;</span>))</span></code></pre></div>
 <pre><code>## [1] &quot;IXIC&quot; &quot;AAPL&quot;</code></pre>
-<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="model.html#cb497-1" tabindex="-1"></a><span class="co"># 设定模型形式</span></span>
-<span id="cb497-2"><a href="model.html#cb497-2" tabindex="-1"></a>q.model <span class="ot">&lt;-</span> <span class="fu">specifyModel</span>(<span class="fu">Next</span>(<span class="fu">OpCl</span>(AAPL)) <span class="sc">~</span> <span class="fu">Lag</span>(<span class="fu">OpHi</span>(AAPL),<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">Hi</span>(IXIC))</span>
-<span id="cb497-3"><a href="model.html#cb497-3" tabindex="-1"></a><span class="co"># 查看模型</span></span>
-<span id="cb497-4"><a href="model.html#cb497-4" tabindex="-1"></a>q.model</span></code></pre></div>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="model.html#cb502-1" tabindex="-1"></a><span class="co"># 设定模型形式</span></span>
+<span id="cb502-2"><a href="model.html#cb502-2" tabindex="-1"></a>q.model <span class="ot">&lt;-</span> <span class="fu">specifyModel</span>(<span class="fu">Next</span>(<span class="fu">OpCl</span>(AAPL)) <span class="sc">~</span> <span class="fu">Lag</span>(<span class="fu">OpHi</span>(AAPL),<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">Hi</span>(IXIC))</span>
+<span id="cb502-3"><a href="model.html#cb502-3" tabindex="-1"></a><span class="co"># 查看模型</span></span>
+<span id="cb502-4"><a href="model.html#cb502-4" tabindex="-1"></a>q.model</span></code></pre></div>
 <pre><code>## 
 ## quantmod object:     Build date:   
 ## 
@@ -352,7 +352,7 @@ div.csl-indent {
 <h3><span class="header-section-number">5.1.2</span> 查看模型数据<a href="#%E6%9F%A5%E7%9C%8B%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>模型设定完成后，modelData 函数可用于查看模型对应的数据集。这一功能在调试阶段尤为重要，通过观察生成的数据结构，用户可以确认变量计算是否符合预期。</p>
 <p>值得注意的是，quantmod 包在处理时间序列数据时会自动处理缺失值和对齐问题，例如通过 na.rm=TRUE 参数可以便捷地移除包含缺失值的样本。</p>
-<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="model.html#cb499-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">modelData</span>(q.model))</span></code></pre></div>
+<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="model.html#cb504-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">modelData</span>(q.model))</span></code></pre></div>
 <pre><code>##            Next.OpCl.AAPL
 ## 2007-01-08      0.0707922
 ## 2007-01-09      0.0237467
@@ -389,8 +389,8 @@ div.csl-indent {
 ## 2007-01-12                0.075535    2503
 ## 2007-01-16                0.032190    2509</code></pre>
 <p>若希望直接生成模型数据集，buildData 函数提供了更简洁的方式，但其结果仅用于数据探查，不能直接传递给模型训练函数。</p>
-<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="model.html#cb501-1" tabindex="-1"></a>bD<span class="ot">=</span><span class="fu">buildData</span>(<span class="fu">Next</span>(<span class="fu">OpCl</span>(AAPL)) <span class="sc">~</span> <span class="fu">Lag</span>(<span class="fu">OpHi</span>(AAPL),<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">Hi</span>(IXIC))</span>
-<span id="cb501-2"><a href="model.html#cb501-2" tabindex="-1"></a><span class="fu">head</span>(bD)</span></code></pre></div>
+<div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb506-1"><a href="model.html#cb506-1" tabindex="-1"></a>bD<span class="ot">=</span><span class="fu">buildData</span>(<span class="fu">Next</span>(<span class="fu">OpCl</span>(AAPL)) <span class="sc">~</span> <span class="fu">Lag</span>(<span class="fu">OpHi</span>(AAPL),<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">Hi</span>(IXIC))</span>
+<span id="cb506-2"><a href="model.html#cb506-2" tabindex="-1"></a><span class="fu">head</span>(bD)</span></code></pre></div>
 <pre><code>##            Next.OpCl.AAPL
 ## 2007-01-08      0.0707922
 ## 2007-01-09      0.0237467
@@ -430,19 +430,19 @@ div.csl-indent {
 <div id="估计模型参数" class="section level3 hasAnchor" number="5.1.3">
 <h3><span class="header-section-number">5.1.3</span> 估计模型参数<a href="#%E4%BC%B0%E8%AE%A1%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>参数估计是模型训练的核心环节。buildModel 函数支持多种建模方法，包括线性回归（lm）、广义线性模型（glm）等。在训练过程中，用户需要指定训练周期，例如 training.per=c(‘2013-08-01’,‘2013-09-30’) 将限定模型仅使用该时间段内的数据进行参数估计。这种时间窗口划分机制使模型能够在历史数据上进行滚动训练，有效评估模型的时间稳定性。训练完成后，通过 print 和 summary 函数可以查看模型的关键统计信息，包括系数估计值、显著性水平以及拟合优度等指标，帮助用户评估模型质量。</p>
-<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="model.html#cb503-1" tabindex="-1"></a><span class="do">## 简单的线型模型</span></span>
-<span id="cb503-2"><a href="model.html#cb503-2" tabindex="-1"></a>bM <span class="ot">&lt;-</span> <span class="fu">buildModel</span>(q.model,<span class="at">method=</span><span class="st">&#39;lm&#39;</span>,<span class="at">training.per=</span><span class="fu">c</span>(<span class="st">&#39;2013-08-01&#39;</span>,<span class="st">&#39;2013-09-30&#39;</span>))</span>
-<span id="cb503-3"><a href="model.html#cb503-3" tabindex="-1"></a><span class="do">## 显示结果</span></span>
-<span id="cb503-4"><a href="model.html#cb503-4" tabindex="-1"></a><span class="fu">print</span>(bM,<span class="at">width =</span> <span class="dv">50</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="model.html#cb508-1" tabindex="-1"></a><span class="do">## 简单的线型模型</span></span>
+<span id="cb508-2"><a href="model.html#cb508-2" tabindex="-1"></a>bM <span class="ot">&lt;-</span> <span class="fu">buildModel</span>(q.model,<span class="at">method=</span><span class="st">&#39;lm&#39;</span>,<span class="at">training.per=</span><span class="fu">c</span>(<span class="st">&#39;2013-08-01&#39;</span>,<span class="st">&#39;2013-09-30&#39;</span>))</span>
+<span id="cb508-3"><a href="model.html#cb508-3" tabindex="-1"></a><span class="do">## 显示结果</span></span>
+<span id="cb508-4"><a href="model.html#cb508-4" tabindex="-1"></a><span class="fu">print</span>(bM,<span class="at">width =</span> <span class="dv">50</span>)</span></code></pre></div>
 <pre><code>## &lt;S4 Type Object&gt;
 ## attr(,&quot;model.id&quot;)
-## [1] &quot;lm1752147173.54446&quot;
+## [1] &quot;lm1753705321.25835&quot;
 ## attr(,&quot;model.spec&quot;)
 ## Next(OpCl(AAPL)) ~ Lag(OpHi(AAPL), 0:3) + Hi(IXIC)
 ## attr(,&quot;model.formula&quot;)
 ## Next.OpCl.AAPL ~ Lag.OpHi.AAPL.0.3.Lag.0 + Lag.OpHi.AAPL.0.3.Lag.1 + 
 ##     Lag.OpHi.AAPL.0.3.Lag.2 + Lag.OpHi.AAPL.0.3.Lag.3 + Hi.IXIC
-## &lt;environment: 0x7f8f5b9f2300&gt;
+## &lt;environment: 0x7fbd426885f0&gt;
 ## attr(,&quot;model.target&quot;)
 ## [1] &quot;Next.OpCl.AAPL&quot;
 ## attr(,&quot;model.inputs&quot;)
@@ -479,7 +479,7 @@ div.csl-indent {
 ## [37] &quot;2013-09-23&quot; &quot;2013-09-24&quot; &quot;2013-09-25&quot;
 ## [40] &quot;2013-09-26&quot; &quot;2013-09-27&quot; &quot;2013-09-30&quot;
 ## attr(,&quot;build.date&quot;)
-## [1] &quot;2025-07-10 19:32:53.544324&quot;
+## [1] &quot;2025-07-28 20:22:01.258183&quot;
 ## attr(,&quot;fitted.model&quot;)
 ## 
 ## Call:
@@ -512,16 +512,16 @@ div.csl-indent {
 ## 2007-01-19     -0.0263629               0.0115086
 ## 2007-01-22     -0.0003501               0.0002246
 ##        ...                                       
-## 2025-06-25     -0.0021347               0.0110201
-## 2025-06-26     -0.0040121               0.0060071
-## 2025-06-27      0.0156428               0.0065878
-## 2025-06-30      0.0055645               0.0266324
-## 2025-07-01      0.0168972               0.0170320
-## 2025-07-02      0.0065991               0.0212053
-## 2025-07-03     -0.0128362               0.0117841
-## 2025-07-07     -0.0004284               0.0166918
-## 2025-07-08      0.0076839               0.0063303
-## 2025-07-09             NA               0.0085907
+## 2025-07-14     -0.0005258               0.0046683
+## 2025-07-15     -0.0006657               0.0127617
+## 2025-07-16     -0.0026120               0.0099857
+## 2025-07-17      0.0014701               0.0058413
+## 2025-07-18      0.0017916               0.0043629
+## 2025-07-21      0.0059116               0.0173503
+## 2025-07-22     -0.0039535               0.0084921
+## 2025-07-23     -0.0006545               0.0006976
+## 2025-07-24     -0.0038192               0.0083684
+## 2025-07-25             NA               0.0025152
 ##            Lag.OpHi.AAPL.0.3.Lag.1
 ## 2007-01-08               0.0050134
 ## 2007-01-09               0.0066310
@@ -534,16 +534,16 @@ div.csl-indent {
 ## 2007-01-19               0.0001086
 ## 2007-01-22               0.0115086
 ##        ...                        
-## 2025-06-25               0.0041957
-## 2025-06-26               0.0110201
-## 2025-06-27               0.0060071
-## 2025-06-30               0.0065878
-## 2025-07-01               0.0266324
-## 2025-07-02               0.0170320
-## 2025-07-03               0.0212053
-## 2025-07-07               0.0117841
-## 2025-07-08               0.0166918
-## 2025-07-09               0.0063303
+## 2025-07-14               0.0074085
+## 2025-07-15               0.0046683
+## 2025-07-16               0.0127617
+## 2025-07-17               0.0099857
+## 2025-07-18               0.0058413
+## 2025-07-21               0.0043629
+## 2025-07-22               0.0173503
+## 2025-07-23               0.0084921
+## 2025-07-24               0.0006976
+## 2025-07-25               0.0083684
 ##            Lag.OpHi.AAPL.0.3.Lag.2
 ## 2007-01-08               0.0226056
 ## 2007-01-09               0.0050134
@@ -556,16 +556,16 @@ div.csl-indent {
 ## 2007-01-19               0.0004098
 ## 2007-01-22               0.0001086
 ##        ...                        
-## 2025-06-25               0.0033229
-## 2025-06-26               0.0041957
-## 2025-06-27               0.0110201
-## 2025-06-30               0.0060071
-## 2025-07-01               0.0065878
-## 2025-07-02               0.0266324
-## 2025-07-03               0.0170320
-## 2025-07-07               0.0212053
-## 2025-07-08               0.0117841
-## 2025-07-09               0.0166918
+## 2025-07-14               0.0141086
+## 2025-07-15               0.0074085
+## 2025-07-16               0.0046683
+## 2025-07-17               0.0127617
+## 2025-07-18               0.0099857
+## 2025-07-21               0.0058413
+## 2025-07-22               0.0043629
+## 2025-07-23               0.0173503
+## 2025-07-24               0.0084921
+## 2025-07-25               0.0006976
 ##            Lag.OpHi.AAPL.0.3.Lag.3 Hi.IXIC
 ## 2007-01-08               0.0033608    2446
 ## 2007-01-09               0.0226056    2450
@@ -578,26 +578,26 @@ div.csl-indent {
 ## 2007-01-19               0.0164087    2454
 ## 2007-01-22               0.0004098    2455
 ##        ...                                
-## 2025-06-25               0.0174535   20053
-## 2025-06-26               0.0033229   20187
-## 2025-06-27               0.0041957   20312
-## 2025-06-30               0.0110201   20418
-## 2025-07-01               0.0060071   20339
-## 2025-07-02               0.0065878   20397
-## 2025-07-03               0.0266324   20625
-## 2025-07-07               0.0170320   20512
-## 2025-07-08               0.0212053   20481
-## 2025-07-09               0.0117841   20645
+## 2025-07-14               0.0085907   20672
+## 2025-07-15               0.0141086   20836
+## 2025-07-16               0.0074085   20751
+## 2025-07-17               0.0046683   20912
+## 2025-07-18               0.0127617   20981
+## 2025-07-21               0.0099857   21077
+## 2025-07-22               0.0058413   20985
+## 2025-07-23               0.0043629   21024
+## 2025-07-24               0.0173503   21113
+## 2025-07-25               0.0084921   21160
 ## attr(,&quot;quantmod.version&quot;)
 ## numeric(0)
 ## attr(,&quot;class&quot;)
 ## [1] &quot;quantmod&quot;
 ## attr(,&quot;class&quot;)attr(,&quot;package&quot;)
 ## [1] &quot;quantmod&quot;</code></pre>
-<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="model.html#cb505-1" tabindex="-1"></a><span class="co"># 查看更详细的结果</span></span>
-<span id="cb505-2"><a href="model.html#cb505-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(bM),<span class="at">width =</span> <span class="dv">50</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb510-1"><a href="model.html#cb510-1" tabindex="-1"></a><span class="co"># 查看更详细的结果</span></span>
+<span id="cb510-2"><a href="model.html#cb510-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(bM),<span class="at">width =</span> <span class="dv">50</span>)</span></code></pre></div>
 <pre><code>## 
-## quantmod object:   lm1752147173.54446    Build date:  2025-07-10 19:32:53.544324 
+## quantmod object:   lm1753705321.25835    Build date:  2025-07-28 20:22:01.258183 
 ## 
 ## Model Specified: 
 ##      Next(OpCl(AAPL)) ~ Lag(OpHi(AAPL), 0:3) + Hi(IXIC) 
@@ -641,9 +641,9 @@ div.csl-indent {
 <h3><span class="header-section-number">5.1.4</span> 模型结果提取<a href="#%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%9C%E6%8F%90%E5%8F%96" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>模型结果提取是连接训练与应用的桥梁。getModelData 函数能够从训练好的模型中提取关键数据，如预测值、残差等，这些数据可进一步用于策略构建或风险分析。例如，通过分析模型残差的分布特征，用户可以识别模型未捕捉到的市场异常波动，从而对模型进行改进。</p>
 <p>提取前述模型结果：</p>
-<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="model.html#cb507-1" tabindex="-1"></a><span class="fu">getModelData</span>(bM)</span></code></pre></div>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="model.html#cb512-1" tabindex="-1"></a><span class="fu">getModelData</span>(bM)</span></code></pre></div>
 <pre><code>## 
-## quantmod object:   lm1752147173.54446    Build date:  2025-07-10 19:32:53.544324 
+## quantmod object:   lm1753705321.25835    Build date:  2025-07-28 20:22:01.258183 
 ## 
 ## Model Specified: 
 ##      Next(OpCl(AAPL)) ~ Lag(OpHi(AAPL), 0:3) + Hi(IXIC) 
@@ -677,12 +677,12 @@ div.csl-indent {
 <div id="策略回测与评估" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> 策略回测与评估<a href="#%E7%AD%96%E7%95%A5%E5%9B%9E%E6%B5%8B%E4%B8%8E%E8%AF%84%E4%BC%B0" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>策略回测是量化模型落地的关键环节。tradeModel 函数提供了基础的回测功能，能够基于训练好的模型生成交易信号并模拟交易过程。默认情况下，回测采用 1 倍杠杆，但通过 leverage 参数可以灵活调整杠杆水平，例如设置为 2 时将使用 2 倍杠杆进行回测，这有助于评估策略在不同资金管理方案下的表现。回测结果会显示关键绩效指标，如累计收益率、最大回撤等，直观反映策略的盈利能力和风险控制能力。</p>
-<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="model.html#cb509-1" tabindex="-1"></a><span class="co"># 基础回测</span></span>
-<span id="cb509-2"><a href="model.html#cb509-2" tabindex="-1"></a><span class="fu">tradeModel</span>(bM)</span></code></pre></div>
+<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="model.html#cb514-1" tabindex="-1"></a><span class="co"># 基础回测</span></span>
+<span id="cb514-2"><a href="model.html#cb514-2" tabindex="-1"></a><span class="fu">tradeModel</span>(bM)</span></code></pre></div>
 <pre><code>## 
-##   Model:  lm1752147173.54446 
+##   Model:  lm1753705321.25835 
 ## 
-##   C.A.G.R.:  -13.24%     H.P.R.:  -97.78% 
+##   C.A.G.R.:  -13.22%     H.P.R.:  -97.79% 
 ## 
 ##   Returns by period summary:
 ## 
@@ -691,12 +691,12 @@ div.csl-indent {
 ##     3rd Qu.   1.58%   2.65%     2.05%
 ##     Mean     -0.35%  -1.52%    -4.40%
 ##     Median   -0.37%  -1.44%    -4.15%
-##     2rd Qu.  -2.22%  -6.33%   -12.44%
+##     2rd Qu.  -2.21%  -6.33%   -12.44%
 ##     Min.    -22.08% -24.44%   -23.94%
 ##              yearly
 ##     Max.     60.86%
 ##     3rd Qu. -12.42%
-##     Mean    -15.96%
+##     Mean    -15.97%
 ##     Median  -19.75%
 ##     2rd Qu. -26.73%
 ##     Min.    -45.64%
@@ -704,29 +704,29 @@ div.csl-indent {
 ##   Period to date returns:
 ## 
 ##              weekly monthly quarterly
-##               0.55%  -2.35%    -2.35%
+##               0.07%  -2.61%    -2.61%
 ##               yearly
-##              -19.28%</code></pre>
-<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="model.html#cb511-1" tabindex="-1"></a><span class="co"># 带杠杆回测</span></span>
-<span id="cb511-2"><a href="model.html#cb511-2" tabindex="-1"></a><span class="fu">tradeModel</span>(bM, <span class="at">leverage=</span><span class="dv">2</span>)</span></code></pre></div>
+##              -19.49%</code></pre>
+<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="model.html#cb516-1" tabindex="-1"></a><span class="co"># 带杠杆回测</span></span>
+<span id="cb516-2"><a href="model.html#cb516-2" tabindex="-1"></a><span class="fu">tradeModel</span>(bM, <span class="at">leverage=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## 
-##   Model:  lm1752147173.54446 
+##   Model:  lm1753705321.25835 
 ## 
-##   C.A.G.R.:  -28.12%     H.P.R.:  -99.99% 
+##   C.A.G.R.:  -28.08%     H.P.R.:  -99.99% 
 ## 
 ##   Returns by period summary:
 ## 
 ##              weekly monthly quarterly
 ##     Max.     23.77%  35.70%    56.36%
 ##     3rd Qu.   3.08%   4.72%     3.62%
-##     Mean     -0.70%  -3.09%    -8.79%
+##     Mean     -0.70%  -3.10%    -8.80%
 ##     Median   -0.80%  -3.10%    -9.71%
 ##     2rd Qu.  -4.44% -12.48%   -24.67%
 ##     Min.    -41.26% -45.38%   -43.48%
 ##              yearly
 ##     Max.    139.66%
 ##     3rd Qu. -27.31%
-##     Mean    -28.67%
+##     Mean    -28.69%
 ##     Median  -40.87%
 ##     2rd Qu. -48.21%
 ##     Min.    -77.62%
@@ -734,9 +734,9 @@ div.csl-indent {
 ##   Period to date returns:
 ## 
 ##              weekly monthly quarterly
-##               1.08%  -4.70%    -4.70%
+##               0.13%  -5.22%    -5.22%
 ##               yearly
-##              -39.33%</code></pre>
+##              -39.67%</code></pre>
 
 </div>
 </div>

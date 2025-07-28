@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第 3 章 图形分析 | quantmod：金融分析手册</title>
+  <title>第 3 章 图形分析 | quantmod:金融分析手册</title>
   <meta name="description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第 3 章 图形分析 | quantmod：金融分析手册" />
+  <meta property="og:title" content="第 3 章 图形分析 | quantmod:金融分析手册" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="/images/cover.jpg" />
   <meta property="og:description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="github-repo" content="dengyihsuo/quantmod-handbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第 3 章 图形分析 | quantmod：金融分析手册" />
+  <meta name="twitter:title" content="第 3 章 图形分析 | quantmod:金融分析手册" />
   
   <meta name="twitter:description" content="本书全面解析 R 语言 quantmod 包在金融数据分析与交易策略开发中的核心应用。本书从基础数据获取到高级策略回测，通过 200 + 实例代码详解量化全流程，涵盖指标定制、图表可视化、模型构建与绩效评估。附赠策略模板库，助读者快速搭建个性化量化系统，是金融分析师、量化交易者及相关专业学生的必备工具书。" />
   <meta name="twitter:image" content="/images/cover.jpg" />
@@ -23,7 +23,7 @@
 <meta name="author" content="邓一硕" />
 
 
-<meta name="date" content="2025-07-10" />
+<meta name="date" content="2025-07-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -309,7 +309,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">quantmod：金融分析手册</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">quantmod:金融分析手册</a>
           </h1>
         </div>
 
@@ -341,17 +341,17 @@ div.csl-indent {
 <div id="条形图" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> 条形图<a href="#%E6%9D%A1%E5%BD%A2%E5%9B%BE" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>条形图以垂直柱形表示价格波动范围，柱形顶部与底部分别对应最高价与最低价，柱体左右横线标记开盘价与收盘价。这种形式介于蜡烛图与线图之间，既能展示价格区间（如 AAPL 每日波动幅度），又比蜡烛图更简洁。条形图的优势在于多资产对比场景 —— 同一图表中并列绘制标普 500 与纳斯达克指数的条形图，可直观比较不同市场的波动差异；此外，通过调整柱形颜色与宽度（如col=“blue”参数），能进一步优化视觉可读性。但需注意，条形图的开盘价与收盘价标记不如蜡烛图直观，且缺乏形态识别功能，在高频数据下可能因柱形密集导致信息过载，更适合中短期数据的概览性展示。</p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="graphs.html#cb323-1" tabindex="-1"></a><span class="fu">require</span>(quantmod)</span>
-<span id="cb323-2"><a href="graphs.html#cb323-2" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="graphs.html#cb328-1" tabindex="-1"></a><span class="fu">require</span>(quantmod)</span>
+<span id="cb328-2"><a href="graphs.html#cb328-2" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="graphs.html#cb325-1" tabindex="-1"></a><span class="fu">barChart</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="graphs.html#cb330-1" tabindex="-1"></a><span class="fu">barChart</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:bar"></span>
 <img src="QuantmodHandbook_files/figure-html/bar-1.png" alt="条形图" width="90%" />
 <p class="caption">
 图 3.1: 条形图
 </p>
 </div>
-<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="graphs.html#cb326-1" tabindex="-1"></a><span class="fu">barChart</span>(AAPL,<span class="at">theme=</span><span class="st">&quot;white&quot;</span>,<span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="graphs.html#cb331-1" tabindex="-1"></a><span class="fu">barChart</span>(AAPL,<span class="at">theme=</span><span class="st">&quot;white&quot;</span>,<span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:barWhite"></span>
 <img src="QuantmodHandbook_files/figure-html/barWhite-1.png" alt="白色主题条形图" width="90%" />
 <p class="caption">
@@ -362,14 +362,14 @@ div.csl-indent {
 <div id="蜡烛图" class="section level3 hasAnchor" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> 蜡烛图<a href="#%E8%9C%A1%E7%83%9B%E5%9B%BE" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>蜡烛图通过整合开盘价、收盘价、最高价与最低价，以实体与影线的组合直观呈现每个交易周期的价格波动。当收盘价高于开盘价时，实体以阳线（常为绿色）显示，反之为阴线（常为红色），影线则标记价格波动的上下限。这种可视化方式能精准传递多空力量对比 —— 例如长上影线表明价格冲高后遇阻回落，短实体配合长下影线则可能预示底部支撑强劲。在实战中，蜡烛图尤其适合短线交易策略，因其能清晰展现吞没形态、晨星组合等经典反转信号，帮助交易者捕捉趋势拐点。但需注意，蜡烛图的信息密度较高，高频数据场景下可能因形态过多导致视觉混乱，且无法直接展示成交量等辅助指标，需配合副图叠加使用。</p>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="graphs.html#cb327-1" tabindex="-1"></a><span class="fu">candleChart</span>(AAPL, <span class="at">subset =</span><span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="graphs.html#cb332-1" tabindex="-1"></a><span class="fu">candleChart</span>(AAPL, <span class="at">subset =</span><span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:candle"></span>
 <img src="QuantmodHandbook_files/figure-html/candle-1.png" alt="蜡烛图" width="90%" />
 <p class="caption">
 图 3.3: 蜡烛图
 </p>
 </div>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="graphs.html#cb328-1" tabindex="-1"></a><span class="fu">candleChart</span>(AAPL,<span class="at">multi.col=</span>T,<span class="at">theme=</span><span class="st">&quot;white&quot;</span>, <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="graphs.html#cb333-1" tabindex="-1"></a><span class="fu">candleChart</span>(AAPL,<span class="at">multi.col=</span>T,<span class="at">theme=</span><span class="st">&quot;white&quot;</span>, <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:cadleWhite"></span>
 <img src="QuantmodHandbook_files/figure-html/cadleWhite-1.png" alt="白色主题蜡烛图" width="90%" />
 <p class="caption">
@@ -380,14 +380,14 @@ div.csl-indent {
 <div id="线图" class="section level3 hasAnchor" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> 线图<a href="#%E7%BA%BF%E5%9B%BE" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>蜡烛图通过整合开盘价、收盘价、最高价与最低价，以实体与影线的组合直观呈现每个交易周期的价格波动。当收盘价高于开盘价时，实体以阳线（常为绿色）显示，反之为阴线（常为红色），影线则标记价格波动的上下限。这种可视化方式能精准传递多空力量对比 —— 例如长上影线表明价格冲高后遇阻回落，短实体配合长下影线则可能预示底部支撑强劲。在实战中，蜡烛图尤其适合短线交易策略，因其能清晰展现吞没形态、晨星组合等经典反转信号，帮助交易者捕捉趋势拐点。但需注意，蜡烛图的信息密度较高，高频数据场景下可能因形态过多导致视觉混乱，且无法直接展示成交量等辅助指标，需配合副图叠加使用。</p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="graphs.html#cb329-1" tabindex="-1"></a><span class="fu">lineChart</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="graphs.html#cb334-1" tabindex="-1"></a><span class="fu">lineChart</span>(AAPL, <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:line"></span>
 <img src="QuantmodHandbook_files/figure-html/line-1.png" alt="线图" width="90%" />
 <p class="caption">
 图 3.5: 线图
 </p>
 </div>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="graphs.html#cb330-1" tabindex="-1"></a><span class="fu">lineChart</span>(AAPL,<span class="at">theme=</span><span class="st">&quot;white&quot;</span>, <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="graphs.html#cb335-1" tabindex="-1"></a><span class="fu">lineChart</span>(AAPL,<span class="at">theme=</span><span class="st">&quot;white&quot;</span>, <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:lineWhite"></span>
 <img src="QuantmodHandbook_files/figure-html/lineWhite-1.png" alt="白色主题线图" width="90%" />
 <p class="caption">
@@ -438,47 +438,47 @@ div.csl-indent {
 </ul></li>
 </ul>
 <p>下面通过一个完整的案例，展示如何使用chartTheme()函数来自定义图表主题：</p>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="graphs.html#cb331-1" tabindex="-1"></a><span class="co"># 加载必要的包</span></span>
-<span id="cb331-2"><a href="graphs.html#cb331-2" tabindex="-1"></a><span class="fu">library</span>(quantmod)</span>
-<span id="cb331-3"><a href="graphs.html#cb331-3" tabindex="-1"></a></span>
-<span id="cb331-4"><a href="graphs.html#cb331-4" tabindex="-1"></a><span class="co"># 获取股票数据</span></span>
-<span id="cb331-5"><a href="graphs.html#cb331-5" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>, <span class="at">from =</span> <span class="st">&quot;2024-01-01&quot;</span>, <span class="at">to =</span> <span class="st">&quot;2025-01-01&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="graphs.html#cb336-1" tabindex="-1"></a><span class="co"># 加载必要的包</span></span>
+<span id="cb336-2"><a href="graphs.html#cb336-2" tabindex="-1"></a><span class="fu">library</span>(quantmod)</span>
+<span id="cb336-3"><a href="graphs.html#cb336-3" tabindex="-1"></a></span>
+<span id="cb336-4"><a href="graphs.html#cb336-4" tabindex="-1"></a><span class="co"># 获取股票数据</span></span>
+<span id="cb336-5"><a href="graphs.html#cb336-5" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>, <span class="at">from =</span> <span class="st">&quot;2024-01-01&quot;</span>, <span class="at">to =</span> <span class="st">&quot;2025-01-01&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="graphs.html#cb333-1" tabindex="-1"></a><span class="co"># 创建自定义主题</span></span>
-<span id="cb333-2"><a href="graphs.html#cb333-2" tabindex="-1"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">chartTheme</span>(</span>
-<span id="cb333-3"><a href="graphs.html#cb333-3" tabindex="-1"></a>  <span class="co"># 基础颜色</span></span>
-<span id="cb333-4"><a href="graphs.html#cb333-4" tabindex="-1"></a>  <span class="at">fg.col =</span> <span class="st">&quot;blue&quot;</span>,      <span class="co"># 前景色（文本、坐标轴）</span></span>
-<span id="cb333-5"><a href="graphs.html#cb333-5" tabindex="-1"></a>  <span class="at">bg.col =</span> <span class="st">&quot;white&quot;</span>,         <span class="co"># 背景色</span></span>
-<span id="cb333-6"><a href="graphs.html#cb333-6" tabindex="-1"></a>  <span class="at">grid.col =</span> <span class="st">&quot;lightgray&quot;</span>,   <span class="co"># 网格线颜色</span></span>
-<span id="cb333-7"><a href="graphs.html#cb333-7" tabindex="-1"></a>  <span class="at">border =</span> <span class="st">&quot;black&quot;</span>,         <span class="co"># 边框颜色</span></span>
-<span id="cb333-8"><a href="graphs.html#cb333-8" tabindex="-1"></a>  </span>
-<span id="cb333-9"><a href="graphs.html#cb333-9" tabindex="-1"></a>  <span class="co"># 刻度线颜色</span></span>
-<span id="cb333-10"><a href="graphs.html#cb333-10" tabindex="-1"></a>  <span class="at">minor.tick =</span> <span class="st">&quot;gray&quot;</span>,      <span class="co"># 次要刻度线</span></span>
-<span id="cb333-11"><a href="graphs.html#cb333-11" tabindex="-1"></a>  <span class="at">major.tick =</span> <span class="st">&quot;lightgray&quot;</span>,  <span class="co"># 主要刻度线</span></span>
-<span id="cb333-12"><a href="graphs.html#cb333-12" tabindex="-1"></a>  </span>
-<span id="cb333-13"><a href="graphs.html#cb333-13" tabindex="-1"></a>  <span class="co"># K线颜色</span></span>
-<span id="cb333-14"><a href="graphs.html#cb333-14" tabindex="-1"></a>  <span class="at">up.col =</span> <span class="st">&quot;green&quot;</span>,         <span class="co"># 上涨K线填充色</span></span>
-<span id="cb333-15"><a href="graphs.html#cb333-15" tabindex="-1"></a>  <span class="at">dn.col =</span> <span class="st">&quot;red&quot;</span>,           <span class="co"># 下跌K线填充色</span></span>
-<span id="cb333-16"><a href="graphs.html#cb333-16" tabindex="-1"></a>  <span class="at">up.border =</span> <span class="st">&quot;darkgreen&quot;</span>,  <span class="co"># 上涨K线边框色</span></span>
-<span id="cb333-17"><a href="graphs.html#cb333-17" tabindex="-1"></a>  <span class="at">dn.border =</span> <span class="st">&quot;darkred&quot;</span>,    <span class="co"># 下跌K线边框色</span></span>
-<span id="cb333-18"><a href="graphs.html#cb333-18" tabindex="-1"></a>  </span>
-<span id="cb333-19"><a href="graphs.html#cb333-19" tabindex="-1"></a>  <span class="co"># 状态转换颜色（高级设置）</span></span>
-<span id="cb333-20"><a href="graphs.html#cb333-20" tabindex="-1"></a>  <span class="at">up.up.col =</span> <span class="st">&quot;limegreen&quot;</span>,    <span class="co"># 连续上涨</span></span>
-<span id="cb333-21"><a href="graphs.html#cb333-21" tabindex="-1"></a>  <span class="at">up.dn.col =</span> <span class="st">&quot;palegreen&quot;</span>,    <span class="co"># 涨后跌</span></span>
-<span id="cb333-22"><a href="graphs.html#cb333-22" tabindex="-1"></a>  <span class="at">dn.dn.col =</span> <span class="st">&quot;tomato&quot;</span>,       <span class="co"># 连续下跌</span></span>
-<span id="cb333-23"><a href="graphs.html#cb333-23" tabindex="-1"></a>  <span class="at">dn.up.col =</span> <span class="st">&quot;lightcoral&quot;</span>,   <span class="co"># 跌后涨</span></span>
-<span id="cb333-24"><a href="graphs.html#cb333-24" tabindex="-1"></a>  <span class="at">up.up.border =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="co"># 连续上涨边框</span></span>
-<span id="cb333-25"><a href="graphs.html#cb333-25" tabindex="-1"></a>  <span class="at">up.dn.border =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="co"># 涨后跌边框</span></span>
-<span id="cb333-26"><a href="graphs.html#cb333-26" tabindex="-1"></a>  <span class="at">dn.dn.border =</span> <span class="st">&quot;darkred&quot;</span>,   <span class="co"># 连续下跌边框</span></span>
-<span id="cb333-27"><a href="graphs.html#cb333-27" tabindex="-1"></a>  <span class="at">dn.up.border =</span> <span class="st">&quot;darkred&quot;</span>    <span class="co"># 跌后涨边框</span></span>
-<span id="cb333-28"><a href="graphs.html#cb333-28" tabindex="-1"></a>)</span>
-<span id="cb333-29"><a href="graphs.html#cb333-29" tabindex="-1"></a></span>
-<span id="cb333-30"><a href="graphs.html#cb333-30" tabindex="-1"></a><span class="co"># 使用自定义主题绘制K线图</span></span>
-<span id="cb333-31"><a href="graphs.html#cb333-31" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, </span>
-<span id="cb333-32"><a href="graphs.html#cb333-32" tabindex="-1"></a>            <span class="at">theme =</span> custom_theme, </span>
-<span id="cb333-33"><a href="graphs.html#cb333-33" tabindex="-1"></a>            <span class="at">type =</span> <span class="st">&quot;candlesticks&quot;</span>, </span>
-<span id="cb333-34"><a href="graphs.html#cb333-34" tabindex="-1"></a>            <span class="at">name =</span> <span class="st">&quot;AAPL Stock Price with Custom Theme&quot;</span>,</span>
-<span id="cb333-35"><a href="graphs.html#cb333-35" tabindex="-1"></a>            <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="graphs.html#cb338-1" tabindex="-1"></a><span class="co"># 创建自定义主题</span></span>
+<span id="cb338-2"><a href="graphs.html#cb338-2" tabindex="-1"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">chartTheme</span>(</span>
+<span id="cb338-3"><a href="graphs.html#cb338-3" tabindex="-1"></a>  <span class="co"># 基础颜色</span></span>
+<span id="cb338-4"><a href="graphs.html#cb338-4" tabindex="-1"></a>  <span class="at">fg.col =</span> <span class="st">&quot;blue&quot;</span>,      <span class="co"># 前景色（文本、坐标轴）</span></span>
+<span id="cb338-5"><a href="graphs.html#cb338-5" tabindex="-1"></a>  <span class="at">bg.col =</span> <span class="st">&quot;white&quot;</span>,         <span class="co"># 背景色</span></span>
+<span id="cb338-6"><a href="graphs.html#cb338-6" tabindex="-1"></a>  <span class="at">grid.col =</span> <span class="st">&quot;lightgray&quot;</span>,   <span class="co"># 网格线颜色</span></span>
+<span id="cb338-7"><a href="graphs.html#cb338-7" tabindex="-1"></a>  <span class="at">border =</span> <span class="st">&quot;black&quot;</span>,         <span class="co"># 边框颜色</span></span>
+<span id="cb338-8"><a href="graphs.html#cb338-8" tabindex="-1"></a>  </span>
+<span id="cb338-9"><a href="graphs.html#cb338-9" tabindex="-1"></a>  <span class="co"># 刻度线颜色</span></span>
+<span id="cb338-10"><a href="graphs.html#cb338-10" tabindex="-1"></a>  <span class="at">minor.tick =</span> <span class="st">&quot;gray&quot;</span>,      <span class="co"># 次要刻度线</span></span>
+<span id="cb338-11"><a href="graphs.html#cb338-11" tabindex="-1"></a>  <span class="at">major.tick =</span> <span class="st">&quot;lightgray&quot;</span>,  <span class="co"># 主要刻度线</span></span>
+<span id="cb338-12"><a href="graphs.html#cb338-12" tabindex="-1"></a>  </span>
+<span id="cb338-13"><a href="graphs.html#cb338-13" tabindex="-1"></a>  <span class="co"># K线颜色</span></span>
+<span id="cb338-14"><a href="graphs.html#cb338-14" tabindex="-1"></a>  <span class="at">up.col =</span> <span class="st">&quot;green&quot;</span>,         <span class="co"># 上涨K线填充色</span></span>
+<span id="cb338-15"><a href="graphs.html#cb338-15" tabindex="-1"></a>  <span class="at">dn.col =</span> <span class="st">&quot;red&quot;</span>,           <span class="co"># 下跌K线填充色</span></span>
+<span id="cb338-16"><a href="graphs.html#cb338-16" tabindex="-1"></a>  <span class="at">up.border =</span> <span class="st">&quot;darkgreen&quot;</span>,  <span class="co"># 上涨K线边框色</span></span>
+<span id="cb338-17"><a href="graphs.html#cb338-17" tabindex="-1"></a>  <span class="at">dn.border =</span> <span class="st">&quot;darkred&quot;</span>,    <span class="co"># 下跌K线边框色</span></span>
+<span id="cb338-18"><a href="graphs.html#cb338-18" tabindex="-1"></a>  </span>
+<span id="cb338-19"><a href="graphs.html#cb338-19" tabindex="-1"></a>  <span class="co"># 状态转换颜色（高级设置）</span></span>
+<span id="cb338-20"><a href="graphs.html#cb338-20" tabindex="-1"></a>  <span class="at">up.up.col =</span> <span class="st">&quot;limegreen&quot;</span>,    <span class="co"># 连续上涨</span></span>
+<span id="cb338-21"><a href="graphs.html#cb338-21" tabindex="-1"></a>  <span class="at">up.dn.col =</span> <span class="st">&quot;palegreen&quot;</span>,    <span class="co"># 涨后跌</span></span>
+<span id="cb338-22"><a href="graphs.html#cb338-22" tabindex="-1"></a>  <span class="at">dn.dn.col =</span> <span class="st">&quot;tomato&quot;</span>,       <span class="co"># 连续下跌</span></span>
+<span id="cb338-23"><a href="graphs.html#cb338-23" tabindex="-1"></a>  <span class="at">dn.up.col =</span> <span class="st">&quot;lightcoral&quot;</span>,   <span class="co"># 跌后涨</span></span>
+<span id="cb338-24"><a href="graphs.html#cb338-24" tabindex="-1"></a>  <span class="at">up.up.border =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="co"># 连续上涨边框</span></span>
+<span id="cb338-25"><a href="graphs.html#cb338-25" tabindex="-1"></a>  <span class="at">up.dn.border =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="co"># 涨后跌边框</span></span>
+<span id="cb338-26"><a href="graphs.html#cb338-26" tabindex="-1"></a>  <span class="at">dn.dn.border =</span> <span class="st">&quot;darkred&quot;</span>,   <span class="co"># 连续下跌边框</span></span>
+<span id="cb338-27"><a href="graphs.html#cb338-27" tabindex="-1"></a>  <span class="at">dn.up.border =</span> <span class="st">&quot;darkred&quot;</span>    <span class="co"># 跌后涨边框</span></span>
+<span id="cb338-28"><a href="graphs.html#cb338-28" tabindex="-1"></a>)</span>
+<span id="cb338-29"><a href="graphs.html#cb338-29" tabindex="-1"></a></span>
+<span id="cb338-30"><a href="graphs.html#cb338-30" tabindex="-1"></a><span class="co"># 使用自定义主题绘制K线图</span></span>
+<span id="cb338-31"><a href="graphs.html#cb338-31" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, </span>
+<span id="cb338-32"><a href="graphs.html#cb338-32" tabindex="-1"></a>            <span class="at">theme =</span> custom_theme, </span>
+<span id="cb338-33"><a href="graphs.html#cb338-33" tabindex="-1"></a>            <span class="at">type =</span> <span class="st">&quot;candlesticks&quot;</span>, </span>
+<span id="cb338-34"><a href="graphs.html#cb338-34" tabindex="-1"></a>            <span class="at">name =</span> <span class="st">&quot;AAPL Stock Price with Custom Theme&quot;</span>,</span>
+<span id="cb338-35"><a href="graphs.html#cb338-35" tabindex="-1"></a>            <span class="at">subset =</span> <span class="st">&quot;last 3 months&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:customTheme"></span>
 <img src="QuantmodHandbook_files/figure-html/customTheme-1.png" alt="自定义主题图表" width="90%" />
 <p class="caption">
@@ -491,33 +491,33 @@ div.csl-indent {
 * 连续上涨和下跌的 K 线使用了不同深浅的颜色，增强了视觉区分度
 * 文本和坐标轴使用深蓝色，既清晰又不刺眼</p>
 <p>还可以创建多个主题并保存，根据不同的场景切换使用：</p>
-<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="graphs.html#cb334-1" tabindex="-1"></a><span class="co"># 创建暗黑主题</span></span>
-<span id="cb334-2"><a href="graphs.html#cb334-2" tabindex="-1"></a>dark_theme <span class="ot">&lt;-</span> <span class="fu">chartTheme</span>(</span>
-<span id="cb334-3"><a href="graphs.html#cb334-3" tabindex="-1"></a>  <span class="at">bg.col =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb334-4"><a href="graphs.html#cb334-4" tabindex="-1"></a>  <span class="at">fg.col =</span> <span class="st">&quot;white&quot;</span>,</span>
-<span id="cb334-5"><a href="graphs.html#cb334-5" tabindex="-1"></a>  <span class="at">grid.col =</span> <span class="st">&quot;gray30&quot;</span>,</span>
-<span id="cb334-6"><a href="graphs.html#cb334-6" tabindex="-1"></a>  <span class="at">up.col =</span> <span class="st">&quot;cyan&quot;</span>,</span>
-<span id="cb334-7"><a href="graphs.html#cb334-7" tabindex="-1"></a>  <span class="at">dn.col =</span> <span class="st">&quot;magenta&quot;</span></span>
-<span id="cb334-8"><a href="graphs.html#cb334-8" tabindex="-1"></a>)</span>
-<span id="cb334-9"><a href="graphs.html#cb334-9" tabindex="-1"></a></span>
-<span id="cb334-10"><a href="graphs.html#cb334-10" tabindex="-1"></a><span class="co"># 创建简约主题</span></span>
-<span id="cb334-11"><a href="graphs.html#cb334-11" tabindex="-1"></a>simple_theme <span class="ot">&lt;-</span> <span class="fu">chartTheme</span>(</span>
-<span id="cb334-12"><a href="graphs.html#cb334-12" tabindex="-1"></a>  <span class="at">bg.col =</span> <span class="st">&quot;white&quot;</span>,</span>
-<span id="cb334-13"><a href="graphs.html#cb334-13" tabindex="-1"></a>  <span class="at">fg.col =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb334-14"><a href="graphs.html#cb334-14" tabindex="-1"></a>  <span class="at">grid.col =</span> <span class="st">&quot;lightgray&quot;</span>,</span>
-<span id="cb334-15"><a href="graphs.html#cb334-15" tabindex="-1"></a>  <span class="at">up.col =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb334-16"><a href="graphs.html#cb334-16" tabindex="-1"></a>  <span class="at">dn.col =</span> <span class="st">&quot;black&quot;</span></span>
-<span id="cb334-17"><a href="graphs.html#cb334-17" tabindex="-1"></a>)</span>
-<span id="cb334-18"><a href="graphs.html#cb334-18" tabindex="-1"></a></span>
-<span id="cb334-19"><a href="graphs.html#cb334-19" tabindex="-1"></a><span class="co"># 根据需要切换主题</span></span>
-<span id="cb334-20"><a href="graphs.html#cb334-20" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">theme =</span> dark_theme)</span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="graphs.html#cb339-1" tabindex="-1"></a><span class="co"># 创建暗黑主题</span></span>
+<span id="cb339-2"><a href="graphs.html#cb339-2" tabindex="-1"></a>dark_theme <span class="ot">&lt;-</span> <span class="fu">chartTheme</span>(</span>
+<span id="cb339-3"><a href="graphs.html#cb339-3" tabindex="-1"></a>  <span class="at">bg.col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb339-4"><a href="graphs.html#cb339-4" tabindex="-1"></a>  <span class="at">fg.col =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb339-5"><a href="graphs.html#cb339-5" tabindex="-1"></a>  <span class="at">grid.col =</span> <span class="st">&quot;gray30&quot;</span>,</span>
+<span id="cb339-6"><a href="graphs.html#cb339-6" tabindex="-1"></a>  <span class="at">up.col =</span> <span class="st">&quot;cyan&quot;</span>,</span>
+<span id="cb339-7"><a href="graphs.html#cb339-7" tabindex="-1"></a>  <span class="at">dn.col =</span> <span class="st">&quot;magenta&quot;</span></span>
+<span id="cb339-8"><a href="graphs.html#cb339-8" tabindex="-1"></a>)</span>
+<span id="cb339-9"><a href="graphs.html#cb339-9" tabindex="-1"></a></span>
+<span id="cb339-10"><a href="graphs.html#cb339-10" tabindex="-1"></a><span class="co"># 创建简约主题</span></span>
+<span id="cb339-11"><a href="graphs.html#cb339-11" tabindex="-1"></a>simple_theme <span class="ot">&lt;-</span> <span class="fu">chartTheme</span>(</span>
+<span id="cb339-12"><a href="graphs.html#cb339-12" tabindex="-1"></a>  <span class="at">bg.col =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb339-13"><a href="graphs.html#cb339-13" tabindex="-1"></a>  <span class="at">fg.col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb339-14"><a href="graphs.html#cb339-14" tabindex="-1"></a>  <span class="at">grid.col =</span> <span class="st">&quot;lightgray&quot;</span>,</span>
+<span id="cb339-15"><a href="graphs.html#cb339-15" tabindex="-1"></a>  <span class="at">up.col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb339-16"><a href="graphs.html#cb339-16" tabindex="-1"></a>  <span class="at">dn.col =</span> <span class="st">&quot;black&quot;</span></span>
+<span id="cb339-17"><a href="graphs.html#cb339-17" tabindex="-1"></a>)</span>
+<span id="cb339-18"><a href="graphs.html#cb339-18" tabindex="-1"></a></span>
+<span id="cb339-19"><a href="graphs.html#cb339-19" tabindex="-1"></a><span class="co"># 根据需要切换主题</span></span>
+<span id="cb339-20"><a href="graphs.html#cb339-20" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">theme =</span> dark_theme)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:createtheme"></span>
 <img src="QuantmodHandbook_files/figure-html/createtheme-1.png" alt="暗黑主题" width="90%" />
 <p class="caption">
 图 3.8: 暗黑主题
 </p>
 </div>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="graphs.html#cb335-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">theme =</span> simple_theme)</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="graphs.html#cb340-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL, <span class="at">theme =</span> simple_theme)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:simpleTheme"></span>
 <img src="QuantmodHandbook_files/figure-html/simpleTheme-1.png" alt="基本主题" width="90%" />
 <p class="caption">
@@ -529,62 +529,62 @@ div.csl-indent {
 <div id="图形缩放" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> 图形缩放<a href="#%E5%9B%BE%E5%BD%A2%E7%BC%A9%E6%94%BE" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>当我们查看金融数据的图形时，有时候会希望查看其中某个时段对应的图形。zoom(n=1, eps=2) 和 zoomChart(subset, yrange=NULL) 函数支持对图表区域进行放大或缩小，方便聚焦关键数据区间。我们还可以借助 zooom 函数对 chartSeries 函数的绘图结果进行缩放或者说截取图形子集。zooom 的用法很简单，在现有绘图基础上，运行 zooom 函数，然后，根据提示分别点击结果区间对应的左边界和右边界即可。</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="graphs.html#cb336-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="graphs.html#cb341-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="graphs.html#cb338-1" tabindex="-1"></a><span class="fu">candleChart</span>(AAPL,<span class="at">multi.col=</span><span class="cn">TRUE</span>,<span class="at">theme=</span><span class="st">&#39;white&#39;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="graphs.html#cb343-1" tabindex="-1"></a><span class="fu">candleChart</span>(AAPL,<span class="at">multi.col=</span><span class="cn">TRUE</span>,<span class="at">theme=</span><span class="st">&#39;white&#39;</span>) </span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:zoom"></span>
 <img src="QuantmodHandbook_files/figure-html/zoom-1.png" alt="原始蜡烛图" width="90%" />
 <p class="caption">
 图 3.10: 原始蜡烛图
 </p>
 </div>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="graphs.html#cb339-1" tabindex="-1"></a><span class="fu">candleChart</span>(AAPL,<span class="at">multi.col=</span><span class="cn">TRUE</span>,<span class="at">theme=</span><span class="st">&#39;white&#39;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="graphs.html#cb344-1" tabindex="-1"></a><span class="fu">candleChart</span>(AAPL,<span class="at">multi.col=</span><span class="cn">TRUE</span>,<span class="at">theme=</span><span class="st">&#39;white&#39;</span>) </span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:zoomYear-1"></span>
 <img src="QuantmodHandbook_files/figure-html/zoomYear-1.png" alt="2013年以来" width="90%" />
 <p class="caption">
 图 3.11: 2013年以来
 </p>
 </div>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="graphs.html#cb340-1" tabindex="-1"></a><span class="fu">zoomChart</span>(<span class="st">&quot;2013::&quot;</span>, <span class="at">yrange=</span><span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="graphs.html#cb345-1" tabindex="-1"></a><span class="fu">zoomChart</span>(<span class="st">&quot;2013::&quot;</span>, <span class="at">yrange=</span><span class="cn">NULL</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:zoomYear-2"></span>
 <img src="QuantmodHandbook_files/figure-html/zoomYear-2.png" alt="2013年以来" width="90%" />
 <p class="caption">
 图 3.12: 2013年以来
 </p>
 </div>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="graphs.html#cb341-1" tabindex="-1"></a><span class="fu">candleChart</span>(AAPL,<span class="at">multi.col=</span><span class="cn">TRUE</span>,<span class="at">theme=</span><span class="st">&#39;white&#39;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="graphs.html#cb346-1" tabindex="-1"></a><span class="fu">candleChart</span>(AAPL,<span class="at">multi.col=</span><span class="cn">TRUE</span>,<span class="at">theme=</span><span class="st">&#39;white&#39;</span>) </span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/zoomMonth-1.png" width="90%" /></p>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="graphs.html#cb342-1" tabindex="-1"></a><span class="fu">zoomChart</span>(<span class="st">&quot;2014-06::&quot;</span>, <span class="at">yrange=</span><span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="graphs.html#cb347-1" tabindex="-1"></a><span class="fu">zoomChart</span>(<span class="st">&quot;2014-06::&quot;</span>, <span class="at">yrange=</span><span class="cn">NULL</span>)</span></code></pre></div>
 <p><img src="QuantmodHandbook_files/figure-html/zoomMonth-2.png" width="90%" /></p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="graphs.html#cb343-1" tabindex="-1"></a><span class="fu">require</span>(quantmod) <span class="co"># 载入quantmod包</span></span>
-<span id="cb343-2"><a href="graphs.html#cb343-2" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)  <span class="co"># 获取高盛公司的股票行情数据</span></span>
-<span id="cb343-3"><a href="graphs.html#cb343-3" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">theme=</span><span class="st">&quot;white&quot;</span>)  <span class="co"># 绘制股票行情数据图，结果如图3.4.1</span></span>
-<span id="cb343-4"><a href="graphs.html#cb343-4" tabindex="-1"></a><span class="co"># 对图形进行缩放</span></span>
-<span id="cb343-5"><a href="graphs.html#cb343-5" tabindex="-1"></a><span class="fu">zooom</span>(<span class="at">n=</span><span class="dv">1</span>, <span class="at">eps=</span><span class="dv">2</span>)    </span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="graphs.html#cb348-1" tabindex="-1"></a><span class="fu">require</span>(quantmod) <span class="co"># 载入quantmod包</span></span>
+<span id="cb348-2"><a href="graphs.html#cb348-2" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)  <span class="co"># 获取高盛公司的股票行情数据</span></span>
+<span id="cb348-3"><a href="graphs.html#cb348-3" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL,<span class="at">theme=</span><span class="st">&quot;white&quot;</span>)  <span class="co"># 绘制股票行情数据图，结果如图3.4.1</span></span>
+<span id="cb348-4"><a href="graphs.html#cb348-4" tabindex="-1"></a><span class="co"># 对图形进行缩放</span></span>
+<span id="cb348-5"><a href="graphs.html#cb348-5" tabindex="-1"></a><span class="fu">zooom</span>(<span class="at">n=</span><span class="dv">1</span>, <span class="at">eps=</span><span class="dv">2</span>)    </span></code></pre></div>
 </div>
 <div id="图形存储" class="section level2 hasAnchor" number="3.5">
 <h2><span class="header-section-number">3.5</span> 图形存储<a href="#%E5%9B%BE%E5%BD%A2%E5%AD%98%E5%82%A8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>完成图表绘制与调整后，saveChart()函数可将图表保存为多种格式。以 AAPL 股票数据为例，在绘制基本图表并添加布林线指标后，使用saveChart(‘pdf’)即可将图表保存为 PDF 格式，还可通过width参数自定义文件宽度，便于后续报告展示与分享。</p>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="graphs.html#cb344-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="graphs.html#cb349-1" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">&quot;AAPL&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;AAPL&quot;</code></pre>
-<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="graphs.html#cb346-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL)</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="graphs.html#cb351-1" tabindex="-1"></a><span class="fu">chartSeries</span>(AAPL)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:savePdf-1"></span>
 <img src="QuantmodHandbook_files/figure-html/savePdf-1.png" alt="蜡烛图" width="90%" />
 <p class="caption">
 图 3.13: 蜡烛图
 </p>
 </div>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="graphs.html#cb347-1" tabindex="-1"></a><span class="fu">require</span>(TTR)</span>
-<span id="cb347-2"><a href="graphs.html#cb347-2" tabindex="-1"></a><span class="fu">addBBands</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="graphs.html#cb352-1" tabindex="-1"></a><span class="fu">require</span>(TTR)</span>
+<span id="cb352-2"><a href="graphs.html#cb352-2" tabindex="-1"></a><span class="fu">addBBands</span>()</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:savePdf-2"></span>
 <img src="QuantmodHandbook_files/figure-html/savePdf-2.png" alt="蜡烛图" width="90%" />
 <p class="caption">
 图 3.14: 蜡烛图
 </p>
 </div>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="graphs.html#cb348-1" tabindex="-1"></a><span class="fu">saveChart</span>(<span class="st">&#39;pdf&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="graphs.html#cb353-1" tabindex="-1"></a><span class="fu">saveChart</span>(<span class="st">&#39;pdf&#39;</span>)</span></code></pre></div>
 <pre><code>## chart saved to AAPL.pdf</code></pre>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="graphs.html#cb350-1" tabindex="-1"></a><span class="fu">saveChart</span>(<span class="st">&#39;pdf&#39;</span>, <span class="at">width=</span><span class="dv">13</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="graphs.html#cb355-1" tabindex="-1"></a><span class="fu">saveChart</span>(<span class="st">&#39;pdf&#39;</span>, <span class="at">width=</span><span class="dv">13</span>)</span></code></pre></div>
 <pre><code>## chart saved to AAPL.pdf</code></pre>
 <p>通过这些功能完备的图形分析工具，R 语言为金融数据可视化提供了一站式解决方案，无论是基础数据展示还是复杂技术指标分析，都能高效且精准地实现。</p>
 

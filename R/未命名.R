@@ -1,9 +1,9 @@
 getSymbols("AAPL")
-chartSeries(AAPL["2025::",],theme="white")
-addPoints(x = 1:nrow(AAPL["2025::"]), y = AAPL["2025::", 6],col="blue")
+chartSeries(AAPL["2025::", ], theme = "white")
+addPoints(x = 1:nrow(AAPL["2025::"]), y = AAPL["2025::", 6], col = "blue")
 
 getSymbols("AAPL")
-chartSeries(AAPL["2025::",],theme="white")
+chartSeries(AAPL["2025::", ], theme = "white")
 
 # 获取子集数据
 subset_data <- AAPL["2025::"]
@@ -19,7 +19,9 @@ for (i in seq_along(event_dates)) {
 }
 
 # 添加标记点
-addPoints(x = event_index,
-          y = Ad(subset_data[event_dates]),
-          col = "darkred",
-          pch = 24)
+addPoints(
+  x = event_index,
+  y = Ad(subset_data[event_dates]),
+  col = "darkred",
+  pch = 24
+)
